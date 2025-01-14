@@ -1,16 +1,23 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { defineCustomElements } from '@savvaslearning/cel-components/dist-stencil/loader';
 
 import { AppComponent } from './app.component';
+import { ButtonsComponent } from './Buttons/buttons.component';
+import { InputFieldsComponent } from './InputFields/input-fields.component';
+import { InputValidationsComponent } from './InputValidations/input-validations.component';
+defineCustomElements();
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ButtonsComponent,
+    InputFieldsComponent,
+    InputValidationsComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
