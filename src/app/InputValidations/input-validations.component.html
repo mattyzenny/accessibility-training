@@ -6,29 +6,21 @@
     text-center
     content
   ">
+  <div>
+    <label id="customLabel">First Name</label>
+    <cel-text-field id="inputValidation0" data-field-label="" (blur)="onBlur('inputValidation0')"
+      [errorMessage]="errorMessages['inputValidation0']"> </cel-text-field>
+  </div>
 
     <div>
         <cel-text-field id="inputValidation1" (blur)="onBlur('inputValidation1')"
-            [errorMessage]="errorMessages['inputValidation1']" data-field-label="Last Name"></cel-text-field>
+            [errorMessage]="errorMessages['inputValidation1']" data-field-label="Middle Name"></cel-text-field>
     </div>
     <div>
         <div>
             <cel-text-field data-aria-describedby="errorMessage" id="inputValidation2"
-                (blur)="onBlur('inputValidation2')" [errorMessage]="" data-field-label="First Name">
+            (blur)="onBlur('inputValidation2')"[errorMessage]="errorMessages['inputValidation2']" data-field-label="First Name">
             </cel-text-field>
         </div>
-        <div id="errorMessage" aria-live="polite">
-            <div *ngIf="errorMessages['inputValidation2']" class="error-container">
-                <cel-icon class="error-icon cel-color cel-color-error icon-small" data-color="error" data-size="small"
-                    aria-label="Error" data-name="alert-circle">
-                </cel-icon>
-                <span class="error-message">{{ errorMessages['inputValidation2']
-                    }}</span>
-            </div>
-        </div>
-        <!-- <label for="inputvalidation3"></label>
-        <input id="inputvalidation3" aria-describedby="errorMessage" name="inputvalidation3" type="text" /> -->
-
-
     </div>
 </div>

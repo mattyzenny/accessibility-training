@@ -20,27 +20,12 @@ export class InputValidationsComponent implements OnInit {
 
   onBlur(inputId: string): void {
     const inputElement = document.getElementById(inputId) as HTMLInputElement; // Access first input value
-    const inputField = inputElement.shadowRoot?.querySelector('input');
     if (inputElement.value) {
-      this.errorMessages[inputId] = '';
-      if (inputElement.shadowRoot) {
-        const inputShadowElement =
-          inputElement.shadowRoot.querySelector('input');
-        if (inputShadowElement) {
-          inputShadowElement.style.border = ''; // Remove error border
-          // inputShadowElement.setAttribute('aria-describedby', 'errorMessage');
-        }
-      }
-    } else {
-      if (inputElement.shadowRoot) {
-        const inputShadowElement =
-          inputElement.shadowRoot.querySelector('input');
-        if (inputShadowElement) {
-          this.errorMessages[inputId] = 'Please enter a valid name';
-          inputShadowElement.style.border = '2px solid red'; // Apply error border
-          // inputShadowElement.setAttribute('aria-describedby', 'errorMessage');
-        }
+      this.errorMessages[inputId] = ''
+    }
+      else {
+        this.errorMessages[inputId] = 'Please enter a valid name';
       }
     }
   }
-}
+

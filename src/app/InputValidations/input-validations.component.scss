@@ -18,3 +18,7 @@
 .text-field {
   border: 2px solid #cc333f;
 }
+#customLabel {display: -ms-flexbox;
+font-size: var(--text-field-label-font-size, 0.875rem);
+font-family: var(--text-field-label-font-family, "OpenSans-Semibold");
+}

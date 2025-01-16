@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ButtonsComponent } from './Buttons/buttons.component';
 import { InputFieldsComponent } from './InputFields/input-fields.component';
 import { InputValidationsComponent } from './InputValidations/input-validations.component';
+import { RadioGroupsComponent } from './RadioGroups/radio-groups.component';
 defineCustomElements();
 
 @NgModule({
@@ -14,6 +15,7 @@ defineCustomElements();
     ButtonsComponent,
     InputFieldsComponent,
     InputValidationsComponent,
+    RadioGroupsComponent,
   ],
   imports: [BrowserModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

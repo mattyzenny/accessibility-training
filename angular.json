@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "celDemo": {
+    "accessibility-sandbox": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/celDemo",
+            "outputPath": "dist/accessibility-sandbox",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -69,18 +69,18 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "port": 8000,
-            "browserTarget": "celDemo:build"
+            "browserTarget": "accessibility-sandbox:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "celDemo:build:production"
+              "browserTarget": "accessibility-sandbox:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "celDemo:build"
+            "browserTarget": "accessibility-sandbox:build"
           }
         },
         "test": {
@@ -95,7 +95,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           }
@@ -117,16 +118,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "celDemo:serve"
+            "devServerTarget": "accessibility-sandbox:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "celDemo:serve:production"
+              "devServerTarget": "accessibility-sandbox:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "celDemo"
+  "defaultProject": "accessibility-sandbox"
 }
