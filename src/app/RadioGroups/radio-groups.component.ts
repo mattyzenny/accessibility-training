@@ -6,10 +6,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./radio-groups.component.scss']
 })
 export class RadioGroupsComponent implements OnInit {
+  title = 'Radio Buttons';
 
-  constructor() { }
+  radioGroupList: any[] = [];
+
+  constructor() {}
 
   ngOnInit(): void {
+    this.radioGroupList = [
+      {
+        header: 'Name',
+        radioGroup: [
+          { radioId: 'firstName', label: 'First Name' },
+          { radioId: 'middleName', label: 'Middle Name' },
+          { radioId: 'other', label: 'Other' },
+        ],
+      },
+      {
+        header: 'Type',
+        radioGroup: [
+          { radioId: 'lastName', label: 'Last Name' },
+          { radioId: 'middleName', label: 'Middle Name' },
+          { radioId: 'other', label: 'Other' },
+        ],
+      },
+      {
+        header: 'Relation',
+        radioGroup: [
+          { radioId: 'middleName', label: 'Middle Name' },
+          { radioId: 'familyName', label: 'Family Name' },
+          { radioId: 'other', label: 'Other' },
+        ],
+      },
+    ];
   }
-
 }

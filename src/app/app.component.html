@@ -12,74 +12,24 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Home <span class="sr-only"></span></a>
+        <a class="nav-link" routerLinkActive="active" routerLink="/Home">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">How To</a>
+        <a class="nav-link" href="/Resources">How To</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Buttons</a>
+        <a class="nav-link" routerLink="/Buttons" routerLinkActive="active">Buttons</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Input Fields</a>
+        <a class="nav-link" routerLink="/Inputs" routerLinkActive="active">Input Fields</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Radio Group</a>
+        <a class="nav-link" routerLink="/Radios" routerLinkActive="active">Radio Group</a>
       </li>
     </ul>
   </div>
 </nav>
 
 <div role="main">
-  <div>
-    <h2>Buttons</h2>
-    <p>Buttons are an important part of Design. They are used in just about every page within Realize.
-      By inheriting a cel-Button, you will want to make sure that all buttons are accessible.
-      Below are 2 different buttons. The first button has a label (data-label) attribute that is used to set the visible
-      label. The second button has a data-button-aria-label attribute that is used to override the aria-label attribute.
-    </p>
-    <p>These buttons look identical. However when screen reader is used, they are completely different.</p>
-    <Buttons></Buttons>
-  </div>
-
-  <div>
-    <h2>Forms</h2>
-    <p>Input fields and forms are also important within Accessibility. Lets look at these 2 input fields.</p>
-    <InputFields></InputFields>
-  </div>
-
-  <div>
-    <h2>Input Validation</h2>
-    <p>Input field validation is important for accessibility. Without the correct semantic association, a screen reader
-      may not know which input the error is referring to
-      or even worse, they may not be aware of an error at all.
-    </p>
-    <InputValidations>
-    </InputValidations>
-  </div>
-
-  <div>
-    <h2>Radio Group</h2>
-    <p>Radio Groups require multiple elements to make it accessible</p>
-    <RadioGroups></RadioGroups>
-  </div>
 </div>
-
-
-<!-- Resources -->
-<h2>Resources</h2>
-<p id="randomText">Here are some links to help you get started:</p>
-
-<div class="card-container">
-  <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
-    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-    </svg>
-
-    <span>Learn Angular</span>
-
-    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-    </svg>
-  </a>
-</div>
+<router-outlet></router-outlet>

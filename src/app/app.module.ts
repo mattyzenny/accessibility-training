@@ -4,10 +4,20 @@ import { defineCustomElements } from '@savvaslearning/cel-components/dist-stenci
 
 import { AppComponent } from './app.component';
 import { ButtonsComponent } from './Buttons/buttons.component';
-import { InputFieldsComponent } from './InputFields/input-fields.component';
-import { InputValidationsComponent } from './InputValidations/input-validations.component';
+import { InputFieldsComponent } from './Forms/InputFields/input-fields.component';
+import { InputValidationsComponent } from './Forms/InputValidations/input-validations.component';
 import { RadioGroupsComponent } from './RadioGroups/radio-groups.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsComponent } from './Forms/forms.component';
+import { HomeComponent } from './Home/home.component';
 defineCustomElements();
+const routes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'Home', component: HomeComponent},
+  {path: 'Buttons', component: ButtonsComponent},
+  {path: 'Inputs', component: FormsComponent},
+  {path: 'Radios', component: RadioGroupsComponent},
+];
 
 @NgModule({
   declarations: [
@@ -16,8 +26,10 @@ defineCustomElements();
     InputFieldsComponent,
     InputValidationsComponent,
     RadioGroupsComponent,
+    FormsComponent,
+    HomeComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes)],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
