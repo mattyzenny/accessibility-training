@@ -1,4 +1,4 @@
-# CelDemo
+# Accessibility-Training
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.19.
 
@@ -30,11 +30,22 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 11.2.19
 
 ## Node versions
-14.10.1 || 16.14.2
+16.14.2
 
 ## .npmrc
 @savvaslearning:registry=https://npm.pkg.github.com/
 //npm.pkg.github.com/:_authToken="{yourAuthTokenHere}"
+
+## package.json
+You can either point dependencies to the forked version of `forked-cel-library` 
+
+"@savvaslearning/cel-components": "https://github.com/mattyzenny/forked-cel-library.git"
+
+ OR 
+ 
+follow the steps below in ## Linking Local Dependencies ##
+
+## You can either point dependencies to the forked version of `forked-cel-library` or if you would like to test out your code -- follow the steps below 
 
 -----------------------------------------------------------------
 
@@ -42,7 +53,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ### 1. **Prepare the Local Dependency (cel-components)**
 
-- Ensure you have the local version of the `cel-components` library.
+- Ensure you have the working version of the cel-components library -- `forked-cel-library` found https://github.com/mattyzenny/forked-cel-library/tree/develop.
 - Make necessary fixes or changes to the library in the local version.
 
 ### 2. **Link the Local Dependency to Your Project**
