@@ -83,17 +83,17 @@
     margin-left: 60px;
   }
 
-
-
   a,
   a:visited,
   a:hover {
-    color: #1976d2;
+    color: #216B9C;
     text-decoration: none;
   }
 
-  a:hover {
-    color: #125699;
+  #content-container {
+    background-color: #F5F5F5;
+    background-clip: border-box;
+    border-radius: 6px;
   }
 
   /* Responsive Styles */

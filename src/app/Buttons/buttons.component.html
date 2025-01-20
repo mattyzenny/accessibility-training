@@ -1,33 +1,200 @@
 <div class="container">
-    <div class="row">
-      <div class="col">
-        <h1>{{ title }}</h1>
-      </div>
+  <div class="row">
+    <div class="col">
+      <h1>{{ title }}</h1>
     </div>
   </div>
-<div>
-    <h2>Buttons</h2>
-    <p>Buttons are an important part of Design. They are used in just about every page within Realize.
-      By inheriting a cel-Button, you will want to make sure that all buttons are accessible.
-      Below are 2 different buttons. The first button has a label (data-label) attribute that is used to set the visible
-      label. The second button has a data-button-aria-label attribute that is used to override the aria-label attribute.
-    </p>
-    <p>These buttons look identical. However when screen reader is used, they are completely different.</p>
-  </div>
+</div>
 
-<div class="
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <p>Buttons are an important part of Design. They are used in just about every page within Realize.
+    By inheriting a cel-button, you will want to make sure that all buttons are accessible.
+  </p>
+  <p>What makes an accessible button?</p>
+  <ul>
+    <li>
+      A button <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank">must</a> have a visible
+      label.
+    </li>
+    <li>
+      If a button has an accessible label, it <a
+        class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/label-in-name" target="_blank">must</a> start with
+      the visible text.
+    </li>
+    <li>
+      The name, role, state, & value <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank">must</a> be programmatically
+      determinable. <em>(<strong>role</strong> is often baked into the native
+        HTML<code> &lt;button&gt; </code>component</em> | <em><strong>name</strong> is the visible text</em> |
+      <em><strong>value, state</strong> are required for more complex functionality)</em>
+    </li>
+  </ul>
+</div>
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      This button is using only the label attribute. Though this button has very little functionality, it is a fully
+      accessible component. Turn on the AT and navigate to the element.
+    </p>
+  </div>
+  <div class="
+    mt-3
+    mb-3
     container
-    d-flex
     justify-content-between
     align-items-center
     text-center
     content
   ">
-    <div>
-        <cel-button id="button1" data-label="Cancel"> </cel-button>
+    <div class="override-container">
+      <cel-button id="button0" data-label="Cancel"> </cel-button>
     </div>
-    <div>
-        <cel-button id="button2" data-label="Cancel"
-            data-button-aria-label="This is an aria label, it overwrites the visible label"></cel-button>
+  </div>
+  <div class="accordion
+              mb-3
+              mt-3
+              container
+              justify-content-between
+              align-items-center
+              text-center
+              content" id="accordion0">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton0" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#codeContainer0" aria-expanded="false" aria-controls="codeContainer0">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
+        <div class="accordion-body">
+          <strong>Button1</strong>
+          <pre></pre>
+          <code>&lt;cel-button id="button0" data-label="Cancel"> &lt;/cel-button&gt;</code>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      When you navigate to the button, the <strong>role </strong><em>'button'</em> and the <strong>name
+      </strong><em>'cancel'</em> are announced. There are no states or values assigned to this button, so they are not
+      needed.
+    </p>
+  </div>
+</div>
+
+<div class="form-control border-primary-subtle border-2 container mb-3 mt-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      This button is using <strong>HAT</strong><em>, hidden accessible text.</em> This means it is providing a different
+      label to screen reader users.
+      <br>
+      To be accessible, we must provide the same information to all users. Therefore it is important use hidden text
+      sparingly and only when providing supplemental information.
+    </p>
+  </div>
+  <div class="
+    mt-3
+    mb-3  
+    container
+    justify-content-between
+    align-items-center
+    text-center
+    content
+  ">
+    <div class="override-container">
+      <cel-button id="button1" data-label="Cancel"
+        data-button-aria-label="Cancel, we are using data-aria-label to pass hidden accessible text to the user"></cel-button>
+    </div>
+  </div>
+  <div class="accordion
+              mb-3
+              mt-3
+              container
+              justify-content-between
+              align-items-center
+              text-center
+              content" id="accordion1">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton1" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#codeContainer1" aria-expanded="false" aria-controls="codeContainer1">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+        <div class="accordion-body">
+          <strong>Button2</strong>
+          <pre></pre>
+          <code>&lt;cel-button id="button1" 
+            data-label="Cancel"</code> <code style="color: #006748;"> data-button-aria-label=</code>
+          <code>"Cancel, we are using data-aria-label to pass hidden accessible text to the user">&lt;/cel-button&gt;</code>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      The <strong>name</strong> <em> 'data-button-aria-label'</em> must first start with the visible label, and then
+      provide supplemental information.
+    </p>
+  </div>
+</div>
+
+<div class="form-control border-primary-subtle border-2 container mb-3 mt-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      The second button has a data-button-aria-label attribute that is used to override the aria-label attribute.
+      <br>
+      These buttons look identical. However when screen reader is used, they are completely different.
+    </p>
+  </div>
+  <div class="
+    mt-3
+    mb-3  
+    container
+    justify-content-between
+    align-items-center
+    text-center
+    content
+  ">
+    <div class="override-container">
+      <cel-button id="button2" data-toggle="true" data-label="Cancel"></cel-button>
+    </div>
+  </div>
+  <div class="accordion
+              mb-3
+              mt-3
+              container
+              justify-content-between
+              align-items-center
+              text-center
+              content" id="accordion2">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton2" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#codeContainer2" aria-expanded="false" aria-controls="codeContainer2">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+        <div class="accordion-body">
+          <strong>Button3</strong>
+          <pre></pre>
+          <code>&lt;cel-button id="button2" 
+            data-label="Cancel"</code> <code style="color: #006748;"> data-toggle=</code>
+          <code>"true">&lt;/cel-button&gt;</code>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      This button has <strong>name</strong> <em> 'cancel'</em>, <strong>role</strong> <em> 'button'</em>,
+      <strong>state</strong> <em> 'selected'</em>.
+    </p>
+  </div>
 </div>

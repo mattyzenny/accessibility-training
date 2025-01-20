@@ -1,8 +1,16 @@
-<div>
-    <h2>Forms</h2>
-    <p>Input fields and forms are also important within Accessibility. Lets look at these 2 input fields.</p>
+<div class="
+    container
+    d-flex
+    justify-content-between
+    align-items-center
+    text-center
+    content
+  ">
+    <h2>Input Fields</h2>
 </div>
-
+<div class="container border border-primary-subtle" id="content-container">
+<p>Input fields and forms are also important within Accessibility. Lets look at these 2 input fields.</p>
+</div>
 <div class="
     container
     d-flex
@@ -12,12 +20,48 @@
     content
   ">
     <div>
-        <cel-text-field id="input1" data-field-label="First Name"></cel-text-field>
-    </div>
-    <div>
         <label id="non-semantic-label" class="text-field-label">First Name</label>
-        <cel-text-field id="input2" data-field-label=""></cel-text-field>
+        <cel-text-field id="input1" data-field-label=""></cel-text-field>
     </div>
     <div>
-        <cel-text-field id="input3" data-field-aria-label="First Name" data-field-label="First Name"></cel-text-field>
+        <cel-text-field id="input2" data-aria-label="Last Name" data-field-label="Middle Name"></cel-text-field>
     </div>
+    <div>
+        <cel-text-field id="input3" data-field-label="Last Name"></cel-text-field>
+    </div>
+    </div>
+    <div class="accordion
+mt-3
+mb-3
+container
+justify-content-between
+align-items-center
+text-center
+content" id="accordion_inputFields">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button id="accordionButton" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#codeContainer0" aria-expanded="false" aria-controls="codeContainer">
+        Expand Code
+      </button>
+    </h2>
+    <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
+      <div class="accordion-body">
+        <strong>First Name</strong>
+        <pre></pre>
+        <code>&lt;label id="non-semantic-label" class="text-field-label">First Name &lt;/label&gt; </code>
+        <pre></pre>
+        <code>&lt;cel-text-field id="input1" data-field-label="" &lt;/cel-text-field&gt;</code>
+        <pre></pre>
+        <strong>Middle Name</strong>
+        <pre></pre>
+        <code>&lt;cel-text-field id="input2" data-aria-label="Last Name" data-field-label="Middle Name"&lt;/cel-text-field&gt;</code>
+        <pre></pre>
+        <strong>Last Name</strong>
+        <pre></pre>
+        <code>&lt;id="input3" data-field-label="Last Name" &lt;/cel-text-field&gt;</code>
+        <pre></pre>
+      </div>
+    </div>
+  </div>
+</div>
