@@ -1,0 +1,24 @@
+.error-container {
+  position: var(--error-container-position, relative);
+  margin-top: var(--error-container-margin-top, 1px);
+  bottom: var(--error-container-bottom, 0);
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.row-start {
+  display: flex;
+}
+.error-message {
+  margin-left: 5px;
+  color: var(--error-message-color, #cc333f);
+  font-family: var(--error-message-font-family, "OpenSans-Bold");
+  font-size: var(--error-message-font-size, 0.75rem);
+  height: var(--validation-message-height);
+}
+.text-field {
+  border: 2px solid #cc333f;
+}
+#customLabel {display: -ms-flexbox;
+font-size: var(--text-field-label-font-size, 0.875rem);
+font-family: var(--text-field-label-font-family, "OpenSans-Semibold");
+}
