@@ -2,6 +2,7 @@
 
 # master > npm run prod
 # git checkout gh-pages
+# rm -f ./*
 # mv dist/accessibility-training/* ./
 # git add .
 # git commit -m "Update gh-pages"
