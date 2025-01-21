@@ -64,17 +64,17 @@ In the `cel-components` project directory, run the following command to link the
 
 This creates a global symlink to the `cel-components` library.
 
-### 3. **Link the Local Dependency to Your Target Project (accessibility-sandbox)**
+### 3. **Link the Local Dependency to Your Target Project (accessibility-training)**
 
-In the `accessibility-sandbox` project directory, run:
+In the `accessibility-training` project directory, run:
 
 {`npm link @savvaslearning/cel-components`}
 
-This links the local version of `cel-components` to the `node_modules` of `accessibility-sandbox`.
+This links the local version of `cel-components` to the `node_modules` of `accessibility-training`.
 
-### 4. **Update the Path to the Local Dependency in `accessibility-sandbox/package.json`**
+### 4. **Update the Path to the Local Dependency in `accessibility-training/package.json`**
 
-In the `accessibility-sandbox` project, adjust the path to point to the local version of `cel-components` in the `package.json` file:
+In the `accessibility-training` project, adjust the path to point to the local version of `cel-components` in the `package.json` file:
 
 ```json
 {"@savvaslearning/cel-components": "file:/path/to/local/cel-components"}
@@ -88,16 +88,16 @@ Check that the `node_modules/@savvaslearning/cel-components/src` directory is no
 
 ### 6. **Build and Serve**
 
-In the `cel-components` directory, run the build command specific to your setup if you have not already done so (e.g., `stencil build` for Stencil projects). You will also want to `pnpm build` anytime there are changes, and it will hot-reload into `accessibility-sandbox`.In the `accessibility-sandbox` project, run `npm install` to resolve any dependencies. If using Angular, run:
+In the `cel-components` directory, run the build command specific to your setup if you have not already done so (e.g., `stencil build` for Stencil projects). You will also want to `pnpm build` anytime there are changes, and it will hot-reload into `accessibility-training`.In the `accessibility-training` project, run `npm install` to resolve any dependencies. If using Angular, run:
 {`npm install`}
 {`npm run build`} || {`ng build`}
 {`npm run start`} || {`ng serve`}
 
 If you encounter issues with the Stencil loader, verify the paths in the import statements (for example, in `app.module.ts`).
 
-### 7. **Update the Path to Custom Loader in `accessibility-sandbox`**
+### 7. **Update the Path to Custom Loader in `accessibility-training`**
 
-Ensure that the import statement in the target project (`accessibility-sandbox`) is pointing to the correct path for the local loader:
+Ensure that the import statement in the target project (`accessibility-training`) is pointing to the correct path for the local loader:
 ```typescript
 import { defineCustomElements } from '@savvaslearning/cel-components/dist-stencil/loader';
 ```

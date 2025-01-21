@@ -1,11 +1,11 @@
 {
-  "name": "accessibility-sandbox",
+  "name": "accessibility-training",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "prod": "ng build --prod --base-href /accessibility-sandbox/",
+    "prod": "ng build --prod --base-href /accessibility-training/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
