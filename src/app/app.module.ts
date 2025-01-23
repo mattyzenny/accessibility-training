@@ -10,6 +10,7 @@ import { RadioGroupsComponent } from './RadioGroups/radio-groups.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsComponent } from './Forms/forms.component';
 import { HomeComponent } from './Home/home.component';
+import { BannerComponent } from './Banner/banner.component';
 defineCustomElements();
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
     RadioGroupsComponent,
     FormsComponent,
     HomeComponent,
+    BannerComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

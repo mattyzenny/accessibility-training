@@ -1,23 +1,22 @@
 import {
   Component,
-  AfterViewInit,
+  HostListener,
   ViewChild,
   ElementRef,
-  HostListener,
+  AfterViewInit,
 } from '@angular/core';
-import { ReflowService } from 'src/app/Services/reflow.service';
+import { ReflowService } from '../Services/reflow.service';
 
 @Component({
-  selector: 'InputFields',
-  templateUrl: './input-fields.component.html',
-  styleUrls: ['./input-fields.component.scss'],
+  selector: 'Banner',
+  templateUrl: './banner.component.html',
+  styleUrls: ['./banner.component.scss'],
 })
-export class InputFieldsComponent implements AfterViewInit {
-  title = '';
 
-  @ViewChild('navToggleButton') navToggleButtonReference!: ElementRef;
+export class BannerComponent implements AfterViewInit {
+  title = 'Accessibility Training';
 
-  // Dependency injection for ReflowService | checks for the NavToggleButton visibility
+  // Dependency injection for ReflowService
   constructor(public reflowService: ReflowService) {}
 
   ngAfterViewInit() {
@@ -30,7 +29,7 @@ export class InputFieldsComponent implements AfterViewInit {
   onResize() {
     this.reflowService.checkViewport();
   }
-  
+
   // Getter to expose the isMobile property from the ReflowService to the template
   // This allows us to conditionally render elements in the template based on whether the screen is mobile-sized
   get isMobile() {
