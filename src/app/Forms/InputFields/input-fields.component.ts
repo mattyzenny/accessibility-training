@@ -14,6 +14,7 @@ import { ReflowService } from 'src/app/Services/reflow.service';
 })
 export class InputFieldsComponent implements AfterViewInit {
   title = '';
+  enableError = false;
 
   @ViewChild('navToggleButton') navToggleButtonReference!: ElementRef;
 

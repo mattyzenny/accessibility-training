@@ -34,7 +34,7 @@
     </div>
     <div>
         <div>
-            <cel-text-field data-aria-describedby="errorMessage" id="inputValidation2"
+            <cel-text-field data-helper-label="maximum 10 character" data-field-aria-describedby="errorMessage" id="inputValidation2"
             (blur)="onBlur('inputValidation2')"[errorMessage]="errorMessages['inputValidation2']" data-field-label="First Name">
             </cel-text-field>
         </div>
@@ -71,7 +71,7 @@ content" id="accordion_inputValidations">
         <pre></pre>
         <strong>Last Name</strong>
         <pre></pre>
-        <code>&lt;cel-text-field data-aria-describedby="errorMessage" id="inputValidation2"
+        <code>&lt;cel-text-field data-field-aria-describedby="errorMessage" id="inputValidation2"
           (blur)="onBlur('inputValidation2')"[errorMessage]="errorMessages['inputValidation2']" data-field-label="First Name" &lt;/cel-text-field&gt;</code>
         <pre></pre>
       </div>
