@@ -6,75 +6,84 @@
     text-center
     content
   ">
-    <h2>Input Validation</h2>
+  <h2>Input Validation</h2>
 </div>
-<div class="container border border-primary-subtle" id="content-container">
-<p>Input field validation is important for accessibility. Without the correct semantic association, a screen reader
-  may not know which input the error is referring to
-  or even worse, they may not be aware of an error at all.
-</p>
-</div>
-<div class="
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>Input field validation is important for accessibility. Without the correct semantic association, a screen reader
+      may not know which input the error is referring to
+      or even worse, they may not be aware of an error at all.
+    </p>
+  </div>
+  <!-- adds css based on mobileView -->
+  <div
+    [class]="!isMobile ? 'mt-3 mb-3 container justify-content-between align-items-center text-center content d-flex' : 'mt-3 mb-3 container justify-content-between align-items-center text-center content'">
+    <div>
+      <label id="customLabel">First Name</label>
+      <cel-text-field id="inputValidation0" data-field-label="" (blur)="onBlur('inputValidation0')"
+        [errorMessage]="errorMessages['inputValidation0']"> </cel-text-field>
+    </div>
+
+    <div>
+      <cel-text-field id="inputValidation1" (blur)="onBlur('inputValidation1')"
+        [errorMessage]="errorMessages['inputValidation1']" data-field-label="Middle Name"></cel-text-field>
+    </div>
+    <div>
+      <div>
+        <cel-text-field data-helper-label="maximum 10 character" data-field-aria-describedby="errorMessage"
+          id="inputValidation2" (blur)="onBlur('inputValidation2')" [errorMessage]="errorMessages['inputValidation2']"
+          data-field-label="First Name">
+        </cel-text-field>
+      </div>
+    </div>
+  </div>
+  <div class="accordion
+    mt-3
+    mb-3
     container
-    d-flex
     justify-content-between
     align-items-center
     text-center
-    content
-  ">
-  <div>
-    <label id="customLabel">First Name</label>
-    <cel-text-field id="inputValidation0" data-field-label="" (blur)="onBlur('inputValidation0')"
-      [errorMessage]="errorMessages['inputValidation0']"> </cel-text-field>
-  </div>
-
-    <div>
-        <cel-text-field id="inputValidation1" (blur)="onBlur('inputValidation1')"
-            [errorMessage]="errorMessages['inputValidation1']" data-field-label="Middle Name"></cel-text-field>
-    </div>
-    <div>
-        <div>
-            <cel-text-field data-helper-label="maximum 10 character" data-field-aria-describedby="errorMessage" id="inputValidation2"
-            (blur)="onBlur('inputValidation2')"[errorMessage]="errorMessages['inputValidation2']" data-field-label="First Name">
-            </cel-text-field>
-        </div>
-    </div>
-</div>
-<div class="accordion
-mt-3
-mb-3
-container
-justify-content-between
-align-items-center
-text-center
-content" id="accordion_inputValidations">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button id="accordionButton" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-        data-bs-target="#codeContainer1" aria-expanded="false" aria-controls="codeContainer">
-        Expand Code
-      </button>
-    </h2>
-    <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion0">
-      <div class="accordion-body">
-        <strong>First Name</strong>
-        <pre></pre>
-        <code>&lt;label id="customLabel" First Name &lt;/label&gt; </code>
-        <pre></pre>
-        <code>&lt;cel-text-field id="inputValidation0" data-field-label="" (blur)="onBlur('inputValidation0')"
+    content" id="accordion-inputValidations">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordion-inputValidations-button" class="accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
+          aria-controls="codeContainer">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion-inputValidations">
+        <div class="accordion-body">
+          <strong>First Name</strong>
+          <pre></pre>
+          <code>&lt;label id="customLabel" First Name &lt;/label&gt; </code>
+          <pre></pre>
+          <code>&lt;cel-text-field id="inputValidation0" data-field-label="" (blur)="onBlur('inputValidation0')"
           [errorMessage]="errorMessages['inputValidation0']" &lt;/cel-text-field&gt;</code>
-        <pre></pre>
-        <strong>Middle Name</strong>
-        <pre></pre>
-        <code>&lt;cel-text-field id="inputValidation1" (blur)="onBlur('inputValidation1')"
+          <pre></pre>
+          <strong>Middle Name</strong>
+          <pre></pre>
+          <code>&lt;cel-text-field id="inputValidation1" (blur)="onBlur('inputValidation1')"
           [errorMessage]="errorMessages['inputValidation1']" data-field-label="Middle Name" &lt;/cel-text-field&gt;</code>
-        <pre></pre>
-        <strong>Last Name</strong>
-        <pre></pre>
-        <code>&lt;cel-text-field data-field-aria-describedby="errorMessage" id="inputValidation2"
+          <pre></pre>
+          <strong>Last Name</strong>
+          <pre></pre>
+          <code>&lt;cel-text-field data-field-aria-describedby="errorMessage" id="inputValidation2"
           (blur)="onBlur('inputValidation2')"[errorMessage]="errorMessages['inputValidation2']" data-field-label="First Name" &lt;/cel-text-field&gt;</code>
-        <pre></pre>
+          <pre></pre>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+        This input is right out-of-the-box from cel-components. It is accessible, but if we want to add any
+        customization, then we must consider adding attributes.
+    </p>
   </div>
 </div>

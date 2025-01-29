@@ -12,7 +12,7 @@
 <!-- Intro section -->
 
 <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-  <p id="test1">Input fields are important for filling out forms or submitting data. They can also be some of the most
+  <p>Input fields are important for filling out forms or submitting data. They can also be some of the most
     complex
     components when it comes to Accessiblilty.
     If you think about it, an input field can be as simple as an <code>&lt;input></code> and a <code>&lt;label></code>,
@@ -45,6 +45,10 @@
         href="https://www.w3.org/WAI/WCAG22/Understanding/label-in-name" target="_blank"
         aria-label="must not use placeholder as the only label, WCAG, opens new window">must </a> not be used as the
       label for an input.
+    </li>
+    <li id="autocomplete-requirements">
+      If personal data is being collected, the proper input type and input purpose <strong>(autocomplete) </strong> <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2" href="https://www.w3.org/TR/2011/WD-html5-20110525/the-input-element.html#attr-input-type" target="_blank" aria-label="must use proper input type and purpose, opens new window">must</a> be used if applicable.
+      There are 22 <a href="https://www.w3.org/TR/2011/WD-html5-20110525/the-input-element.html#attr-input-type" target="_blank" aria-label="input types, opens new window">input types</a> and 50 <a href="https://www.w3.org/TR/WCAG22/#input-purposes" target="_blank" aria-label="input purposes, opens new window">input purposes</a> to choose from.
     </li>
   </ul>
   <p>
@@ -209,15 +213,15 @@
             &lt;cel-text-field data-field-label="Email" data-field-aria-placeholder="personal@gmail.com"
             <s>data-field-aria-label="Email, enter your personal email"</s>
           </code>
-          <code style="color: #006748;"> 
+          <code style="color: #006748;">
             data-helper-label=</code>
           <code>"enter an email no longer than 15 characters, No .edu"
           </code>
-          <code style="color: #006748;"> 
+          <code style="color: #006748;">
             data-max-field-length=</code>
           <code>"15"
           </code>
-          <code style="color: #006748;"> 
+          <code style="color: #006748;">
             data-required=</code>
           <code>"true"&gt; &lt;/cel-text-field&gt;
           </code>
@@ -232,7 +236,7 @@
             data-field-aria-label=</code>
           <code>"Email, enter your personal email"
           </code>
-          <code style="color: #006748;"> 
+          <code style="color: #006748;">
             data-field-aria-describedby=</code>
           <code>"textField-5-helperLabelId"
             data-max-field-length="15"
@@ -250,16 +254,16 @@
             data-input-type=</code>
           <code>"email"
           </code>
-          <code style="color: #006748;"> 
+          <code style="color: #006748;">
             data-autocomplete=</code>
           <code>"email" data-field-label="Email" data-field-aria-placeholder="personal@gmail.com"
             data-field-aria-label="Email, enter your personal email"</code>
-            <code style="color: #006748"> data-field-aria-describedby=</code><code>"textField-6-helperLabelId
+          <code style="color: #006748"> data-field-aria-describedby=</code><code>"textField-6-helperLabelId
           <mark>textField-6-describedbyContent</mark>"
             data-max-field-length="15"
             data-helper-label="enter an email no longer than 15 characters, No .edu"
           </code>
-          <code style="color: #006748"> 
+          <code style="color: #006748">
             data-field-aria-describedby-content=</code>
           <code>"all emails must have an @ symbol"
             data-required="true"&gt; &lt;/cel-text-field&gt;
@@ -272,26 +276,55 @@
   <div class="container" id="details-container">
     <ol>
       <li>
-        Lets take a closer look at this input-field. Visually we can see a few new additions
+        <ul>
+          <li>
+            <code>data-required=true</code>.
+            The <strong>*</strong> is a common way to indicate a required field.
+            Thankfully this is handled from the cel-component library where <code>data-required=true</code> injects
+            <strong>HTML's </strong> <code>required=true</code> and <strong>ARIA's
+            </strong><code>aria-hidden=true</code> hiding the <strong>*</strong>
+            from screen readers.
+            That way, both sighted users visually recognize the required field and AT user only hear
+            <strong>'required'</strong>.
+          </li>
+          <li>
+            We have also added new attributes <code>data-helper-label</code> and <code>data-max-field-length</code>.
+            The <code>data-max-field-length</code> attribute limits the number of characters a user can input into the field.
+            If we add this type of limitation, we also need to communicate this to users.
+
+            In the current design, the <code>data-helper-label</code> is injected into the HTML
+            <code>&lt;label&gt;</code> field.
+            If we remember, <code>aria-label</code> will overwrite whatever the visual label shows. So in this example,
+            we have removed <code>data-field-aria-label</code>;
+            so that we can read the appended <code>&lt;label&gt;</code> content.
+          </li>
+        </ul>
       </li>
       <br>
       <li>
-        This input has its own <code>&lt;label&gt;</code>. We are not creating a custom label, but rather using the
-        built-in attribute <code>data-field-label</code>
+        This example demonstrates how we can apply both the <code>data-field-aria-label</code> &  <code>data-field-aria-describedby</code> together.
+        The aria-label attribute overwrites the label field, and aria-describedby adds supplemental content by referencing any element's ID. 
+        In this example we reference the <strong>helper-label</strong> ID with our <code>data-field-aria-describedby</code> attribute to apply both the <strong>helper-label</strong> content along with the <strong>HAT</strong> associated to our <code>data-aria-field-label</code>.
       </li>
       <br>
       <li>
-        This input is using <strong>HAT</strong>. Notice the same visual label is being announced to the screen reader,
-        however; additional content is being added. This is acceptable and a common practice as long as the visual label
-        is also included into the accessible label.
+        This final input is fully loaded with everything an input could possibly need. It is unlikely to use all of these attributes at once,
+        but we are showcasing how they are accessibily used together.
+        <ul>
+          <li>
+            First let's look at our <code>data-field-aria-describedby</code>. An aria-describedby attribute can concatenate
+            multiple ID's within the DOM. Here we are referencing the ID of <code>data-helper-label</code> & <code>data-field-aria-describedby-content</code>
+            to give us a optimally robust description for our input field.
+          </li>
+          <li>
+            Most importantly we have added <code>data-autocomplete</code> & <code>data-input-type</code>.
+            These attributes are used to help the browser understand what type of input is being used, and
+            assists the user with auto-filling stored data.
+            For more information, please reference <a href="/Inputs#autocomplete-requirements">autocomplete requirements</a>.
+          </li>
+        </ul>
       </li>
       <br>
-      <li>
-        The fourth input is using a placeholder text. Technically the placeholder text can be whatever meaninful text
-        you want it to be, as long as it is supplimental to the <code>&lt;label&gt;</code>.
-        This is because once you begin typing into the input-field, the placeholder text will be removed. We cannot have
-        our only label disappear.
-      </li>
     </ol>
   </div>
 </div>
