@@ -164,24 +164,24 @@
   <div
     [class]="!isMobile ? 'mt-3 mb-3 container justify-content-between align-items-center text-center content d-flex' : 'mt-3 mb-3 container justify-content-between align-items-center text-center content'">
     <div>
-      <cel-text-field data-field-label="Last Name" data-field-aria-placeholder="Last Name"
-        data-helper-label="please enter a last name no longer than 10 characters" data-max-field-length="10"
+      <cel-text-field data-field-label="Email" data-field-aria-placeholder="personal@gmail.com"
+        data-helper-label="enter an email no longer than 15 characters, No .edu" data-max-field-length="15"
         data-required="true">
       </cel-text-field>
     </div>
     <div>
-      <cel-text-field data-field-label="Last Name" data-field-aria-placeholder="Last Name"
-        data-field-aria-label="Last Name, or family name" data-field-aria-describedby="textField-5-helperLabelId"
-        data-max-field-length="10" data-helper-label="please enter a last name no longer than 10 characters"
+      <cel-text-field data-field-label="Email" data-field-aria-placeholder="personal@gmail.com"
+        data-field-aria-label="Email, enter your personal email" data-field-aria-describedby="textField-5-helperLabelId"
+        data-max-field-length="10" data-helper-label="enter a valid email no longer than 15 characters, No .edu"
         data-required="true">
       </cel-text-field>
     </div>
     <div>
-      <cel-text-field data-input-type="family-name" data-field-label="Last Name" data-field-aria-placeholder="Last Name"
-        data-field-aria-label="Last Name, or family name" data-field-aria-describedby="textField-6-helperLabelId textField-6-describedbyContent"
-        data-max-field-length="10" data-helper-label="please enter a last name no longer than 10 characters"
-        data-field-aria-describedby-content="If you do not have a last name, please enter 'N/A'"
-        data-required="true">
+      <cel-text-field data-input-type="email" data-autocomplete="email" data-field-label="Email"
+        data-field-aria-placeholder="personal@gmail.com" data-field-aria-label="Email, enter your personal email"
+        data-field-aria-describedby="textField-6-helperLabelId textField-6-describedbyContent"
+        data-max-field-length="15" data-helper-label="enter a valid email, no longer than 15 characters, No .edu"
+        data-field-aria-describedby-content="all emails must have an @ symbol" data-required="true">
       </cel-text-field>
     </div>
   </div>
@@ -202,40 +202,68 @@
       </h2>
       <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
         <div class="accordion-body">
+
           <strong>Input 1</strong>
           <pre></pre>
-          <code>&lt;cel-text-field data-field-label="Last Name" data-field-aria-placeholder="Last Name"
-            <s>data-field-aria-label="Last Name, or family name"</s></code>
-          <code style="color: #006748;"> data-helper-label=</code>
-          <code>"please enter a last name no longer than 10 characters"</code>
-          <code style="color: #006748;"> data-max-field-length=</code>
-          <code>"10"</code>
-          <code style="color: #006748;"> data-required=</code>
-          <code>"true"
-            &gt; &lt;/cel-text-field&gt;</code>
+          <code>
+            &lt;cel-text-field data-field-label="Email" data-field-aria-placeholder="personal@gmail.com"
+            <s>data-field-aria-label="Email, enter your personal email"</s>
+          </code>
+          <code style="color: #006748;"> 
+            data-helper-label=</code>
+          <code>"enter an email no longer than 15 characters, No .edu"
+          </code>
+          <code style="color: #006748;"> 
+            data-max-field-length=</code>
+          <code>"15"
+          </code>
+          <code style="color: #006748;"> 
+            data-required=</code>
+          <code>"true"&gt; &lt;/cel-text-field&gt;
+          </code>
           <pre></pre>
+
           <strong>Input 2</strong>
           <pre></pre>
-          <code>&lt;cel-text-field data-field-label="Last Name" data-field-aria-placeholder="Last Name"
-            </code>
-          <code style="color: #006748;">data-field-aria-label=</code>
-          <code>"Last Name, or family name"</code> 
-          <code style="color: #006748;"> data-field-aria-describedby=</code>
+          <code>
+            &lt;cel-text-field data-field-label="Email" data-field-aria-placeholder="personal@gmail.com"
+          </code>
+          <code style="color: #006748;">
+            data-field-aria-label=</code>
+          <code>"Email, enter your personal email"
+          </code>
+          <code style="color: #006748;"> 
+            data-field-aria-describedby=</code>
           <code>"textField-5-helperLabelId"
-            data-max-field-length="10"
-            data-helper-label="please enter a last name no longer than 10 characters"
-            data-required="true"&gt; &lt;/cel-text-field&gt;</code>
+            data-max-field-length="15"
+            data-helper-label="enter an email no longer than 15 characters, No .edu"
+            data-required="true"&gt; &lt;/cel-text-field&gt;
+          </code>
           <pre></pre>
+
           <strong>Input 3</strong>
           <pre></pre>
-          <code>&lt;cel-text-field</code> <code style="color: #006748;"> data-input-type=</code>
-          <code>"family-name" data-field-label="Last Name" data-field-aria-placeholder="Last Name"
-            data-field-aria-label="Last Name, or family name" data-field-aria-describedby="textField-6-helperLabelId"
-            data-max-field-length="10"
-            data-helper-label="please enter a last name no longer than 10 characters"</code>
-           <code style="color: #006748"> data-field-aria-describedby-content=</code>
-           <code>"If you do not have a last name, please enter 'N/A'"
-            data-required="true"&gt; &lt;/cel-text-field&gt;</code>
+          <code>
+            &lt;cel-text-field
+          </code>
+          <code style="color: #006748;">
+            data-input-type=</code>
+          <code>"email"
+          </code>
+          <code style="color: #006748;"> 
+            data-autocomplete=</code>
+          <code>"email" data-field-label="Email" data-field-aria-placeholder="personal@gmail.com"
+            data-field-aria-label="Email, enter your personal email"</code>
+            <code style="color: #006748"> data-field-aria-describedby=</code><code>"textField-6-helperLabelId
+          <mark>textField-6-describedbyContent</mark>"
+            data-max-field-length="15"
+            data-helper-label="enter an email no longer than 15 characters, No .edu"
+          </code>
+          <code style="color: #006748"> 
+            data-field-aria-describedby-content=</code>
+          <code>"all emails must have an @ symbol"
+            data-required="true"&gt; &lt;/cel-text-field&gt;
+          </code>
           <pre></pre>
         </div>
       </div>
