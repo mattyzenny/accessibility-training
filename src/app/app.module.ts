@@ -8,6 +8,7 @@ import { InputFieldsComponent } from './Forms/InputFields/input-fields.component
 import { InputValidationsComponent } from './Forms/InputValidations/input-validations.component';
 import { RadioGroupsComponent } from './RadioGroups/radio-groups.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsComponent } from './Forms/forms.component';
 import { HomeComponent } from './Home/home.component';
 import { BannerComponent } from './Banner/banner.component';
@@ -31,9 +32,9 @@ const routes: Routes = [
     HomeComponent,
     BannerComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [BrowserModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
