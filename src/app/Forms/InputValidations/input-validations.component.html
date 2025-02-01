@@ -24,22 +24,21 @@
     [class]="!isMobile ? 'mt-3 mb-3 container justify-content-between align-items-center text-center content d-flex' : 'mt-3 mb-3 container justify-content-between align-items-center text-center content'">
     <div>
       <label id="customLabel">First Name</label>
-      <cel-text-field id="inputValidation0" data-field-label="" (blur)="onBlur('inputValidation0')"
-        [errorMessage]="errorMessages['inputValidation0']"> </cel-text-field>
+      <cel-text-field data-max-field-length="10" data-field-label="" id="cel-textField-7" (blur)="validateInputOnBlur('cel-textField-7')"
+        [errorMessage]="errorMessages['cel-textField-7']"  [successMessage]="successMessages['cel-textField-7']"> </cel-text-field>
     </div>
 
     <div>
-      <cel-text-field id="inputValidation1" (blur)="onBlur('inputValidation1')"
+      <cel-text-field id="inputValidation1" (blur)="validateInputOnBlur('inputValidation1')"
         [errorMessage]="errorMessages['inputValidation1']" data-field-label="Middle Name"></cel-text-field>
     </div>
-    <div>
+  
       <div>
         <cel-text-field data-helper-label="maximum 10 character" data-field-aria-describedby="errorMessage"
-          id="inputValidation2" (blur)="onBlur('inputValidation2')" [errorMessage]="errorMessages['inputValidation2']"
+          id="inputValidation2" (blur)="validateInputOnBlur('inputValidation2')" [errorMessage]="errorMessages['inputValidation2']"
           data-field-label="First Name">
         </cel-text-field>
       </div>
-    </div>
   </div>
   <div class="accordion
     mt-3
