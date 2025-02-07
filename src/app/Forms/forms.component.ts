@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forms.component.scss']
 })
 export class FormsComponent implements OnInit {
-  title = 'Form Fields';
+  title = 'Text Fields';
 
   constructor() { }
 

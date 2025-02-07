@@ -14,7 +14,7 @@ import { ReflowService } from '../Services/reflow.service';
 })
 
 export class BannerComponent implements AfterViewInit {
-  title = 'Accessibility Training';
+  title = 'Accessibility Training Savvas Logo';
 
   // Dependency injection for ReflowService
   constructor(public reflowService: ReflowService) {}
