@@ -6,7 +6,7 @@
     text-center
     content
   ">
-  <h2>Input Validation</h2>
+  <h2 class="h4 text-body-secondary">Input Validation</h2>
 </div>
 
 
@@ -90,17 +90,9 @@
           <strong>First Name</strong>
           <pre></pre>
           <code>
-            &lt;cel-text-field id="cel-textField-9" (blur)="validateInputOnBlur('cel-textField-9')"
-            [errorMessage]="errorMessages['cel-textField-9']" [successMessage]="successMessages['cel-textField-9']"
+            &lt;cel-text-field id="cel-textField-9" data-helper-label="maximum 10 characters" (blur)="validateInputOnBlur('cel-textField-9')"
+            [errorMessage]="errorMessages['cel-textField-9']" data-max-field-legth="10" [successMessage]="successMessages['cel-textField-9']"
             data-field-label="First Name" data-required="true"
-          </code>
-          <code style="color: #006748;">
-            data-helper-label=</code>
-          <code>"maximum 10 character"
-          </code>
-          <code style="color: #006748;">
-            data-max-field-length=</code>
-          <code>"10"
           </code>
           <code style="color: #006748;">
             data-toggle-password=</code>
