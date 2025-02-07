@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, HostListener, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, HostListener, AfterViewInit, Input } from '@angular/core';
 import { ReflowService } from 'src/app/Services/reflow.service';
 
 @Component({
@@ -7,22 +7,24 @@ import { ReflowService } from 'src/app/Services/reflow.service';
   styleUrls: ['./input-validations.component.scss'],
 })
 export class InputValidationsComponent implements AfterViewInit {
-  @ViewChild('inputValidation1') inputElement?: ElementRef; // Access the element
-  @ViewChild('inputValidation2') inputElement2?: ElementRef; // Access the element
   errorMessages: { [key: string]: string } = {};
-
+  successMessages: { [key: string]: string } = {};
   constructor(public reflowService: ReflowService) {}
 
   ngAfterViewInit(): void {
     this.reflowService.checkViewport();
 
+    this.successMessages = {
+      genericSuccessMessage: 'Available',
+    };
     this.errorMessages = {
-      inputValidation1: '',
-      inputValidation2: '',
+      maxCharacterLimit: 'max characters reached, please use less than',
+      invalidCharacters: 'no special characters allowed',
+      genericErrorMessage: 'please enter a valid name'
     };
   }
 
-    // Listens to the window resize event
+  // Listens to the window resize event
   // The '$event' is not necessary for this case but can be useful for debugging
   @HostListener('window:resize', ['$event'])
   onResize() {
@@ -30,19 +32,57 @@ export class InputValidationsComponent implements AfterViewInit {
   }
   
   // Getter to expose the isMobile property from the ReflowService to the template
-  // This allows us to conditionally render elements in the template based on whether the screen is mobile-sized
   get isMobile() {
     return this.reflowService.isMobile;
   }
 
-  onBlur(inputId: string): void {
-    const inputElement = document.getElementById(inputId) as HTMLInputElement; // Access first input value
-    if (inputElement.value) {
-      this.errorMessages[inputId] = ''
-    }
-      else {
-        this.errorMessages[inputId] = 'Please enter a valid name';
-      }
-    }
-  }
+  
+// Function to validate input on blur event
+validateInputOnBlur(inputId: string): void {
+  const inputElement = document.getElementById(inputId) as HTMLInputElement; // Access input value
+  const textField = inputElement.shadowRoot?.querySelector('input');
+  const maxLength = textField?.maxLength;
 
+  // Start with a clean slate
+  this.errorMessages[inputId] = '';
+  this.successMessages[inputId] = '';
+
+
+  if (textField?.value) {
+
+    const isValidMaxLength = this.validateMaxLength(textField, inputId);
+    const isValidCharacters = this.validateNoSpecialCharacters(textField, inputId);
+
+    if (isValidMaxLength && isValidCharacters) {
+      this.successMessages[inputId] = this.successMessages.genericSuccessMessage;
+    }
+
+    if (!isValidMaxLength && !isValidCharacters) {
+      this.errorMessages[inputId] = `${this.errorMessages.maxCharacterLimit} ${maxLength} ${this.errorMessages.invalidCharacters}`.trim();
+    }
+  } else {
+    this.errorMessages[inputId] = this.errorMessages.genericErrorMessage;
+  }
+}
+
+// Max length validation
+validateMaxLength(textField: HTMLInputElement, inputId: string): boolean {
+  const currentLength = textField.value.length;
+  const maxLengthValue = textField.maxLength;
+  if (maxLengthValue > 0 && currentLength >= maxLengthValue) {
+    this.errorMessages[inputId] = `${this.errorMessages.maxCharacterLimit} ${maxLengthValue}`;
+    return false;
+  }
+  return true;
+}
+
+// Special character validation
+validateNoSpecialCharacters(textField: HTMLInputElement, inputId: string): boolean {
+  const specialCharRegex = /[^a-zA-Z0-9 ]/g;
+  if (specialCharRegex.test(textField.value)) {
+    this.errorMessages[inputId] = this.errorMessages.invalidCharacters;
+    return false;
+  }
+  return true;
+}
+}

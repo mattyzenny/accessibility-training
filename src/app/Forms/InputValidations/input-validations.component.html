@@ -22,23 +22,24 @@
   <!-- adds css based on mobileView -->
   <div
     [class]="!isMobile ? 'mt-3 mb-3 container justify-content-between align-items-center text-center content d-flex' : 'mt-3 mb-3 container justify-content-between align-items-center text-center content'">
-    <div>
-      <label id="customLabel">First Name</label>
-      <cel-text-field id="inputValidation0" data-field-label="" (blur)="onBlur('inputValidation0')"
-        [errorMessage]="errorMessages['inputValidation0']"> </cel-text-field>
+    <div aria-live="polite">
+      <cel-text-field data-field-label="Last Name" data-required="true" id="cel-textField-7"
+        (blur)="validateInputOnBlur('cel-textField-7')" [errorMessage]="errorMessages['cel-textField-7']">
+      </cel-text-field>
     </div>
 
-    <div>
-      <cel-text-field id="inputValidation1" (blur)="onBlur('inputValidation1')"
-        [errorMessage]="errorMessages['inputValidation1']" data-field-label="Middle Name"></cel-text-field>
+    <div aria-live="polite">
+      <cel-text-field id="cel-textField-8" data-required="true" (blur)="validateInputOnBlur('cel-textField-8')"
+        [errorMessage]="errorMessages['cel-textField-8']" [successMessage]="successMessages['cel-textField-8']"
+        data-field-label="Middle Name"></cel-text-field>
     </div>
-    <div>
-      <div>
-        <cel-text-field data-helper-label="maximum 10 character" data-field-aria-describedby="errorMessage"
-          id="inputValidation2" (blur)="onBlur('inputValidation2')" [errorMessage]="errorMessages['inputValidation2']"
-          data-field-label="First Name">
-        </cel-text-field>
-      </div>
+
+    <div aria-live="polite">
+      <cel-text-field data-helper-label="maximum 10 character" data-required="true" data-max-field-length="10"
+        id="cel-textField-9" (blur)="validateInputOnBlur('cel-textField-9')"
+        [successMessage]="successMessages['cel-textField-9']" [errorMessage]="errorMessages['cel-textField-9']"
+        data-toggle-password="true" data-autocomplete="new-password" data-field-label="First Name">
+      </cel-text-field>
     </div>
   </div>
   <div class="accordion
@@ -52,38 +53,121 @@
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button id="accordion-inputValidations-button" class="accordion-button collapsed" type="button"
-          data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
-          aria-controls="codeContainer">
+          data-bs-toggle="collapse" data-bs-target="#codeContainer2" aria-expanded="false"
+          aria-controls="codeContainer2">
           Expand Code
         </button>
       </h2>
-      <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion-inputValidations">
+      <div id="codeContainer2" class="accordion-collapse collapse" data-bs-parent="#accordion-inputValidations">
         <div class="accordion-body">
-          <strong>First Name</strong>
-          <pre></pre>
-          <code>&lt;label id="customLabel" First Name &lt;/label&gt; </code>
-          <pre></pre>
-          <code>&lt;cel-text-field id="inputValidation0" data-field-label="" (blur)="onBlur('inputValidation0')"
-          [errorMessage]="errorMessages['inputValidation0']" &lt;/cel-text-field&gt;</code>
-          <pre></pre>
-          <strong>Middle Name</strong>
-          <pre></pre>
-          <code>&lt;cel-text-field id="inputValidation1" (blur)="onBlur('inputValidation1')"
-          [errorMessage]="errorMessages['inputValidation1']" data-field-label="Middle Name" &lt;/cel-text-field&gt;</code>
-          <pre></pre>
           <strong>Last Name</strong>
           <pre></pre>
-          <code>&lt;cel-text-field data-field-aria-describedby="errorMessage" id="inputValidation2"
-          (blur)="onBlur('inputValidation2')"[errorMessage]="errorMessages['inputValidation2']" data-field-label="First Name" &lt;/cel-text-field&gt;</code>
+          <code>
+            &lt;cel-text-field data-field-label="Last Name" data-required="true" id="cel-textField-7"
+          </code>
+          <code style="color: #006748;">
+            (blur)=</code>
+          <code>"validateInputOnBlur('cel-textField-7')"
+          </code>
+          <code style="color: #006748;">
+            [errorMessage]=</code>
+          <code>"errorMessages['cel-textField-7']"&gt; &lt;/cel-text-field&gt;
+          </code>
           <pre></pre>
+
+          <strong>Middle Name</strong>
+          <pre></pre>
+          <code>
+            &lt;cel-text-field data-required="true" id="cel-textField-8" (blur)="validateInputOnBlur('cel-textField-8')"
+            [errorMessage]="errorMessages['cel-textField-8']" data-field-label="Middle Name"
+          </code>
+          <code style="color: #006748;">
+            [successMessage]=</code>
+          <code>"successMessages['cel-textField-8']"&gt; &lt;/cel-text-field&gt;
+          </code>
+          <pre></pre>
+
+          <strong>First Name</strong>
+          <pre></pre>
+          <code>
+            &lt;cel-text-field id="cel-textField-9" (blur)="validateInputOnBlur('cel-textField-9')"
+            [errorMessage]="errorMessages['cel-textField-9']" [successMessage]="successMessages['cel-textField-9']"
+            data-field-label="First Name" data-required="true"
+          </code>
+          <code style="color: #006748;">
+            data-helper-label=</code>
+          <code>"maximum 10 character"
+          </code>
+          <code style="color: #006748;">
+            data-max-field-length=</code>
+          <code>"10"
+          </code>
+          <code style="color: #006748;">
+            data-toggle-password=</code>
+          <code>"true"
+          </code>
+          <code style="color: #006748;">
+            data-autocomplete=</code>
+          <code>"new-password"&gt; &lt;/cel-text-field&gt;
+          </code>
+          <pre></pre>
+
         </div>
       </div>
     </div>
   </div>
   <div class="container" id="details-container">
-    <p>
-        This input is right out-of-the-box from cel-components. It is accessible, but if we want to add any
-        customization, then we must consider adding attributes.
-    </p>
+    <ol>
+      <li class="mt-2">
+        <ul>
+          <li>
+            <code>(blur)</code>
+            This is an onBlur() function. It runs error validation when a user tabs out or clicks out of the element.
+          </li>
+          <li>
+            <code>[errorMessage]</code>
+            This is an array of error messages that will be displayed if the input is invalid.
+            This should be added to any required input that need validation.
+          </li>
+        </ul>
+      </li>
+      <li class="mt-2">
+        Here we add the <code>[successMessage]</code> which behaves exactly like the <code>[errorMessage]</code>. It
+        takes an array of messages.
+      </li>
+      <li class="mt-2">
+        Before we look the newly added attributes, lets try triggering all the different validation messages.
+        <ul>
+          <li>
+            <span class="badge text-bg-danger text-uppercase small">Generic Error:</span><em> leave the input field empty.</em>
+          </li>
+          <li>
+            <span class="badge text-bg-danger text-uppercase small">No Special Character:</span> <em> enter a special character.</em>
+          </li>
+          <li>
+            <span class="badge text-bg-danger text-uppercase small">Max Length:</span> <em> enter more than 9 characters.</em>
+          </li>
+          <li>
+            <span class="badge text-bg-success text-uppercase small">Success Message:</span><em> enter a valid input.</em>
+          </li>
+        </ul>
+        <ul>
+          <li>
+            <code>data-toggle-password</code>
+            This attribute is used to toggle the password visibility. If you inspect the code, the
+            <strong>data-toggle-password</strong> is bound to the input type.
+            On toggle, it is setting the input type to <strong>text</strong> or <strong>password</strong>.
+          </li>
+          <li>
+            <code>data-autocomplete</code>
+            Mentioned in previous examples, the autocomplete helps with auto-filling stored data.
+            <strong>new-password</strong> is just one of
+            the many values that can be used.
+            For more information, please reference <a [routerLink]="[]"
+              [fragment]="'autocomplete-requirements'">autocomplete requirements</a>.
+          </li>
+        </ul>
+      </li>
+    </ol>
   </div>
 </div>
