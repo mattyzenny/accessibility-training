@@ -1,6 +1,7 @@
 #!/bin/bash
 
-
+echo "Starting production build..."
+npm run build prod
 
 #Switches branches
 echo "Do you want to switch branches? (y/n)"
