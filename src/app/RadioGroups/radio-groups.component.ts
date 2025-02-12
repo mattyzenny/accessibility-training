@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, AfterViewInit } from '@angular/core';
+import { Component, OnInit, HostListener, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { ReflowService } from 'src/app/Services/reflow.service';
 
 @Component({
@@ -7,23 +7,33 @@ import { ReflowService } from 'src/app/Services/reflow.service';
   styleUrls: ['./radio-groups.component.scss'],
 })
 export class RadioGroupsComponent implements AfterViewInit {
+  @ViewChild('toggleButton') toggleButtonRef!: ElementRef;
+  isPressed: boolean = false;
   title = 'Radio Buttons';
   radioGroupList: any[] =[];
+  onSubmitRadioGroupList: any[] = [];
   constructor(public reflowService: ReflowService) {}
-  testRadioGroupList = 
-    {
-      header: "test",
-      radioGroup: [
-        { radioId: 'test1', label: 'test1' },
-        { radioId: 'test2', label: 'test2' },
-        { radioId: 'test3', label: 'test3' },
-      ]
-    }
-  ;
   
-
   ngOnInit(){
 
+    this.onSubmitRadioGroupList = [
+      {
+        header: 'Enable Toggle',
+        radioGroup: [
+          { radioId: 'yes', label: 'Yes' },
+          { radioId: 'no', label: 'No' }
+        ]
+      },
+    ],
+
+      {
+        header: 'Color',
+        radioGroup: [
+          { radioId: 'blue', label: 'Blue' },
+          { radioId: 'red', label: 'Red', disabled: true },
+          { radioId: 'green', label: 'Green' },
+        ],
+      }
 
     this.radioGroupList = [
       {
@@ -35,26 +45,27 @@ export class RadioGroupsComponent implements AfterViewInit {
         ],
       },
       {
-        header: 'Type',
+        header: 'Color',
         radioGroup: [
-          { radioId: 'lastName', label: 'Last Name' },
-          { radioId: 'middleName', label: 'Middle Name' },
-          { radioId: 'other', label: 'Other' },
+          { radioId: 'blue', label: 'Blue' },
+          { radioId: 'red', label: 'Red', disabled: true },
+          { radioId: 'green', label: 'Green' },
         ],
-      },
-      {
-        header: 'Relation',
-        radioGroup: [
-          { radioId: 'middleName', label: 'Middle Name' },
-          { radioId: 'familyName', label: 'Family Name' },
-          { radioId: 'other', label: 'Other' },
-        ],
-      },
+      }
     ];
   }
 
   ngAfterViewInit() {
     this.reflowService.checkViewport();
+  }
+
+  isActive() {
+    const button = this.toggleButtonRef.nativeElement;
+    const currentState = button.getAttribute('aria-pressed') === 'true';
+    this.isPressed = !currentState;
+
+    button.setAttribute('aria-pressed', this.isPressed ? 'true' : 'false');
+    return this.isPressed;
   }
 
   // Listens to the window resize event

@@ -8,26 +8,29 @@
   </div>
 </header>
 
-<!-- Intro section -->
+<!-- Intro Section -->
 
 <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-  <p>Radio group buttons are another important element within a form. They allow users to select one option
-    from a list of options. Radio buttons are often used in groups, where only one option can be selected at a time.
+  <p>Radio buttons are often used in groups where only one option can be selected at a time. The
+    expected navigation is for a user to tab into the first radio element, where the <strong>name </strong>
+    <code>&lt;label&gt;</code> will be read,
+    followed by the <strong>role </strong><code>type</code>. It will also read the index of that raido and its
+    associated <code>&lt;legend&gt;</code> or group label.
+    Users can then use arrow keys to traverse the group.
     Each radio button requires a label for the button, and some sort of group label to help the user understand the
     context.
   </p>
   <p>How to make a radio group accessible?</p>
   <ul>
     <li>
-      A button <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
-        href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank">must</a> have a visible
-      label.
+      Starting from the top, a radio group must have a visible <code>&lt;legend&gt;</code>. These are curicual
+      for the understanding and purpose of the radio group. They can be seen as the instructions or the group label.
     </li>
     <li>
-      If a button has an accessible label, it <a
+      Similar to many other elements, each individual radio button <a
         class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
-        href="https://www.w3.org/WAI/WCAG22/Understanding/label-in-name" target="_blank">must</a> start with
-      the visible text.
+        href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank">must</a> have a visible
+      label. All users need to know what each button represents.
     </li>
     <li>
       The name, role, state, & value <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
@@ -41,12 +44,12 @@
 
 <!-- Component Grouping -->
 
-
 <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
   <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
     <p>
-      This button is using only the label attribute. Though this button has very little functionality, it is a fully
-      accessible component. Turn on the AT and navigate to the element.
+      This first radio group is using the bare mininmum to be accessible. There is a group
+      label, and each radio button has a visible label. Only 2 props are required to pass accessibility when using
+      cel-components.
     </p>
   </div>
 
@@ -58,7 +61,7 @@
     align-items-center
     text-center
     content
-  ">
+    ">
       <div>
         <cel-radio-button-group [attr.data-show-radio-group-horizontal]="!isMobile" [header]="radio.header"
           [list]="radio.radioGroup"></cel-radio-button-group>
@@ -91,9 +94,73 @@
   </div>
   <div class="container" id="details-container">
     <p>
-      When you navigate to the button, the <strong>role </strong><em>'button'</em> and the <strong>name
-      </strong><em>'cancel'</em> are announced. There are no states or values assigned to this button, so they are not
-      needed.
+      When you select an element you will hear <strong>state</strong> selected be announced. In the second radio
+      group, another <strong>state</strong> "disabled" is being announced. <em>Notice that in larger viewports the
+        radio group is displayed horizontally. Despite
+        the visual appearance, the key navigation remains the same. </em>
+  </div>
+</div>
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      The radio groups can also be enabled based off another action on the page.
     </p>
   </div>
+
+  <div *ngFor="let radio of onSubmitRadioGroupList; let i =index">
+    <div class="
+    container
+    d-flex
+    justify-content-between
+    align-items-center
+    text-center
+    content
+    ">
+
+      <div>
+        <cel-button #toggleButton (click)="isActive()" data-toggle=true
+          data-label="Continue"></cel-button>
+      </div>
+      <div>
+        <cel-radio-button-group [attr.data-show-radio-group-horizontal]="!isMobile" [header]="radio.header"
+          [list]="radio.radioGroup" [attr.data-field-disabled]="!isPressed"></cel-radio-button-group>
+      </div>
+    </div>
+  </div>
+  <div class="accordion
+              mb-3
+              mt-3
+              container
+              justify-content-between
+              align-items-center
+              text-center
+              content" id="accordion0">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton0"
+          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer0" aria-expanded="false"
+          aria-controls="codeContainer0">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
+        <div class="accordion-body">
+          <strong>Radio Group 1</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      When you select an element you will hear <strong>state</strong> selected be announced. In the second radio group,
+      another <strong>state</strong> "disabled" is being announced. <em>Notice that in larger viewports the radio group
+        is displayed horizontally. Despite
+        the visual appearance, the key navigation remains the same. </em>
+  </div>
+
 </div>
