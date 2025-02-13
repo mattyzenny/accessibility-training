@@ -33,21 +33,40 @@
 
 
 <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <h2>Resources</h2>
+  <p id="randomText">Here are some links to help you get started:</p>
+  <div class="card-container">
+    <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+      </svg>
 
-<h2>Resources</h2>
-<p id="randomText">Here are some links to help you get started:</p>
+      <span>Learn Angular</span>
 
-<div class="card-container">
-  <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
-    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
-    </svg>
-
-    <span>Learn Angular</span>
-
-    <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-      <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
-    </svg>
-  </a>
+      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+      </svg>
+    </a>
+  </div>
 </div>
+
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <!-- <div class="card"> -->
+  <footer>
+    <div class="card-body override-container">
+      <h3 class="card-title">Support</h3>
+      <p>
+        Report a Bug or Submit Feedback
+      </p>
+      <p class="card-text">We are always trying to improve. Please let us know how!</p>
+      <div class="d-grid gap-2 col-1 mt-3 mb-3">
+      <a [href]="emailPath"
+        target="_blank" class="btn btn-primary">
+        Submit
+      </a>
+      </div>
+    </div>
+  </footer>
+  <!-- </div> -->
 </div>
+
