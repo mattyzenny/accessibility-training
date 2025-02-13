@@ -12,6 +12,9 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsComponent } from './Forms/forms.component';
 import { HomeComponent } from './Home/home.component';
 import { BannerComponent } from './Banner/banner.component';
+import { HowToComponent } from './HowTo/how-to.component';
+import { ResourcesComponent } from './Resources/resources.component';
+
 defineCustomElements();
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -19,6 +22,8 @@ const routes: Routes = [
   {path: 'Buttons', component: ButtonsComponent},
   {path: 'Inputs', component: FormsComponent},
   {path: 'Radios', component: RadioGroupsComponent},
+  {path: 'How-To', component: HowToComponent},
+  {path: 'Resources', component: ResourcesComponent},
 ];
 
 @NgModule({
@@ -31,6 +36,8 @@ const routes: Routes = [
     FormsComponent,
     HomeComponent,
     BannerComponent,
+    HowToComponent,
+    ResourcesComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
