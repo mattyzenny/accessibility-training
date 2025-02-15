@@ -24,7 +24,7 @@ export class ResourcesComponent implements OnInit {
         endLine: 25
       },
       {
-        term: 'Test New commit',
+        term: 'WebAIM',
         definition:
           'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
         link: 'https://webaim.org/',
@@ -48,7 +48,7 @@ export class ResourcesComponent implements OnInit {
           "The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.",
         link: 'https://www.w3.org/',
         updated: 'Loading...',
-        startline: 46,
+        startLine: 46,
         endLine: 53
       },
     ];
