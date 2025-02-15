@@ -20,11 +20,11 @@ export class ResourcesComponent implements OnInit {
           'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',
         updated: 'Loading...',
-        startLine: 1,
-        endLine: 3
+        startLine: 17,
+        endLine: 25
       },
       {
-        term: 'WebAIM',
+        term: 'Test New commit',
         definition:
           'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
         link: 'https://webaim.org/',
@@ -39,7 +39,7 @@ export class ResourcesComponent implements OnInit {
         link: 'https://www.deque.com/',
         updated: 'Loading...',
         startLine: 35,
-        endLine: 44
+        endLine: 43
       },
 
       {
@@ -48,8 +48,8 @@ export class ResourcesComponent implements OnInit {
           "The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.",
         link: 'https://www.w3.org/',
         updated: 'Loading...',
-        startline: 43,
-        endLine: 51
+        startline: 46,
+        endLine: 53
       },
     ];
       // Call API using async/await .subscribe() and Loop through each item and fetch its last updated time 
