@@ -18,11 +18,11 @@ fi
 # Fetch from the accessibility-training repository (local or remote)
 git fetch accessibility-training
 
-# Get the last commit message from the 'accessibility-training' main branch
-COMMIT_MESSAGE=$(git log accessibility-training/master -1 --pretty=format:"%s")
 
 # Navigate to git-backend and commit/push updates.json
 (
+  # Get the last commit message from the 'accessibility-training' main branch
+  COMMIT_MESSAGE=$(git log accessibility-training/master -1 --pretty=format:"%s")
   cd git-backend || exit 1  # Change path if necessary
   git add updates.json
   git commit -m "Auto-update: - ${COMMIT_MESSAGE} - Changed updates.json"
