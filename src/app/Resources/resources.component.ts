@@ -32,7 +32,7 @@ export class ResourcesComponent implements OnInit {
         startLine: 27,
         endLine: 33,
       },
-
+//testing auto commit
       {
         term: 'Deque Systems',
         definition:
