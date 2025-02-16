@@ -49,41 +49,16 @@ export class ResourcesComponent implements OnInit {
 
     this.definitions = [
       {
-        term: 'WebAIM',
-        definition:
-          'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
-        link: 'https://webaim.org/',
-        updated: 'Loading...',
-        startLine: 60,
-        endLine: 68,
-      },      {
-        term: 'WebAIM',
-        definition:
-          'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
-        link: 'https://webaim.org/',
-        updated: 'Loading...',
-        startLine: 60,
-        endLine: 68,
-      },      {
-        term: 'WebAIM',
-        definition:
-          'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
-        link: 'https://webaim.org/',
-        updated: 'Loading...',
-        startLine: 60,
-        endLine: 68,
-      },
-      {
-        term: 'Assistive Technology',
+        term: 'Assistive echnology',
         definition:
           'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',
-        updated: 'Loding...',
+        updated: 'Loading...',
         startLine: 51,
         endLine: 59
       },
       {
-        term: 'WebAIM',
+        term: 'WeAIM',
         definition:
           'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
         link: 'https://webaim.org/',
@@ -92,7 +67,7 @@ export class ResourcesComponent implements OnInit {
         endLine: 68,
       },
       {
-        term: 'Deque Sdystems',
+        term: 'Deque Systems',
         definition:
           'Deque Systems is a company that specializes in digital accessibility. Deque provides software, training, and consulting services to help organizations meet their accessibility goals. Deque has been a leader in the field of digital accessibility since 1999.',
         link: 'https://www.deque.com/',
