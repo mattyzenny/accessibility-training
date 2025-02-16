@@ -25,6 +25,6 @@ COMMIT_MESSAGE=$(git log accessibility-training/master -1 --pretty=format:"%s")
 (
   cd git-backend || exit 1  # Change path if necessary
   git add updates.json
-  git commit -m "Auto-update: - ${COMMIT_MESSAGE} - Tracking changes in updates.json"
+  git commit -m "Auto-update: - ${COMMIT_MESSAGE} - Changed updates.json"
   git push origin main
 ) &>/dev/null
