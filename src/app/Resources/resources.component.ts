@@ -58,7 +58,7 @@ export class ResourcesComponent implements OnInit {
         endLine: 59
       },
       {
-        term: 'WebAIM',
+        term: 'WebAAIM',
         definition:
           'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
         link: 'https://webaim.org/',
