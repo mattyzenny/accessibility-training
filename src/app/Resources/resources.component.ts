@@ -52,7 +52,8 @@ export class ResourcesComponent implements OnInit {
       {
         term: 'new array',
         definition: '',
-        link
+        link,
+        updated: 'Loading...',
       },
       {
         term: 'Assistive Technology',
