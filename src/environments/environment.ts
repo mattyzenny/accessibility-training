@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,  // Set to false for local
-  apiUrl: 'http://localhost:1000/last-updated' // Local API URL
+  apiUrl: 'http://localhost:3000/last-updated' // Local API URL
 };
 
 /*

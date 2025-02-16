@@ -1,17 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { GitService } from '../Services/git.service';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'Resources',
   templateUrl: './resources.component.html',
   styleUrls: ['./resources.component.scss'],
+  providers: [DatePipe]
 })
 export class ResourcesComponent implements OnInit {
   title = 'Resources';
   definitions: Record<string, any>[] = []; // For stricter checking definitions: { term: string; definition: string; link: string; updated?: string }[] = [];
-  filePath = 'Resources/resources.component.ts';
-  constructor(private gitService: GitService) {}
+  filePath = 'src/app/Resources/resources.component.ts';
+  constructor(private gitService: GitService, private datePipe: DatePipe) {}
 
+  getFormattedDate(date: string) {
+    const dateFormat = this.datePipe.transform(date, 'MMM d');  // 'Feb 16'
+    const timeFormat = this.datePipe.transform(date, 'h:mm a'); // '11:00'
+    
+    return `${dateFormat}, ${timeFormat}`;
+  }
+  
   ngOnInit(): void {
     this.definitions = [
       {
@@ -32,7 +40,7 @@ export class ResourcesComponent implements OnInit {
         startLine: 27,
         endLine: 33,
       },
-      
+
       {
         term: 'Deque Systems',
         definition:
@@ -56,7 +64,7 @@ export class ResourcesComponent implements OnInit {
       // Call API using async/await .subscribe() and Loop through each item and fetch its last updated time 
       this.definitions.forEach(definition => {
         this.gitService.getLastUpdated(this.filePath, definition.startLine, definition.endLine).subscribe(response => {
-          definition.updated = response.updated;
+          definition.updated = this.getFormattedDate(response.updated); // Format the updated time using DatePipe
         });
       });
   }
