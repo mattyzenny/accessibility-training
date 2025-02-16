@@ -49,6 +49,10 @@ export class ResourcesComponent implements OnInit {
 
     this.definitions = [
       {
+        term: 'new array',
+        definition: '',
+      },
+      {
         term: 'Assistive Technology',
         definition:
           'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
