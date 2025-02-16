@@ -32,7 +32,7 @@ export class ResourcesComponent implements OnInit {
         startLine: 27,
         endLine: 33,
       },
-//testing auto commit
+//testing auto commit// Another test for auto-push
       {
         term: 'Deque Systems',
         definition:
