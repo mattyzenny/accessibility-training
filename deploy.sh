@@ -55,9 +55,9 @@ echo "Adding changes to git..."
 git add .
 
 # Confirm before committing changes
-echo "Do you want a custom commit? (y/n)"
+echo "Go with the standard commit message? (y/n)"
 read confirmation_commit
-if [[ "$confirmation_commit" == "y" ]]; then
+if [[ "$confirmation_commit" == "n" ]]; then
   echo "Enter your custom commit message:"
   read commit_message
   git commit -m "$commit_message"

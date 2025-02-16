@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,  // Set to false for local
+  apiUrl: 'http://localhost:1000/last-updated' // Local API URL
 };
 
 /*

@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { defineCustomElements } from '@savvaslearning/cel-components/dist-stencil/loader';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ButtonsComponent } from './Buttons/buttons.component';
 import { InputFieldsComponent } from './Forms/InputFields/input-fields.component';
@@ -39,7 +39,7 @@ const routes: Routes = [
     HowToComponent,
     ResourcesComponent,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
+  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],

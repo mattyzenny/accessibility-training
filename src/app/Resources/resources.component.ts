@@ -28,12 +28,13 @@ export class ResourcesComponent implements OnInit {
         definition:
           'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
         link: 'https://webaim.org/',
+        updated: 'Loading...',
         startLine: 27,
         endLine: 33,
       },
 
       {
-        term: 'Deque',
+        term: 'Deq',
         definition:
           'Deque Systems is a company that specializes in digital accessibility. Deque provides software, training, and consulting services to help organizations meet their accessibility goals. Deque has been a leader in the field of digital accessibility since 1999.',
         link: 'https://www.deque.com/',
