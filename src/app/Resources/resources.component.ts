@@ -49,7 +49,7 @@ export class ResourcesComponent implements OnInit {
 
     this.definitions = [
       {
-        term: 'Assistive Technology',
+        term: 'Asistive Technology',
         definition:
           'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',
@@ -58,7 +58,7 @@ export class ResourcesComponent implements OnInit {
         endLine: 59
       },
       {
-        term: 'WebAIM',
+        term: 'WebIM',
         definition:
           'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
         link: 'https://webaim.org/',
