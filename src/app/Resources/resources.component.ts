@@ -68,6 +68,7 @@ export class ResourcesComponent implements OnInit {
       },
       {
         term: 'Deque Systems',
+        link: 'https://www.deque.com/',
       },
       {
         term: 'Defjsdlkajfsklque Systems',
