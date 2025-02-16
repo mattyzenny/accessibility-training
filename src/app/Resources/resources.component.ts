@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GitService } from '../Services/git.service';
 import { DatePipe } from '@angular/common';
+import { link } from 'fs';
 @Component({
   selector: 'Resources',
   templateUrl: './resources.component.html',
@@ -51,6 +52,7 @@ export class ResourcesComponent implements OnInit {
       {
         term: 'new array',
         definition: '',
+        link
       },
       {
         term: 'Assistive Technology',
