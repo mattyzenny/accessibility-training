@@ -50,15 +50,15 @@ export class ResourcesComponent implements OnInit {
     this.resources = [
       {
         term: 'AT',
-        definition: 'Assistive technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
+        definition: ' Technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',
         updated: 'Loading...',
         startLine: 51,
         endLine: 58
       },
       {
-        term: 'newTerm',
-        definition: 'WebAIM (Web Accessibility In Mind) is a non-profit organization based at the Center for Persons with Disabilities at Utah State University. WebAIM has provided comprehensive web accessibility solutions since 1999. These years of experience have made WebAIM one of the leading providers of web accessibility expertise internationally.',
+        term: 'HAT',
+        definition: 'HAT stands for hidden accessible text. It is only announced to those users who use screen readers. They are often applied to give supplemental information that sighted users can see through the orientation of the page',
         link: 'https://webaim.org/',
         updated: 'Loading...',
         startLine: 59,
