@@ -51,7 +51,7 @@ export class ResourcesComponent implements OnInit {
     this.resources = [
       {
         term: 'AT',
-        definition: 'abcd If i change thisTechnology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
+        definition: 'Assistive Technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',
         updated: 'Loading...',
         startLine: 51,
@@ -59,7 +59,7 @@ export class ResourcesComponent implements OnInit {
       },
       {
         term: 'HAT',
-        definition: 'HAT stands for hidden accessible text. It is only announced to those users who use screen readers. They are often applied to give supplemental information that sighted users can see through the orientation of the page',
+        definition: 'HAT for hidden accessible text. It is only announced to those users who use screen readers. They are often applied to give supplemental information that sighted users can see through the orientation of the page',
         link: 'https://webaim.org/',
         updated: 'Loading...',
         startLine: 59,
@@ -75,7 +75,7 @@ export class ResourcesComponent implements OnInit {
       },
       {
         term: 'W3C',
-        definition: "The Wold Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.",
+        definition: "The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.",
         link: 'https://www.w3.org/',
         updated: 'Loading...',
         startLine: 75,
