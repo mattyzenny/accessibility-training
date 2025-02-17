@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GitService } from '../Services/git.service';
 import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'Resources',
   templateUrl: './resources.component.html',
@@ -50,7 +51,7 @@ export class ResourcesComponent implements OnInit {
     this.resources = [
       {
         term: 'AT',
-        definition: ' Technology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
+        definition: 'abcd If i change thisTechnology is simply a piece of equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',
         updated: 'Loading...',
         startLine: 51,
@@ -74,21 +75,21 @@ export class ResourcesComponent implements OnInit {
       },
       {
         term: 'W3C',
-        definition: "The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.",
+        definition: "The Wold Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web. W3C is made up of member organizations, full-time staff, and the public. W3C's mission is to lead the Web to its full potential by developing protocols and guidelines that ensure the long-term growth of the Web.",
         link: 'https://www.w3.org/',
         updated: 'Loading...',
         startLine: 75,
         endLine: 82
       },
     ];
-     this.resources.forEach(resource => {
-    this.gitService.getLastUpdated(this.filePath, resource.startLine, resource.endLine)
-      .subscribe(response => {
-        console.log(response);
-        if (response && response.updated) {
-          resource.updated = this.getFormattedDate(response.updated); // Format the updated time
-        }
-      });
-  });
+    this.resources.forEach(resource => {
+      this.gitService.getLastUpdated(this.filePath, resource.startLine, resource.endLine)
+        .subscribe(response => {
+          console.log(`Updated for ${resource.term}:`, response.updated);  // Log the updated field
+          if (response && response.updated !== 'Unknown') {
+            resource.updated = this.getFormattedDate(response.updated); // Format the updated time
+          }
+        });
+    });
   }
 }
