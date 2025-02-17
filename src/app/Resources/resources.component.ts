@@ -59,7 +59,7 @@ export class ResourcesComponent implements OnInit {
       },
       {
         term: 'HAT',
-        definition: 'HAT for hidden accessible text. It is only announced to those users who use screen readers. They are often applied to give supplemental information that sighted users can see through the orientation of the page',
+        definition: 'HAT stands for hidden accessible text. It is only announced to those users who use screen readers. They are often applied to give supplemental information that sighted users can see through the orientation of the page',
         link: 'https://webaim.org/',
         updated: 'Loading...',
         startLine: 59,
@@ -67,7 +67,7 @@ export class ResourcesComponent implements OnInit {
       },
       {
         term: 'Deque Systems',
-        definition: 'Deque Systems is a company that specializes in digital accessibility. Deque provides software, training, and consulting services to help organizations meet their accessibility goals. Deque has been a leader in the field of digital accessibility since 1999.',
+        definition: 'Deque is a company that specializes in digital accessibility. Deque provides software, training, and consulting services to help organizations meet their accessibility goals. Deque has been a leader in the field of digital accessibility since 1999.',
         link: 'https://www.deque.com/',
         updated: 'Loading...',
         startLine: 67,
