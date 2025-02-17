@@ -10,18 +10,22 @@ export class GitService {
   private apiUrl = environment.apiUrl;  // apiUrl from environment config
 
   constructor(private http: HttpClient) {}
-
-  getLastUpdated(filePath: string, startLine: number, endLine: number): Observable<{ updated: string }> {
+  
+  getLastUpdated(filePath: string, startLine: number, endLine: number): Observable<any> {
     const params = new HttpParams()
       .set('filePath', filePath)
       .set('startLine', startLine.toString())
       .set('endLine', endLine.toString());
   
-    return this.http.get<{ definition: { updated: string } }>(`${this.apiUrl}`, { params }).pipe(
-  map(response => {
-    // Check if updated is nested, and return it as a string
-    return { updated: response.definition.updated || 'Unknown' }; // Use 'Unknown' if updated is missing
-  })
-);
+    return this.http.get<any>(`${this.apiUrl}`, { params }).pipe(
+      map(response => {
+        console.log('Full API Response:', response); // Add this to inspect the full response
+        // Check if the `updated` field is available in the response
+        return {
+          updated: response.updated || 'Unknown',  // Directly access `updated` field from response
+          term: response.term || 'Unknown Term',    // If available, otherwise use 'Unknown Term'
+        };
+      })
+    );
   }
 };
