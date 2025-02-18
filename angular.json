@@ -44,6 +44,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "assets": ["src/favicon.ico", "src/assets", "src/app/Resources"],
               "baseHref": "/accessibility-training/",
               "optimization": true,
               "outputHashing": "none",
