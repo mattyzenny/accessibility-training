@@ -6,7 +6,8 @@
     "serve": "node git-backend/server.js",
     "start": "concurrently \"npm run serve\"  \"ng serve\"",
     "build": "ng build",
-    "prod": "ng build --prod --base-href /accessibility-training/",
+    "postbuild": "mkdir -p dist/accessibility-training/src/app && cp -r src/app/Resources dist/accessibility-training/src/app/",    
+    "prod": "ng build --prod && npm run postbuild",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
