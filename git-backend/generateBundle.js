@@ -90,6 +90,8 @@ function generateContentBundle() {
   fs.writeFileSync(fallbackBundlePath, resourceBundle);
   console.log(`✅ Successfully generated ${fallbackBundlePath}`);
 
+  console.log("✨ New contentBundle.json created! Don't forget to commit it. 🚀")
+
 }
 
 // 🚀 Run script
