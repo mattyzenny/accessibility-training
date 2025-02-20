@@ -45,7 +45,7 @@ export class ResourcesComponent implements OnInit {
       {
         term: 'Deque Systems',
         definition:
-          'Deque Systems is a company that specializes in digital accessibility. Deque provides software, training, and consulting services to help organizations meet their accessibility goals. Deque has been a leader in the field of digital accessibility since 1999.',
+          'Deque Systems, (deque for short) is a company that heads most of the software and tooling around accessibility. The closely align with the W3C and are a great resource for learning more about accessibility.',
         link: 'https://www.deque.com/',
         updated: 'Loading...',
         startLine: 45,
