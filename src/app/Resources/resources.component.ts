@@ -36,7 +36,7 @@ export class ResourcesComponent implements OnInit {
       {
         term: 'HAT',
         definition:
-          'HAT stands for hidden accessible text. It is only announced to those users who use screen readers. They are often applied to give supplemental information that sighted users infer through the orientation of the page.',
+          'HAT represents Hidden Accessible Text. It is only announced to those users who use screen readers. They are often applied to give supplemental information that sighted users infer through the orientation of the page.',
         link: 'https://webaim.org/',
         updated: 'Loading...',
         startLine: 36,
