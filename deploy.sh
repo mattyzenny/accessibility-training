@@ -62,7 +62,7 @@ if [[ "$confirmation_commit" == "n" ]]; then
   read commit_message
   git commit -m "$commit_message"
   else
-  git commit -m "Update gh-pages"
+  git commit -m "Update gh-pages" --no-verify
 fi
 
 # Push changes to the remote repository
