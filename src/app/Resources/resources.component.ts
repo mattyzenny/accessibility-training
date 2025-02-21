@@ -74,6 +74,15 @@ export class ResourcesComponent implements OnInit {
         startLine: 68,
         endLine: 76,
       },
+      {
+        term: 'WCAG',
+        definition:
+          'The Web Content Accessibility Guidelines (WCAG) are part of a series of web accessibility guidelines published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), the main international standards organization for the Internet.',
+        link: 'https://www.w3.org/WAI/WCAG22/Understanding/',
+        updated: 'Loading...',
+        startLine: 68,
+        endLine: 76,
+      },
     ];
       
     // Fetch the full content bundle in one API call
