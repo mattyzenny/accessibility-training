@@ -6,11 +6,12 @@ import { DatePipe } from '@angular/common';
   selector: 'Resources',
   templateUrl: './resources.component.html',
   styleUrls: ['./resources.component.scss'],
-  providers: [DatePipe]
+  providers: [DatePipe],
 })
 export class ResourcesComponent implements OnInit {
   title = 'Resources';
   resources: Record<string, any>[] = [];
+  searchList: Record<string, any>[] = [];
   filePath = 'contentBundle.json';
 
   constructor(private gitService: GitService, private datePipe: DatePipe) {}
@@ -21,6 +22,19 @@ export class ResourcesComponent implements OnInit {
 
     return `${dateFormat}, ${timeFormat}`;
   }
+
+  //anchor link logic
+  selectedResource(event: Event) {
+    const currentElementParent = event.target as HTMLElement;
+    const targetElement = currentElementParent.shadowRoot?.activeElement?.id;
+    if (targetElement) {
+      const element = document.getElementById(targetElement);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
 
   ngOnInit(): void {
     this.resources = [
@@ -61,20 +75,27 @@ export class ResourcesComponent implements OnInit {
         endLine: 62,
       },
     ];
-
+      
     // Fetch the full content bundle in one API call
     this.gitService.getLastUpdated(this.filePath).subscribe(
       (response) => {
         this.resources = response.Resources.map(
-          (resource: { updated: string }) => ({
+          (resource: { term: any; updated: string }) => ({
             ...resource,
-            updated: this.getFormattedDate(resource.updated)
+            updated: this.getFormattedDate(resource.updated), // Formats the date
+            id: resource.term.replace(/\s+/g, '-').toLowerCase(), // Adds a new 'id' property for anchor links
           })
         );
+    
+        // Build searchList based on updated resources
+        this.searchList = this.resources.map((resource) => ({
+          id: resource.id,
+          label: resource.term
+        }));
       },
       (error) => {
         console.error('Failed to fetch content bundle:', error);
       }
-    );
+    );  
   }
 }
