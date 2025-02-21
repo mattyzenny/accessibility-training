@@ -60,7 +60,7 @@ read confirmation_commit
 if [[ "$confirmation_commit" == "n" ]]; then
   echo "Enter your custom commit message:"
   read commit_message
-  git commit -m "$commit_message"
+  git commit -m "$commit_message" --no-verify
   else
   git commit -m "Update gh-pages" --no-verify
 fi
