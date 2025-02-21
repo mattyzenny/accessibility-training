@@ -44,8 +44,8 @@ export class ResourcesComponent implements OnInit {
           'Assistive Technology is equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.',
         link: 'https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.',
         updated: 'Loading...',
-        startLine: 27,
-        endLine: 35,
+        startLine: 41,
+        endLine: 49,
       },
       {
         term: 'HAT',
@@ -53,8 +53,8 @@ export class ResourcesComponent implements OnInit {
           'HAT represents Hidden Accessible Text. It is only announced to those users who use screen readers. They are often applied to give supplemental information that sighted users infer through the orientation of the page.',
         link: 'https://webaim.org/',
         updated: 'Loading...',
-        startLine: 36,
-        endLine: 44,
+        startLine: 50,
+        endLine: 58,
       },
       {
         term: 'Deque Systems',
@@ -62,8 +62,8 @@ export class ResourcesComponent implements OnInit {
           'Deque Systems is a company that heads most of the software and tooling around accessibility. The closely align with the W3C and are a great resource for learning more about accessibility.',
         link: 'https://www.deque.com/',
         updated: 'Loading...',
-        startLine: 45,
-        endLine: 53,
+        startLine: 59,
+        endLine: 67,
       },
       {
         term: 'W3C',
@@ -71,8 +71,8 @@ export class ResourcesComponent implements OnInit {
           'The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web.',
         link: 'https://www.w3.org/',
         updated: 'Loading...',
-        startLine: 54,
-        endLine: 62,
+        startLine: 68,
+        endLine: 76,
       },
     ];
       
