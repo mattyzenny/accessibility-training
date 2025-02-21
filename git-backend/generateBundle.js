@@ -45,18 +45,16 @@ function extractResources() {
 // ✅ Get last updated date using Git log
 function getLastUpdated(filePath, startLine, endLine) {
   try {
-    // ✅ Skip invalid or zero line numbers
     if (startLine <= 0 || endLine <= 0 || startLine > endLine) {
-      console.warn(`⚠️ Skipping invalid line range: ${startLine}-${endLine}`);
       return "Unknown";
     }
-
     const command = `git log -1 --format="%cd" -L ${startLine},${endLine}:${filePath}`;
     const output = execSync(command).toString().trim();
 
+    // Only return the first line (date)
     const firstLine = output.split("\n")[0];
-    return firstLine || "Unknown";
 
+    return firstLine || "Unknown";
   } catch (error) {
     console.error(`❌ Error getting last updated for ${filePath} (${startLine}-${endLine}):`, error.message);
     return "Unknown";
@@ -69,12 +67,19 @@ function generateContentBundle() {
   if (!resources.length) return console.error('❌ No resources found. Skipping content bundle generation.');
 
   const contentBundle = {
-    Resources: resources.map(resource => ({
-      term: resource.term,
-      definition: resource.definition,
-      link: resource.link,
-      updated: getLastUpdated(filePath, resource.startLine, resource.endLine)
-    }))
+    Resources: resources
+      .map(resource => ({
+        term: resource.term,
+        definition: resource.definition,
+        link: resource.link,
+        updated: getLastUpdated(filePath, resource.startLine, resource.endLine)
+      }))
+      // ✅ Filter out entries with "Unknown" or incomplete data
+      .filter(resource =>
+        resource.term !== 'Unknown Term' &&
+        resource.definition !== 'No definition available' &&
+        resource.updated !== 'Unknown'
+      )
   };
    // ✅ Compare file hashes before writing
    const resourceBundle = JSON.stringify(contentBundle, null, 2);
