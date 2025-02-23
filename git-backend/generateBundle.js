@@ -48,7 +48,7 @@ function getLastUpdated(filePath, startLine, endLine) {
     if (startLine <= 0 || endLine <= 0 || startLine > endLine) {
       return "Unknown";
     }
-    const command = `git log -1 --date=relative --format="%cd" -L ${startLine},${endLine}:${filePath}`;
+    const command = `git log -1 --format="%cd" -L ${startLine},${endLine}:${filePath}`;
     const output = execSync(command).toString().trim();
 
     // Only return the first line (date)
