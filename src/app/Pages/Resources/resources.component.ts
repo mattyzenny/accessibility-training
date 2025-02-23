@@ -90,8 +90,8 @@ export class ResourcesComponent implements OnInit {
         link: 'https://dequeuniversity.com/checklists/web/',
         updated: 'Loading...',
         startLine: 86,
-        endLink: 94,
-      }
+        endLine: 94,
+      },
     ];
       
     // Fetch the full content bundle in one API call
