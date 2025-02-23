@@ -88,7 +88,7 @@ export class ResourcesComponent implements OnInit {
         endLine: 76,
       },
       {
-        term: 'Component Checklist',
+        term: 'ADA Component Checklist',
         definition:
           'A checklist that can be used to ensure that core components are accessible. This checklist is a great resource for designers when building components.',
         link: 'https://dequeuniversity.com/checklists/web/',
