@@ -1,0 +1,122 @@
+<div class="
+    container
+    d-flex
+    justify-content-between
+    align-items-center
+    text-center
+    content
+  ">
+  <h2 class="h4 text-body-secondary">{{title}}</h2>
+</div>
+
+<!-- <div class="container border border-2 border-dark-subtle" id="group-container"> -->
+
+
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      Links are pretty straightforward components, but are often used incorrectly.
+      Buttons and Links may sometimes look similar, but they <strong>should</strong> perform different actions.
+      Links are expected to navigate to a different page or resource, while buttons are used
+      to perform an action. If you remember that links go somewhere, and buttons do something,
+      then you should be well equipped to utilize the two components correctly.
+    </p>
+    <p>Required</p>
+    <ul>
+      <li>
+        A link's purpose <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+          href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context" target="_blank"
+          aria-label="must be clear in its context, WCAG, opens new window">must</a>
+          be clear from its text or surrounding context. A user should be able to navigate to the link and understand it's purpose.
+      </li>
+      <li>
+        A link <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+          href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank"
+          aria-label="must be marked up correctly, WCAG, opens new window">must</a>
+          have a programmatically discernable text, and must be semantically identifiable as a link. This means 
+          it is marked up as a link <code>&lt;a&gt;</code> and has visible or accessible text that match.
+      </li>
+      <li>
+        It is <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum" target="_blank"
+        aria-label="required to pass target size minimum, WCAG, opens new window">required</a>
+        that all elements (not just links) are 24x24 pixels wide, or have a 24x24 margin between the next interactive element.
+      </li>
+      <li>
+        A link <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard" target="_blank"
+        aria-label="must be focusable and navigable via keyboard, WCAG, opens new window">must</a> be keyboard navigable.
+      </li>
+      <li>
+        Color cannot be the only visual means of conveying information. If a link changes color on hover, then
+        it <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color" target="_blank"
+        aria-label="must not use color alone to indicate it is a link, WCAG, opens new window">must</a>
+         also have an underline or other visual indicator. It is best practice to
+         style links with an underline by default, and to have in-line links contrast to their surrounding text.
+      </li>
+    </ul>
+    <p>
+      Best Practices
+    </p>
+    <ul>
+      <li>
+        A link should be styled with an underline by default, and should have a contrastive color to its surrounding texts.
+      </li>
+    </ul>
+  </div>
+
+  <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+      <p>
+        
+      </p>
+    </div>
+    <div class="
+    mt-3
+    mb-3
+    container
+    justify-content-between
+    align-items-center
+    text-center
+    content
+  ">
+      <div class="override-container">
+        <cel-text-link id="button0" data-label="Cancel"> </cel-text-link>
+      </div>
+    </div>
+    <div class="accordion
+              mb-3
+              mt-3
+              container
+              justify-content-between
+              align-items-center
+              text-center
+              content" id="accordion0">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button id="accordionButton0"
+            class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#codeContainer0" aria-expanded="false"
+            aria-controls="codeContainer0">
+            Expand Code
+          </button>
+        </h2>
+        <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
+          <div class="accordion-body">
+            <strong>Button1</strong>
+            <pre></pre>
+            <code><strong>&lt;cel-button</strong> id="button0" data-label="Cancel"<strong>&gt;</strong> <strong>&lt;/cel-button&gt;</strong></code>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="details-container">
+      <p>
+        When you navigate to the button, the <strong>role </strong> <em>'button'</em> and the <strong>name
+        </strong><em> 'cancel'</em> are announced. The <strong>name</strong> here is set with <code>data-label</code>.
+        There are no states or values assigned to this button, so they are not
+        needed.
+      </p>
+    </div>
+  </div>
+<!-- </div> -->

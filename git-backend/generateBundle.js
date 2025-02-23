@@ -2,7 +2,7 @@ const fs = require('fs');
 const execSync = require('child_process').execSync;
 const path = require('path');
 const crypto = require('crypto');
-const filePath = 'src/app/Resources/resources.component.ts'; // The file being tracked
+const filePath = 'src/app/Pages/Resources/resources.component.ts'; // The file being tracked
 const contentBundlePath = path.join(__dirname, 'contentBundle.json');
 const fallbackBundlePath = path.join(__dirname, '../src/assets/contentBundle/contentBundle.json');
 

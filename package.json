@@ -1,6 +1,6 @@
 {
   "name": "accessibility-training",
-  "version": "1.0.6 ",
+  "version": "1.0.8 ",
   "scripts": {
     "ng": "ng",
     "serve": "node git-backend/server.js",
@@ -21,7 +21,7 @@
     "@angular/platform-browser": "~11.2.14",
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "^11.2.14",
-    "@savvaslearning/cel-components": "../../forked-cel-library",
+    "@savvaslearning/cel-components": "../forked-cel-library",
     "bootstrap": "5.3.3",
     "mini-css-extract-plugin": "^2.9.2",
     "rxjs": "~6.6.0",

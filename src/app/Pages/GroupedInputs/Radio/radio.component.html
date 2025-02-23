@@ -1,0 +1,239 @@
+<div class="
+    container
+    d-flex
+    justify-content-between
+    align-items-center
+    text-center
+    content
+  ">
+  <h2 class="h4 text-body-secondary">{{title}}</h2>
+</div>
+
+<!-- Intro Section -->
+
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <p>Radio buttons are often used in groups where only one option can be selected at a time. The
+    expected navigation is for a user to tab into the first radio element, where the <strong>name </strong>
+    <code>&lt;label&gt;</code> will be read,
+    followed by the <strong>role </strong><code>type</code>. It will also read the index of that raido and its
+    associated <code>&lt;legend&gt;</code> or group label.
+    Users can then use arrow keys to traverse the group.
+    Each radio button requires a label for the button, and some sort of group label to help the user understand the
+    context.
+  </p>
+  <p>How to make a radio group accessible?</p>
+  <ul>
+    <li>
+      Starting from the top, grouped inputs
+      <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships" target="_blank"
+        aria-label="must have a visual and meaningful group label, WCAG, opens new window">must</a> have a visible,
+      meaningful label <code>&lt;legend&gt;</code>. These are curicual
+      for the understanding and purpose of the radio group. They can be seen as the instructions or the group label.
+    </li>
+    <li>
+      Similar to many other elements, each individual radio button <a
+        class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions" target="_blank"
+        aria-label="must have a visible descriptive for each input, WCAG, opens new window">must</a> have a visible
+      label. All users need to know what each button represents.
+    </li>
+    <li>
+      The name, role, state, & value <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank"
+        aria-label="must semantically or programmatical be correct, WCAG, opens new window">must</a> be programmatically
+      determinable. <em>(<strong>role</strong> is often baked into the native
+        HTML<code> &lt;button&gt; </code>component</em> | <em><strong>name</strong> is the visible text</em> |
+      <em><strong>value, state</strong> are required for more complex functionality)</em>
+    </li>
+  </ul>
+</div>
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      This first radio group is using the bare mininmum to be accessible. There is a group
+      label, and each radio button has a visible label. Only 2 props are required to pass accessibility when using
+      cel-components.
+    </p>
+  </div>
+
+  <div *ngFor="let radio of radioGroupList; let i =index">
+    <div class="
+    container
+    d-flex
+    justify-content-between
+    align-items-center
+    text-center
+    content
+    ">
+      <div>
+        <cel-radio-button-group [attr.data-show-radio-group-horizontal]="!isMobile" [header]="radio.header"
+          [list]="radio.radioGroup"></cel-radio-button-group>
+      </div>
+    </div>
+  </div>
+  <div class="accordion
+              mb-3
+              mt-3
+              container
+              justify-content-between
+              align-items-center
+              text-center
+              content" id="accordion0">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton0"
+          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer0" aria-expanded="false"
+          aria-controls="codeContainer0">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
+        <div class="accordion-body">
+          <strong>Radio Group 1</strong>
+          <pre></pre>
+  <code>
+    <strong>
+      &lt;cel-radio-button-group
+    </strong>
+  </code>
+  <code style="color: #006748;">
+    [attr.data-show-radio-group-horizontal]=</code>
+  <code>"!isMobile"
+  </code>
+  <code style="color: #006748;">
+    [header]=</code>
+  <code>"radio.header"
+  </code>
+  <code style="color: #006748;">
+    [list]=</code>
+  <code>"radio.radioGroup"<strong>&gt;
+    &lt;/cel-radio-button-group&gt;
+  </strong>
+  </code>
+<pre></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      When you select an input, you will hear the <strong>state</strong> of "selected" be announced.
+      In the second input of the second radio group, the <strong>state</strong> of "disabled" is announced.
+      <br>
+      <code>data-show-radio-group-horizontal</code> is 
+      a styled property that changes display of the radio group,
+      <code> header </code> <small>(Not to be confused with &lt;header&gt; or &lt;h1&gt;...)</small> is providing the group label or <code>&lt;legend&gt;</code>
+      and <code>list</code> is an array of objects defined in the code elsewhere.
+      <em>Notice that in larger viewports the
+        radio group is displayed horizontally. Despite
+        its visual appearance; the key navigation remains the same. </em>
+        </p>
+  </div>
+</div>
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      A common pattern is to enable a disabled field after
+      a user has made a confirming action.
+    </p>
+  </div>
+
+  <div *ngFor="let radio of onSubmitRadioGroupList; let i =index">
+    <div class="
+    container
+    d-flex
+    justify-content-between
+    align-items-center
+    text-center
+    content
+    ">
+
+      <div>
+        <p id="continueLabel">
+          Do you wish to continue?
+        </p>
+        <cel-button #toggleButton (click)="isActive()" data-toggle=true data-label="Yes"
+          data-button-aria-label="Do you wish to Continue? Yes"></cel-button>
+      </div>
+      <div>
+        <cel-radio-button-group [attr.data-show-radio-group-horizontal]="!isMobile" [header]="radio.header"
+          [list]="radio.radioGroup" [attr.data-field-disabled]="!isPressed"></cel-radio-button-group>
+      </div>
+    </div>
+  </div>
+  <div class="accordion
+              mb-3
+              mt-3
+              container
+              justify-content-between
+              align-items-center
+              text-center
+              content" id="accordion1">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton1"
+          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
+          aria-controls="codeContainer1">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+        <div class="accordion-body">
+          <strong>Radio Group</strong>
+          <pre></pre>
+          <code><strong>&lt;p&gt;</strong> Do you wish to continue? <strong>&lt;/p&gt;</strong></code>
+          <pre></pre>
+          <code>
+            <strong>
+              &lt;cel-button
+            </strong>
+              #toggleButton 
+              (click)="isActive()" 
+            data-toggle="true"
+            data-label="Yes"
+            data-button-aria-label=
+            "Do you wish to Continue? Yes"<strong>&gt;
+            &lt;/cel-button&gt;</strong>
+          </code>
+          <pre></pre>
+          <code>
+            <strong>
+              &lt;cel-radio-button-group 
+            </strong>
+          </code>
+          <code>
+            [attr.data-show-radio-group-horizontal]="!isMobile"
+            [header]="radio.header"
+            [list]="radio.radioGroup"
+          </code>
+          <code style="color: #006748;">
+            [attr.data-field-disabled]=</code>
+          <code>"!isPressed"<strong>&gt;
+            &lt;/cel-radio-button-group&gt;
+          </strong>
+          </code>
+          <pre></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      Upon clicking on <code>&lt;cel-button&gt;</code> a function is called
+      <code>(click)="isActive()</code> which toggles a variable of
+      <code>isPressed</code> that is bound to <code>data-field-disabled</code>. This is
+      what disables or enables the entire component.
+    </p>
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+<header>
+  <div class="container mt-3 mb-3">
+    <div class="row">
+      <div class="col">
+        <h1>{{ title }}</h1>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Resources -->
+<div class="container">
+<cel-search-field data-show-search-results="true" data-field-isBubbled="true" (celSearchFieldSelect)="selectedResource($event)"
+  [searchList]="searchList"></cel-search-field>
+  </div>
+
+<div class="container border rounded border-primary-subtle mt-3 mb-3">
+  <div *ngFor="let definition of resources" class="list-group list-group-item-primary mt-3 mb-3 ">
+    <a [href]="definition.link" target="_blank" [id]="definition.id" class="rounded-4  list-group-item list-group-item-action">
+      <div class="d-flex justify-content-between">
+        <h2 class="h5 mb-1">{{definition.term}}</h2>
+        <p [attr.aria-label]="'Last updated ' + definition.updated">
+        <small>{{definition.updated}}</small>
+      </p>
+      </div>
+      <small>
+        <p class="mb-1">{{definition.definition}}</p>
+      </small>
+    </a>
+  </div>
