@@ -19,6 +19,7 @@ export class ResourcesComponent implements OnInit {
 
   constructor(private gitService: GitService, private datePipe: DatePipe) {}
 
+  // Function that formats the date in MMM d, h:mm format
   getFormattedDate(date: string) {
     const dateFormat = this.datePipe.transform(date, 'MMM d'); // 'Feb 16'
     const timeFormat = this.datePipe.transform(date, 'h:mm a'); // '11:00'
@@ -103,7 +104,8 @@ export class ResourcesComponent implements OnInit {
         this.resources = response.Resources.map(
           (resource: { term: any; updated: string }) => ({
             ...resource,
-            updated: this.getFormattedDate(resource.updated), // Formats the date
+            // updated: this.getFormattedDate(resource.updated), // to format in Feb 16, 11:00 format
+            updated: resource.updated,
             id: resource.term.replace(/\s+/g, '-').toLowerCase(), // Adds a new 'id' property for anchor links
           })
         );
