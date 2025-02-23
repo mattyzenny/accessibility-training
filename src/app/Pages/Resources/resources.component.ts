@@ -86,7 +86,7 @@ export class ResourcesComponent implements OnInit {
       {
         term: 'Component Checklist',
         definition:
-          'A checklist that can be used to ensure that core components are accessible. This checklist is a great resource for designers to use when building components.',
+          'A checklist that can be used to ensure that core components are accessible. This checklist is a great resource for designers when building components.',
         link: 'https://dequeuniversity.com/checklists/web/',
         updated: 'Loading...',
         startLine: 86,
