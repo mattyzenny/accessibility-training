@@ -2,15 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { GitService } from '../../Services/git.service';
 import { DatePipe } from '@angular/common';
 
+type Resource = { startLine: number; endLine: number } & Record<string, any>;
+
 @Component({
   selector: 'Resources',
   templateUrl: './resources.component.html',
   styleUrls: ['./resources.component.scss'],
   providers: [DatePipe],
 })
+
 export class ResourcesComponent implements OnInit {
   title = 'Resources';
-  resources: Record<string, any>[] = [];
+  resources: Resource[] = [];
   searchList: Record<string, any>[] = [];
   filePath = 'contentBundle.json';
 
@@ -91,7 +94,7 @@ export class ResourcesComponent implements OnInit {
         updated: 'Loading...',
         startLine: 86,
         endLine: 94,
-      },
+      }
     ];
       
     // Fetch the full content bundle in one API call
