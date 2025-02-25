@@ -9,15 +9,16 @@
   <h2 class="h4 text-body-secondary">{{title}}</h2>
 </div>
 
-<!-- <div class="container border border-2 border-dark-subtle" id="group-container"> -->
-
 
 <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <p class="text-warning bg-dark rounded d-flex justify-content-center align-items-center">
+    <strong>DO NOT USE NATIVE TOOLTIPS UNLESS THEY ARE CUSTOMIZED</strong>
+  </p>
   <p>
     Lets clear the air on what a tooltip is. Historically and colloquially, a tooltip is a native browser
     popup that displays on hover. This is applied with the <strong>title</strong> attribute.
     We can already infer a few things wrong with this. A native HTML tooltip alone
-    does not suffice in todays accessibility standards. A tooltip may be visible for individuals using a mouse
+    does not suffice in todays accessibility standards. A tooltip may be visible for individuals using a mouse,
     but anyone on a mobile device or using strictly keyboard navigation will never see these tooltips.
   </p>
   <p>
@@ -33,10 +34,152 @@
   </p>
 </div>
 
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <p>
+    <strong>Required</strong>
+  </p>
+  <ul>
+    <li>
+      Icons must have a sufficient color contrast of 3:1. It must not break contrast of foreground elements. <a
+        class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast" target="_blank">WCAG 1.4.11</a>
+    </li>
+    <li>
+      Icons and images should not include text. <a
+        class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/images-of-text" target="_blank">WCAG 1.4.5</a>
+    </li>
+    <ol>
+      <li>
+        <strong>Decorative</strong>
+      </li>
+      <ul>
+        <li>
+          Icons must have an empty alt attribute. <a
+            class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+            href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content" target="_blank">WCAG 1.1.1</a>
+        </li>
+      </ul>
+      <li>
+        <strong>Non-Decorative</strong>
+      </li>
+      <ul>
+        <li>
+          Icons must have a text alternative. <a
+            class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+            href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-content" target="_blank">WCAG 1.1.1</a>
+        </li>
+        <li>
+          If interactive, it must have a tabindex <a
+            class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+            href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard" target="_blank">WCAG 2.1.1</a>
+        </li>
+        <li>
+          Use of color cannot be the only thing to convey meaning. <a
+            class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+            href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color" target="_blank">WCAG 1.4.1</a>
+        </li>
+        <li>
+          Icons must be consistently identified and used across the application. <a
+            class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+            href="https://www.w3.org/WAI/WCAG22/Understanding/consistent-behavior" target="_blank">WCAG 3.2.3 </a>
+          &nbsp;
+          <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+            href="https://www.w3.org/WAI/WCAG22/Understanding/consistent-navigation" target="_blank"> WCAG 3.2.4</a>
+        </li>
+        <li>
+          Content that appears on focus needs to be dismissable without moving the mouse. <a
+            class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+            href="https://www.w3.org/WAI/WCAG22/Understanding/content-on-hover-or-focus" target="_blank">WCAG 1.4.13</a>
+        </li>
+      </ul>
+    </ol>
+  </ul>
+  <p>
+    <strong>Best Practice</strong>
+  </p>
+  <ul>
+    <li>
+      Do not rely on the title attribute to provide alternative text. It should only be supplimental and non-required
+      information.
+    </li>
+    <li>
+      Do not use the title attribute with an aria-label to avoid AT redundant annoucement.
+    </li>
+    <li>
+      Provide visible text labels, if not, provide custom tooltips on ambiguous icons.
+    </li>
+  </ul>
+</div>
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <p>
+    <strong>Key Differences</strong>
+  </p>
+  <ul>
+    <li>
+      <strong>Icon</strong>
+      <ol>
+        <li>
+          Icons do not inherently have a tabindex.
+        </li>
+        <li>
+          If decorative, icons should have an empty alt attribute.
+        </li>
+        <li>
+          Icons should never be used as a selectable item unless it is wrapped by a interactive element.
+        </li>
+      </ol>
+    </li>
+    <li>
+      <strong>Icon-Button</strong>
+      <ol>
+        <li>
+          Icon-buttons inherently have a tabindex.
+        </li>
+        <li>
+          Icon-buttons should perform some action.
+        </li>
+        <li>
+          Cel-icon-buttons <em>(currently)</em> are not fully accessible, as they descriminate
+          against keyboard users.
+        </li>
+        <li>
+          Icon-buttons that use only the <em>title</em> attribute are not a good practice.
+        </li>
+      </ol>
+    </li>
+    <li>
+      <strong>Icon-Button (custom)</strong>
+      <ol>
+        <li>
+          Icon-buttons should have a tabindex.
+        </li>
+        <li>
+          Icon-buttons should perform some action.
+        </li>
+        <li>
+          Icon-buttons, if ambiguous, should have onHover and onFocus tooltips.
+        </li>
+      </ol>
+    </li>
+  </ul>
+</div>
+
+
+
+<!-- Component Grouping -->
+
+
 <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
   <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p class="d-flex justify-content-center align-items-center">
+      <strong>Hover & Focus</strong>
+    </p>
     <p>
-
+      Hover and tab to each element.
+    </p>
+    <p>
+      When design requires an icon, that icon should be coupled with a text label.
     </p>
   </div>
   <div class="
@@ -49,11 +192,14 @@
     content
   ">
     <div class="d-flex justify-content-between align-items-center">
-      <cel-icon data-tooltip-label="Assign" data-name="assign"></cel-icon>
+      <div class="d-flex align-items-center">
+        <p class="mb-0">Assign</p>
+        <cel-icon id="assign" data-tooltip-label="Assign" data-name="assign"></cel-icon>
+      </div>
       <cel-icon-button data-color="primary" data-name="assign" data-tooltip-label="Assign">
       </cel-icon-button>
-      <cel-icon-button data-color="primary" data-name="assign" data-bs-tooltip="true"
-        data-bs-title="Assign"></cel-icon-button>
+      <cel-icon-button data-color="primary" data-icon-button-aria-label="Assign" data-name="assign"
+        data-bs-tooltip="true" data-bs-title="Assign"></cel-icon-button>
     </div>
     <div class="accordion
               mb-3
@@ -74,27 +220,72 @@
         </h2>
         <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
           <div class="accordion-body">
-            <strong>Button1</strong>
+            <strong>Icon</strong>
             <pre></pre>
-            <code><strong>&lt;cel-button</strong> id="button0" data-label="Cancel"<strong>&gt;</strong> <strong>&lt;/cel-button&gt;</strong></code>
+            <code><strong>&lt;cel-icon</strong></code>
+            <code style="color: #006748;"> data-tooltip-label=</code>
+            <code>"Assign" </code>
+            <code> data-name=</code>
+            <code>"assign"<strong>&gt;&lt;/cel-icon&gt;</strong></code>
+            <pre></pre>
+
+            <strong>Icon Button</strong>
+            <pre></pre>
+            <code><strong>&lt;cel-icon-button</strong></code>
+            <code> data-color=</code>
+            <code>"primary"</code>
+            <code> data-name=</code>
+            <code>"assign"</code>
+            <code style="color: #006748;">  data-tooltip-label=</code>
+            <code>"Assign"<strong>&gt;&lt;/cel-icon-button&gt;</strong></code>
+            <pre></pre>
+
+            <strong>Icon Button (custom)</strong>
+            <pre></pre>
+            <code><strong>&lt;cel-icon-button</strong></code>
+            <code> data-color=</code>
+            <code>"primary"</code>
+            <code> data-icon-button-aria-label=</code>
+            <code>"Assign"</code>
+            <code> data-name=</code>
+            <code>"assign"</code>
+            <code style="color: #006748;">data-bs-tooltip=</code>
+            <code>"true" </code>
+            <code style="color: #006748;">data-bs-title=</code>
+            <code>"Assign"<strong>&gt;&lt;/cel-icon-button&gt;</strong></code>
+            <pre></pre>
           </div>
         </div>
       </div>
     </div>
     <div class="container" id="details-container">
       <p>
-
+        When using custom tooltips, the tooltip must be dismissible
+        without moving the mouse. Press the <strong>Esc</strong> key to dismiss the onHover, onFocus tooltip.
       </p>
     </div>
   </div>
+</div>
 
-  <div class="form-control border-primary-subtle border-2 container mb-3 mt-3">
-    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-      <p>
+<!-- Component Grouping -->
 
-      </p>
-    </div>
-    <div class="
+
+<div class="form-control border-primary-subtle border-2 container mb-3 mt-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p class="d-flex justify-content-center align-items-center">
+      <strong>Ambiguous Icons</strong>
+    </p>
+    <p>
+      The icons below are not universally understood. It is crucial that designs are considerate of the icons we are
+      using.
+      Not every user is a screen reader user. If we are using a icon-button, it should be understood for all users.
+    </p>
+    <p>
+      Tooltips are the hero for these types of scenarios, where <strong>onHover()</strong> and
+      <strong>onFocus()</strong> stand out.
+    </p>
+  </div>
+  <div class="
     mt-3
     mb-3  
     container
@@ -103,12 +294,14 @@
     text-center
     content
   ">
-      <div class="override-container">
-        <cel-button id="button1" data-label="Cancel"
-          data-button-aria-label="Cancel, we are using data-aria-label to pass hidden accessible text to the user"></cel-button>
-      </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <cel-icon-button data-color="primary" data-name="about-author" data-tooltip-label="About author">
+      </cel-icon-button>
+      <cel-icon-button data-color="primary" data-icon-button-aria-label="About author" data-name="about-author"
+        data-bs-tooltip="true" data-bs-title="About Author"></cel-icon-button>
     </div>
-    <div class="accordion
+  </div>
+  <div class="accordion
               mb-3
               mt-3
               container
@@ -116,40 +309,68 @@
               align-items-center
               text-center
               content" id="accordion1">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button id="accordionButton1"
-            class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
-            data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
-            aria-controls="codeContainer1">
-            Expand Code
-          </button>
-        </h2>
-        <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
-          <div class="accordion-body">
-            <strong>Button2</strong>
-            <pre></pre>
-            <code><strong>&lt;cel-button</strong> id="button1" 
-            data-label="Cancel"</code> <code style="color: #006748;"> data-button-aria-label=</code>
-            <code>"Cancel, we are using data-aria-label to pass hidden accessible text to the user"<strong>&gt;</strong><strong>&lt;/cel-button&gt;</strong></code>
-          </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton1"
+          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
+          aria-controls="codeContainer1">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+        <div class="accordion-body">
+          <strong>Icon Button</strong>
+          <pre></pre>
+          <code><strong>&lt;cel-icon-button</strong></code>
+          <code> data-color=</code>
+          <code>"primary"</code>
+          <code> data-name=</code>
+          <code>"about-author"</code>
+          <code> data-tooltip-label=</code>
+          <code>"About Author"<strong>&gt;&lt;/cel-icon-button&gt;</strong></code>
+          <pre></pre>
+
+          <strong>Icon Button (custom)</strong>
+          <pre></pre>
+          <code><strong>&lt;cel-icon-button</strong></code>
+          <code> data-color=</code>
+          <code>"primary"</code>
+          <code> data-icon-button-aria-label=</code>
+          <code>"About Author"</code>
+          <code> data-name=</code>
+          <code>"about-author"</code>
+          <code> data-bs-tooltip=</code>
+          <code>"true"</code>
+          <code> data-bs-title=</code>
+          <code>"About Author"<strong>&gt;&lt;/cel-icon-button&gt;</strong></code>
+          <pre></pre>
         </div>
       </div>
     </div>
-    <div class="container" id="details-container">
-      <p>
-
-      </p>
-    </div>
   </div>
+  <div class="container" id="details-container">
+    <p>
+      Hopefully now you can see the strength of custom tooltips.
+      Notice without a visible label on icons, keyboard users have no way of understanding the purpose
+      of the icons and icon-buttons.
+    </p>
+  </div>
+</div>
 
-  <div class="form-control border-primary-subtle border-2 container mb-3 mt-3">
-    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-      <p>
 
-      </p>
-    </div>
-    <div class="
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mb-3 mt-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p class="d-flex justify-content-center align-items-center">
+      <strong>Use of Color</strong>
+    </p>
+    <p>
+      If we heavily rely on color, we fall into another problem with our native HTML <strong>title</strong> attributes.
+    </p>
+  </div>
+  <div class="
     mt-3
     mb-3  
     container
@@ -158,11 +379,17 @@
     text-center
     content
   ">
-      <div class="override-container">
-        <cel-button id="button2" data-toggle="true" data-label="Cancel"></cel-button>
-      </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <cel-icon tabindex="0" aria-label="wifi strong" data-tooltip-label="Strong" data-color="primary"
+        data-name="wifi-online"></cel-icon>
+      <cel-icon tabindex="0" aria-label="wifi weak" data-color="notification" data-name="wifi-online"
+        data-tooltip-label="Weak">
+      </cel-icon>
+      <cel-icon tabindex="0" aria-label="wifi offline" data-color="primary" data-color="error" data-name="wifi-online"
+        data-bs-tooltip="true" data-bs-title="Off-line"></cel-icon>
     </div>
-    <div class="accordion
+  </div>
+  <div class="accordion
               mb-3
               mt-3
               container
@@ -170,32 +397,75 @@
               align-items-center
               text-center
               content" id="accordion2">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button id="accordionButton2"
-            class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
-            data-bs-toggle="collapse" data-bs-target="#codeContainer2" aria-expanded="false"
-            aria-controls="codeContainer2">
-            Expand Code
-          </button>
-        </h2>
-        <div id="codeContainer2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
-          <div class="accordion-body">
-            <strong>Button3</strong>
-            <pre></pre>
-            <code><strong>&lt;cel-button</strong> id="button2" 
-            data-label="Cancel"</code> <code style="color: #006748;"> data-toggle=</code>
-            <code>"true"<strong>&gt;</strong><strong>&lt;/cel-button&gt;</strong></code>
-          </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton2"
+          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer2" aria-expanded="false"
+          aria-controls="codeContainer2">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+        <div class="accordion-body">
+          <strong>WiFi Strong</strong>
+          <pre></pre>
+          <code><strong>&lt;cel-icon</strong></code>
+          <code style="color: #006748;"> tabindex=</code>
+          <code>"0"</code>
+          <code> aria-label=</code>
+          <code>"wifi strong"</code>
+          <code> data-tooltip-label=</code>
+          <code>"Strong" </code>
+          <code style="color: #006748;">data-color=</code>
+          <code>"primary"</code>
+          <code> data-name=</code>
+          <code>"wifi-online"<strong>&gt;&lt;/cel-icon&gt;</strong></code>
+          <pre></pre>
+
+          <strong>WiFi Weak</strong>
+          <pre></pre>
+          <code><strong>&lt;cel-icon</strong></code>
+          <code style="color: #006748;"> tabindex=</code>
+          <code>"0"</code>
+          <code> aria-label=</code>
+          <code>"wifi weak" </code>
+          <code> data-tooltip-label=</code>
+          <code>"Weak"</code>
+          <code style="color: #006748;"> data-color=</code>
+          <code>"notification"</code>
+          <code> data-name=</code>
+          <code>"wifi-online"<strong>&gt;&lt;/cel-icon&gt;</strong></code>
+          <pre></pre>
+
+          <strong>WiFi Offline</strong>
+          <pre></pre>
+          <code><strong>&lt;cel-icon</strong></code>
+          <code style="color: #006748;"> tabindex=</code>
+          <code>"0"</code>
+          <code style="color: #006748;"> data-color=</code>
+          <code>"error"</code>
+          <code>"Assign"</code>
+          <code> aria-label=</code>
+          <code>"wifi offline"</code>
+          <code> data-name=</code>
+          <code>"wifi-online"</code>
+          <code> data-bs-tooltip=</code>
+          <code>"true"</code>
+          <code> data-bs-title=</code>
+          <code>"Off-line"<strong>&gt;&lt;/cel-icon&gt;</strong></code>
+          <pre></pre>
         </div>
       </div>
     </div>
-    <div class="container" id="details-container">
-      <p>
-      </p>
-    </div>
   </div>
+  <div class="container" id="details-container">
+    <p>
+      Notice all the icon-buttons were changed to icons. Though icons should not typically fall into
+      the focus order, there are exceptions. The icon here is informative, and as longer
+      as we keep a meaningful and logical focus order, it abides by WCAG criteria.
+    </p>
+  </div>
+</div>
 
-  <!-- </div> -->
-
-  <!-- Provide Error example either in new page or at the bottom of the page here -->
+<!-- Provide Error example either in new page or at the bottom of the page here -->
