@@ -12,31 +12,34 @@
 <!-- <div class="container border border-2 border-dark-subtle" id="group-container"> -->
 
 
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <p>
+    Lets clear the air on what a tooltip is. Historically and colloquially, a tooltip is a native browser
+    popup that displays on hover. This is applied with the <strong>title</strong> attribute.
+    We can already infer a few things wrong with this. A native HTML tooltip alone
+    does not suffice in todays accessibility standards. A tooltip may be visible for individuals using a mouse
+    but anyone on a mobile device or using strictly keyboard navigation will never see these tooltips.
+  </p>
+  <p>
+    There is langauge that excuses the <strong>title</strong> attribute for its inherent inaccessibility,
+    but for the purposes of this training, all content should be accessible to all users.
+  </p>
+  <p>
+    Now using <strong>title</strong> is not wrong, and sometimes it can be quite useful, it just needs to be used
+    sparingly.
+    For instance, using a Native HTML tooltip on an icon button or icon link is preferred. However, it is almost always
+    preferred,
+    if using a tooltip, to provide a tooltip that displays onHover and onFocus.
+  </p>
+</div>
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
   <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
     <p>
-      Icons vs tooltips
+
     </p>
-    <p>Required</p>
-    <ul>
-      <li>
-       
-      </li>
-      <li>
-        
-      </li>
-      <li>
-       
-      </li>
-    </ul>
   </div>
-
-  <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
-    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-      <p>
-
-      </p>
-    </div>
-    <div class="
+  <div class="
     mt-3
     mb-3
     container
@@ -45,9 +48,12 @@
     text-center
     content
   ">
-      <div class="override-container">
-        <cel-icon id="button0" data-label="Cancel"> </cel-icon>
-      </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <cel-icon data-tooltip-label="Assign" data-name="assign"></cel-icon>
+      <cel-icon-button data-color="primary" data-name="assign" data-tooltip-label="Assign">
+      </cel-icon-button>
+      <cel-icon-button data-color="primary" data-name="assign" data-bs-tooltip="true"
+        data-bs-title="Assign"></cel-icon-button>
     </div>
     <div class="accordion
               mb-3
@@ -85,7 +91,7 @@
   <div class="form-control border-primary-subtle border-2 container mb-3 mt-3">
     <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
       <p>
-       
+
       </p>
     </div>
     <div class="
@@ -190,6 +196,6 @@
     </div>
   </div>
 
-<!-- </div> -->
+  <!-- </div> -->
 
-<!-- Provide Error example either in new page or at the bottom of the page here -->
+  <!-- Provide Error example either in new page or at the bottom of the page here -->

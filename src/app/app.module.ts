@@ -16,11 +16,12 @@ import { HowToComponent } from './Pages/HowTo/how-to.component';
 import { ResourcesComponent } from './Pages/Resources/resources.component';
 import { LinksComponent } from './Pages/InteractiveElements/Links/links.component';
 import { PagesComponent } from './Pages/PageStructure/pages.component';
-import { IconsComponent } from './Pages/InteractiveElements/Icons/icons.component';
+import { IconsComponent } from './Pages/Tooltips/Icons/icons.component';
 import { InteractiveElementsComponent } from './Pages/InteractiveElements/interactive-elements.component';
 import { AdvancedComponentsComponent } from './Pages/AdvancedComponents/advanced-components.component';
 import { GroupedInputsComponent } from './Pages/GroupedInputs/grouped-inputs.component';
 import { CheckboxComponent } from './Pages/GroupedInputs/Checkbox/checkbox.component';
+import { TooltipsComponent } from './Pages/Tooltips/tooltips.component';
 
 defineCustomElements();
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'Pages', component: PagesComponent},
   {path: 'How-To', component: HowToComponent},
   {path: 'Resources-Testing', component: ResourcesComponent},
+  {path: 'Tooltips', component: TooltipsComponent},
 ];
 
 @NgModule({
@@ -53,6 +55,7 @@ const routes: Routes = [
     PagesComponent,
     IconsComponent,
     CheckboxComponent,
+    TooltipsComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

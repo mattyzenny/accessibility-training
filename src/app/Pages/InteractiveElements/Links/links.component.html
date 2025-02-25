@@ -11,67 +11,90 @@
 
 <!-- <div class="container border border-2 border-dark-subtle" id="group-container"> -->
 
+<!-- Intro Section -->
 
-  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-    <p>
-      Links are pretty straightforward components, but are often used incorrectly.
-      Buttons and Links may sometimes look similar, but they <strong>should</strong> perform different actions.
-      Links are expected to navigate to a different page or resource, while buttons are used
-      to perform an action. If you remember that links go somewhere, and buttons do something,
-      then you should be well equipped to utilize the two components correctly.
-    </p>
-    <p>Required</p>
-    <ul>
-      <li>
-        A link's purpose <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
-          href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context" target="_blank"
-          aria-label="must be clear in its context, WCAG, opens new window">must</a>
-          be clear from its text or surrounding context. A user should be able to navigate to the link and understand it's purpose.
-      </li>
-      <li>
-        A link <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
-          href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank"
-          aria-label="must be marked up correctly, WCAG, opens new window">must</a>
-          have a programmatically discernable text, and must be semantically identifiable as a link. This means 
-          it is marked up as a link <code>&lt;a&gt;</code> and has visible or accessible text that match.
-      </li>
-      <li>
-        It is <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <p>
+    Links are are simple components that are often misued.
+    Buttons and Links may sometimes look similar, but they <strong>should</strong> perform different actions.
+    Links are expected to navigate to a different page or resource, while buttons are used
+    to perform an action. If you remember <strong><em> links go somewhere, and buttons do something</em></strong>,
+    then you should be well equipped to utilize the two components correctly.
+  </p>
+  <p>Required</p>
+  <ul>
+    <li>
+      A link's purpose <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context" target="_blank"
+        aria-label="must be clear in its context, WCAG, opens new window">must</a>
+      be clear from its text or surrounding context. A user should be able to navigate to the link and understand it's
+      purpose.
+    </li>
+    <li>
+      A link <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank"
+        aria-label="must be marked up correctly, WCAG, opens new window">must</a>
+      have a programmatically discernable text, and must be semantically identifiable as a link. This means
+      it is marked up as a link <code>&lt;a&gt;</code> and has visible or accessible text that match.
+    </li>
+    <li>
+      It is <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
         href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum" target="_blank"
         aria-label="required to pass target size minimum, WCAG, opens new window">required</a>
-        that all elements (not just links) are 24x24 pixels wide, or have a 24x24 margin between the next interactive element.
-      </li>
-      <li>
-        A link <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+      that all elements (not just links) are 24x24 pixels wide, or have a 24x24 margin between the next interactive
+      element.
+    </li>
+    <li>
+      A link <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
         href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard" target="_blank"
-        aria-label="must be focusable and navigable via keyboard, WCAG, opens new window">must</a> be keyboard navigable.
-      </li>
-      <li>
-        Color cannot be the only visual means of conveying information. If a link changes color on hover, then
-        it <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        aria-label="must be focusable and navigable via keyboard, WCAG, opens new window">must</a> be keyboard
+      navigable.
+    </li>
+    <li>
+      Color cannot be the only visual means of conveying information. If a link changes color on hover, then
+      it <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
         href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color" target="_blank"
         aria-label="must not use color alone to indicate it is a link, WCAG, opens new window">must</a>
-         also have an underline or other visual indicator. It is best practice to
-         style links with an underline by default, and to have in-line links contrast to their surrounding text.
-      </li>
-    </ul>
-    <p>
-      Best Practices
-    </p>
-    <ul>
-      <li>
-        A link should be styled with an underline by default, and should have a contrastive color to its surrounding texts.
-      </li>
-    </ul>
-  </div>
+      also have an underline or other visual indicator. It is best practice to
+      style links with an underline by default, and to have in-line links contrast to their surrounding text.
+    </li>
+    <li>
+      When a link is truncated, it <a href="https://www.w3.org/WAI/WCAG22/Understanding/text-spacing" target="_blank"
+        aria-label="must display truncated text, WCAG, opens new window"
+        class="text-info-emphasis fw-semibold link-underline-info link-offset-2">must</a> either display the full text
+      on focus and on hover, or in the linked page iteself.
+    </li>
+  </ul>
+  <p>
+    Best Practices
+  </p>
+  <ul>
+    <li>
+      A link should be styled with an underline by default, and should have a contrastive color to its surrounding
+      texts.
+    </li>
+    <li>
+      A link should explicitly state where it will navigate to. For example, a common trend is for a link that opens a
+      new tab should say
+      "Opens in a new window".
+    </li>
+  </ul>
+</div>
 
-  <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
-    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-      <p>
-        
-      </p>
-    </div>
-    <div class="
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      Links in a paragraph <strong>must</strong> be distinguishable
+      from the surrounding text. The example uses a different font family, underlines the text, and uses color. At least
+      2 of these are required
+      for a link to be considered accessible.
+    </p>
+  </div>
+  <div class="
     mt-3
     mb-3
     container
@@ -80,43 +103,184 @@
     text-center
     content
   ">
-      <div class="override-container">
-        <cel-text-link id="button0" data-label="Cancel"> </cel-text-link>
-      </div>
+    <div class="override-container">
+      <p> Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et
+        <cel-text-link data-truncate="false" data-text-link-aria-label="Lorem Ipsum, navigates to top of page"
+          (celTextLinkClicked)="scrollToTop($event)" data-label="Lorem Ipsum"> </cel-text-link>
+        dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
     </div>
-    <div class="accordion
+  </div>
+  <div class="accordion
               mb-3
               mt-3
               container
               justify-content-between
               align-items-center
               text-center
-              content" id="accordion0">
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button id="accordionButton0"
-            class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
-            data-bs-toggle="collapse" data-bs-target="#codeContainer0" aria-expanded="false"
-            aria-controls="codeContainer0">
-            Expand Code
-          </button>
-        </h2>
-        <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
-          <div class="accordion-body">
-            <strong>Button1</strong>
-            <pre></pre>
-            <code><strong>&lt;cel-button</strong> id="button0" data-label="Cancel"<strong>&gt;</strong> <strong>&lt;/cel-button&gt;</strong></code>
-          </div>
+              content" id="accordion3">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton3"
+          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer3" aria-expanded="false"
+          aria-controls="codeContainer3">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+        <div class="accordion-body">
+          <strong>Link</strong>
+          <pre></pre>
+          <code><strong>&lt;cel-text-link</strong></code> <code
+            style="color: #006748;"> data-text-link-aria-label=</code>
+          <code>"Lorem Ipsum, navigates to top of page" (celTextLinkClicked)="scrollToTop($event)" data-label="Lorem Ipsum"</code>
+          <code><strong>&gt;</strong> <strong>&lt;/cel-text-link&gt;</strong></code>
         </div>
       </div>
     </div>
-    <div class="container" id="details-container">
-      <p>
-        When you navigate to the button, the <strong>role </strong> <em>'button'</em> and the <strong>name
-        </strong><em> 'cancel'</em> are announced. The <strong>name</strong> here is set with <code>data-label</code>.
-        There are no states or values assigned to this button, so they are not
-        needed.
-      </p>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      Notice the link is focusable. All <code>&lt;cel-text-link&gt;</code> components are focusable by default.
+      The <strong>HAT</strong> is provided by the <code>data-text-link-aria-label</code> attribute to provide additonal
+      context to screen reader users.
+    </p>
+  </div>
+</div>
+
+
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      Though it is always better to provide visible text as labels for your links, sometimes
+      the design only uses icons.
+    </p>
+    <ul>
+      <li>
+        <span class="text-danger">Warning:</span> If you truncate a link, you <strong>must</strong> provide a means for
+        that label to come back into view. This can be done by
+        providing a tooltip on hover and on focus, or by the truncated text being revealed on the linked page.
+      </li>
+      <li>
+        You should <strong>never</strong> use only icons unless that icon is universally understood.
+      </li>
+      <li>
+        When a link navigates a user to a new tab, it <strong>should</strong> always announce it is opening in a new
+        window.
+      </li>
+    </ul>
+    <p>
+      Hover over each link. Noticed a tooltip appears only on one. That is because
+      we want to display the full truncated links to all users. The <em>mail</em> link
+      already has visible text so a <strong><em>title</em></strong> attribute would be redundant and unecessary.
+    </p>
+  </div>
+  <div class="
+    mt-3
+    mb-3
+    container
+    justify-content-between
+    align-items-center
+    text-center
+    content
+  ">
+    <div class="override-container">
+      <cel-text-link data-truncate="true" data-show-icon-left="true" data-open-in-new-tab="true"
+        data-label="Google Drive" data-link-href="https://google.com/drive" data-show-icon="true"
+        data-icon-name="drive-link">
+      </cel-text-link>
+      <cel-text-link style="margin-left: 10px" data-text-link-aria-label="send mail" data-open-in-new-tab="false"
+        (celTextLinkClicked)="windowAlert($event)" data-label="mail" data-show-icon="true" data-icon-name="send">
+      </cel-text-link>
     </div>
   </div>
-<!-- </div> -->
+  <div class="accordion
+              mb-3
+              mt-3
+              container
+              justify-content-between
+              align-items-center
+              text-center
+              content" id="accordion4">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button id="accordionButton4"
+          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer4" aria-expanded="false"
+          aria-controls="codeContainer4">
+          Expand Code
+        </button>
+      </h2>
+      <div id="codeContainer4" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+        <div class="accordion-body">
+          <strong>Link 1</strong>
+          <pre></pre>
+          <code><strong>&lt;cel-text-link</strong></code>
+          <code style="color: #006748;"> data-truncate=</code>
+          <code>"true"</code>
+          <code style="color: #006748;"> data-show-icon-left=</code>
+          <code>"true"</code>
+          <code style="color: #006748;"> data-open-in-new-tab=</code>
+          <code>"true"</code>
+          <code> data-label=</code>
+          <code>"Google Drive"</code>
+          <code> data-link-href=</code>
+          <code>"https://google.com/drive"</code>
+          <code style="color: #006748;"> data-show-icon=</code>
+          <code>"true"</code>
+          <code style="color: #006748;"> data-icon-name=</code>
+          <code>"drive-link"</code>
+          <code><strong>&gt;</strong> <strong>&lt;/cel-text-link&gt;</strong></code>
+
+          <pre></pre>
+          <strong>Link 2</strong>
+          <pre></pre>
+          <code><strong>&lt;cel-text-link</strong></code>
+          <code style="color: #006748;"> style="margin-left: 10px"</code>
+          <code> data-text-link-aria-label=</code>
+          <code>"send mail"</code>
+          <code> data-open-in-new-tab=</code>
+          <code>"false"</code>
+          <code> (celTextLinkClicked)=</code>
+          <code>"windowAlert($event)"</code>
+          <code> data-label=</code>
+          <code>"mail"</code>
+          <code> data-show-icon=</code>
+          <code>"true"</code>
+          <code> data-icon-name=</code>
+          <code>"send"</code>
+          <code><strong>&gt;</strong> <strong>&lt;/cel-text-link&gt;</strong></code>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      Lets breakdown the properties used in the examples below.
+    </p>
+    <ul>
+      <li>
+        <code>data-truncate="true"</code> is used to truncate the text of the link.
+        Current design has the <strong>'...'</strong> elipses. Since we have the text truncated, we also
+        must provide a meaningful icon.
+      </li>
+      <li>
+        Because the link is taking us to a new page, we apply the <code>data-open-in-new-tab="true"</code> property.
+      </li>
+    </ul>
+    <p>
+      <span class="text-danger">Warning:</span> when you have 2 links next to eachother, they must have a minimum of
+      24x24 margin between the targetted areas.
+      The current design of <code>&lt;cel-text-link&gt;</code> does not have this built in. It must be styled
+      independently.
+    </p>
+  </div>
+</div>
