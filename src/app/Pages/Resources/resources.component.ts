@@ -95,6 +95,15 @@ export class ResourcesComponent implements OnInit {
         updated: 'Loading...',
         startLine: 86,
         endLine: 94,
+      },
+      {
+        term: 'Bootstrap',
+        definition:
+          'Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first, front-end web development. It was leveraged alongside cel-components styles to build this training.',
+        link: 'https://getbootstrap.com/',
+        updated: 'Loading...',
+        startLine: 99,
+        endLine: 107,
       }
     ];
       
