@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, HostListener, AfterViewInit, Input } from '@angular/core';
-import { ReflowService } from 'src/app/Services/reflow.service';
+import { ReflowService } from 'src/app/Services/ReflowService/reflow.service';
 
 @Component({
   selector: 'InputValidations',

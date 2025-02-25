@@ -5,7 +5,7 @@ import {
   ElementRef,
   AfterViewInit,
 } from '@angular/core';
-import { ReflowService } from '../../Services/reflow.service';
+import { ReflowService } from '../../Services/ReflowService/reflow.service';
 
 @Component({
   selector: 'Banner',

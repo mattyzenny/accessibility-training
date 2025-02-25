@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GitService } from '../../Services/git.service';
+import { GitService } from '../../Services/GitService/git.service';
 import { DatePipe } from '@angular/common';
 
 type Resource = { startLine: number; endLine: number } & Record<string, any>;

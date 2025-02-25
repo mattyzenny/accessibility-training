@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TooltipService } from './../../../Services/tooltip.service';
+import { TooltipService } from '../../../Services/TooltipService/tooltip.service';
 
 @Component({
   selector: 'Icons',
