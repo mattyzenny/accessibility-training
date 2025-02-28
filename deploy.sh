@@ -34,12 +34,14 @@ if [[ "$confirmation_delete" != "y" ]]; then
 fi
 
 # Remove all files from the current directory (except for .git directory)
-echo "Removing all files from the current directory..."
+echo "Removing all files from root and assets directory..."
 rm -f ./*
+rm -rf assets
 
 # Move the contents from dist/accessibility-training to the current directory
 echo "Moving files from dist/accessibility-training to current directory..."
 mv dist/accessibility-training/* ./
+mv dist/accessibility-training/assets ./
 
 
 echo "Ready to Deploy? (y/n)"
