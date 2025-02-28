@@ -18,13 +18,11 @@
   <div *ngFor="let definition of resources" class="list-group list-group-item-primary mt-3 mb-3 ">
     <a [href]="definition.link" target="_blank" [id]="definition.id" class="rounded-4  list-group-item list-group-item-action">
       <div class="d-flex justify-content-between">
-        <h2 class="h5 mb-1">{{definition.term}}</h2>
-        <p [attr.aria-label]="'Last updated ' + definition.updated">
-        <small>{{definition.updated}}</small>
-      </p>
+        <h2 class="h5 mb-1">{{definition.term}}</h2>    
+          <small [attr.aria-label]="'Last updated ' + definition.updated" class="d-inline-flex text-body-secondary fst-italic fs-8 flex-wrap ms-2">Last updated: {{definition.updated}}</small>
       </div>
       <small>
-        <p class="mb-1">{{definition.definition}}</p>
+        <p class="mb-1 mt-2">{{definition.definition}}</p>
       </small>
     </a>
   </div>

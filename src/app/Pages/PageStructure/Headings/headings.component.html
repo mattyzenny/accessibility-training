@@ -1,0 +1,167 @@
+<div class="
+    container
+    d-flex
+    justify-content-between
+    align-items-center
+    text-center
+    content
+  ">
+    <h2 class="h4 text-body-secondary">{{title}}</h2>
+</div>
+
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <h3>When to Use Headings</h3>
+    <ul>
+        <li>Use a heading when introducing a new section of content.</li>
+        <li>Each page should have exactly one <code>&lt;h1&gt;</code>.</li>
+        <li>Headings must be semantically marked up, not styled with CSS.</li>
+        <li>Headings should be sequentially ordered.</li>
+    </ul>
+
+    <h3>When Not to Use Headings</h3>
+    <ul>
+        <li>Do not use headings for visual styling. Use CSS instead.</li>
+        <li>Do not use <code>&lt;b&gt;</code> or <code>&lt;strong&gt;</code> to visually replace a heading.</li>
+        <li>Do not use headings as labels for form inputs. Use the <code>&lt;label&gt;</code> element.</li>
+    </ul>
+
+    <h3>Best Practices</h3>
+    <ul>
+        <li>Headings should be short, clear, and describe the section’s content.</li>
+        <li>Do not use more than one <code>&lt;h1&gt;</code> per page.</li>
+        <li>Ensure screen readers can navigate your page structure easily by following correct heading order.</li>
+        <li>Do not use aria-level. There is almost never a reason to use aria-level over HTML <code>&lt;h1&gt;</code>
+        </li>
+    </ul>
+</div>
+
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <h3>Common Mistakes</h3>
+    <ul>
+        <li>
+            ❌ <strong>Bad:</strong> Multiple MFE's sharing the same page may have non-sequential headings.
+            ✅ <strong>Good:</strong> Coordinate heading levels across MFEs to maintain a logical structure.
+        </li>
+        <li>
+            ❌ <strong>Bad:</strong> Starting a page with the wrong heading level.
+            ✅ <strong>Good:</strong> Ensure the main page <code>&lt;h1&gt;</code> is set by the shell app, and MFEs use
+            <code>&lt;h2&gt;</code> or lower as needed.
+        </li>
+        <li>
+            ❌ <strong>Bad:</strong> Styling <code>&lt;div&gt;</code> to look like a heading.
+            ✅ <strong>Good:</strong> Use a proper <code>&lt;h2&gt;</code> or <code>&lt;h3&gt;</code> tag.
+        </li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+        <p>
+            This is a real world example of a page with headings. Highlighted are expected headings; however,
+            the heirarchy can be tricky.
+        </p>
+    </div>
+    <div>
+        <img [src]="dashboard" alt="Savvas Dashboard Landing Page" class="img-fluid" />
+    </div>
+    <div>
+    </div>
+    <div>
+
+    </div>
+
+    <!-- Accordion for Code -->
+    <div class="accordion
+      mb-3
+      mt-3
+      container
+      justify-content-between
+      align-items-center
+      text-center
+      content" id="accordion1">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button id="accordionButton1"
+                    class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
+                    aria-controls="codeContainer1">
+                    Expand Code
+                </button>
+            </h2>
+            <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                <div class="accordion-body">
+                    <strong>Card Headings</strong>
+                    <pre></pre>
+                    <code>
+                        <strong>&lt;div&gt;</strong>
+                            <strong style="color: green;">&lt;h2&gt;</strong>
+                                <strong>&lt;a&gt;</strong> 
+                                    A11y 7 Class 
+                                <strong>&lt;/a&gt;</strong>
+                            <strong style="color: green;">&lt;/h2&gt;</strong>
+                            <strong>&lt;app-assignments-listing/&gt;</strong>
+                        <strong>&lt;/div&gt;</strong>
+                    </code>
+                    <pre></pre>
+                    <code>
+                        <strong>&lt;div&gt;</strong>
+                            <strong style="color: green;">&lt;h2&gt;</strong>
+                                <strong>&lt;a&gt;</strong> 
+                                    Experience Math K-5 NA 
+                                <strong>&lt;/a&gt;</strong>
+                            <strong style="color: green;">&lt;/h2&gt;</strong>
+                            <strong>&lt;app-assignments-listing/&gt;</strong>
+                        <strong>&lt;/div&gt;</strong>
+                    </code>
+                    <pre></pre>
+                    <code>
+                        <strong>&lt;div&gt;</strong>
+                            <strong style="color: green;">&lt;h2&gt;</strong>
+                                <strong>&lt;a&gt;</strong> 
+                                    Iowa City Proposals Team DoDEA 
+                                <strong>&lt;/a&gt;</strong>
+                            <strong style="color: green;">&lt;/h2&gt;</strong>
+                            <strong>&lt;app-assignments-listing/&gt;</strong>
+                        <strong>&lt;/div&gt;</strong>
+                    </code>
+                    <pre></pre>
+                    <code>
+                        <strong>&lt;div&gt;</strong>
+                            <strong style="color: green;">&lt;h2&gt;</strong>
+                                <strong>&lt;a&gt;</strong> 
+                                    PASADA-1717 
+                                <strong>&lt;/a&gt;</strong>
+                            <strong style="color: green;">&lt;/h2&gt;</strong>
+                            <strong>&lt;app-assignments-listing/&gt;</strong>
+                        <strong>&lt;/div&gt;</strong>
+                    </code>
+                    <pre></pre>
+                    <code>
+                        <strong>&lt;program-list&gt;</strong>
+                            <div>
+                                <strong class="text-decoration-line-through rounded text-black bg-warning">&lt;h2&gt;</strong>
+                                My Programs  
+                                <strong class="text-decoration-line-through rounded bg-warning text-black">&lt;/h2&gt;</strong>
+                            </div>
+                            <strong>&lt;program-list&gt;</strong>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="details-container">
+        <p>
+            An argument can be made that the 'My Programs' heading should be a lower heading level. Ask yourself, does it carry the
+            same importance, styling, or information as the others? Is it visually less important?
+        </p>
+    </div>
+</div>

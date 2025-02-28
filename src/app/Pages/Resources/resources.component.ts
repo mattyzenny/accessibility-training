@@ -63,7 +63,7 @@ export class ResourcesComponent implements OnInit {
       {
         term: 'Deque Systems',
         definition:
-          'Deque Systems is a company that heads most of the software and tooling around accessibility. The closely align with the W3C and are a great resource for learning more about accessibility.',
+          'Deque Systems is a company that heads most of the software and tooling around accessibility. They closely align with the W3C and are a great resource for learning more about accessibility.',
         link: 'https://www.deque.com/',
         updated: 'Loading...',
         startLine: 59,

@@ -17,18 +17,22 @@
     <code>&lt;label&gt;</code> will be read,
     followed by the <strong>role </strong><code>type</code>. It will also read the index of that raido and its
     associated <code>&lt;legend&gt;</code> or group label.
-    Users can then use arrow keys to traverse the group.
+    Users must then use arrow keys to traverse the group.
     Each radio button requires a label for the button, and some sort of group label to help the user understand the
     context.
+  </p>
+  <p>
+    There is no need to add a tabindex to the radio button. It is already focusable by default.
+    In order for radio buttons to be grouped, they need to share a 'name' attribute. This is handled at the cel level.
   </p>
   <p><strong>Required</strong></p>
   <ul>
     <li>
-      Starting from the top, grouped inputs
+      Starting from the top level of the component, grouped inputs
       <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
         href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships" target="_blank"
         aria-label="must have a visual and meaningful group label, WCAG, opens new window">must</a> have a visible,
-      meaningful label <code>&lt;legend&gt;</code>. These are curicual
+      meaningful label <code>&lt;legend&gt;</code>. These are crucial
       for the understanding and purpose of the radio group. They can be seen as the instructions or the group label.
     </li>
     <li>

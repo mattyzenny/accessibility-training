@@ -22,6 +22,8 @@ import { AdvancedComponentsComponent } from './Pages/AdvancedComponents/advanced
 import { GroupedInputsComponent } from './Pages/GroupedInputs/grouped-inputs.component';
 import { CheckboxComponent } from './Pages/GroupedInputs/Checkbox/checkbox.component';
 import { TooltipsComponent } from './Pages/Tooltips/tooltips.component';
+import { LandmarksComponent } from './Pages/PageStructure/Landmarks/landmarks.component';
+import { HeadingsComponent } from './Pages/PageStructure/Headings/headings.component';
 
 defineCustomElements();
 const routes: Routes = [
@@ -56,6 +58,8 @@ const routes: Routes = [
     IconsComponent,
     CheckboxComponent,
     TooltipsComponent,
+    HeadingsComponent,
+    LandmarksComponent,
   ],
   imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
