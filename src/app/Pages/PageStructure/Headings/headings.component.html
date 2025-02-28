@@ -10,7 +10,7 @@
 </div>
 
 <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-    <h3>When to Use Headings</h3>
+    <h3 class="h5 text-body-secondary">When to Use Headings</h3>
     <ul>
         <li>Use a heading when introducing a new section of content.</li>
         <li>Each page should have exactly one <code>&lt;h1&gt;</code>.</li>
@@ -18,14 +18,14 @@
         <li>Headings should be sequentially ordered.</li>
     </ul>
 
-    <h3>When Not to Use Headings</h3>
+    <h3 class="h5 text-body-secondary">When Not to Use Headings</h3>
     <ul>
         <li>Do not use headings for visual styling. Use CSS instead.</li>
         <li>Do not use <code>&lt;b&gt;</code> or <code>&lt;strong&gt;</code> to visually replace a heading.</li>
         <li>Do not use headings as labels for form inputs. Use the <code>&lt;label&gt;</code> element.</li>
     </ul>
 
-    <h3>Best Practices</h3>
+    <h3 class="h5 text-body-secondary">Best Practices</h3>
     <ul>
         <li>Headings should be short, clear, and describe the section’s content.</li>
         <li>Do not use more than one <code>&lt;h1&gt;</code> per page.</li>
@@ -36,19 +36,22 @@
 </div>
 
 <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-    <h3>Common Mistakes</h3>
+    <h3 class="h5 text-body-secondary">Common Mistakes</h3>
     <ul>
         <li>
             ❌ <strong>Bad:</strong> Multiple MFE's sharing the same page may have non-sequential headings.
+            <br>
             ✅ <strong>Good:</strong> Coordinate heading levels across MFEs to maintain a logical structure.
         </li>
         <li>
             ❌ <strong>Bad:</strong> Starting a page with the wrong heading level.
+            <br>
             ✅ <strong>Good:</strong> Ensure the main page <code>&lt;h1&gt;</code> is set by the shell app, and MFEs use
             <code>&lt;h2&gt;</code> or lower as needed.
         </li>
         <li>
             ❌ <strong>Bad:</strong> Styling <code>&lt;div&gt;</code> to look like a heading.
+            <br>
             ✅ <strong>Good:</strong> Use a proper <code>&lt;h2&gt;</code> or <code>&lt;h3&gt;</code> tag.
         </li>
     </ul>
@@ -87,17 +90,17 @@
       justify-content-between
       align-items-center
       text-center
-      content" id="accordion1">
+      content" id="accordion0">
         <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button id="accordionButton1"
+            <h4 class="accordion-header">
+                <button id="accordionButton0"
                     class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed"
-                    type="button" data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
-                    aria-controls="codeContainer1">
+                    type="button" data-bs-toggle="collapse" data-bs-target="#codeContainer0" aria-expanded="false"
+                    aria-controls="codeContainer0">
                     Expand Code
                 </button>
-            </h2>
-            <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+            </h4>
+            <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
                 <div class="accordion-body">
                     <strong>Card Headings</strong>
                     <pre></pre>
@@ -160,8 +163,208 @@
     </div>
     <div class="container" id="details-container">
         <p>
-            An argument can be made that the 'My Programs' heading should be a lower heading level. Ask yourself, does it carry the
+            An argument can be made that the red highlighted heading should be a lower heading level. Ask yourself, does
+            it carry the
             same importance, styling, or information as the others? Is it visually less important?
         </p>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+        <p>
+            The example below features combined MFE pages.
+            It emphasizes the importance of identifying consistent patterns across an application,
+            and using them as anchor points for headings.
+        </p>
+    </div>
+    <div>
+        <img [src]="assignmentSummary" alt="Savvas Assignment Summary Page" class="img-fluid" />
+    </div>
+    <div>
+    </div>
+    <div>
+
+    </div>
+
+    <!-- Accordion for Code -->
+    <div class="accordion
+      mb-3
+      mt-3
+      container
+      justify-content-between
+      align-items-center
+      text-center
+      content" id="accordion1">
+        <div class="accordion-item">
+            <h4 class="accordion-header">
+                <button id="accordionButton1"
+                    class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
+                    aria-controls="codeContainer1">
+                    Expand Code
+                </button>
+            </h4>
+            <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+                <div class="accordion-body">
+                    <strong>Assignment Page</strong>
+                    <pre></pre>
+                    <code>
+                        <strong>&lt;div&gt;</strong>
+                                    A11y 7 Class 
+                                    <strong>&lt;/div&gt;</strong>
+                            <strong> &lt;div</strong>
+                            title="1-10: Additional Example 3"<strong>&gt;</strong>
+                            1-10: Additional Example 3
+                            <strong>&lt;/div&gt;</strong>
+                            &nbsp;<strong class="text-decoration-line-through rounded text-black bg-warning">&lt;h1&gt;</strong>
+                            Assignment Summary
+                            <strong class="text-decoration-line-through rounded text-black bg-warning">&lt;/h1&gt;</strong>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="details-container">
+        <p>
+            Consistency is important. On this specific page, the first highlighted section is not a heading. If we were
+            to navigate
+            to the previous page, we would see that same section of content as a <code>&lt;h1&gt;</code>.
+        </p>
+        <p>
+            Another way to identify a missing heading is by looking at the CSS.
+            We are visually embolding and changing the size of the font. We are
+            applying a change to the text to draw the attention of the user, however we provide no such support for
+            non-sighted users.
+        </p>
+        <p>
+            To remain consistent, the <code>&lt;h1&gt;</code> should be applied on the first element,
+            and the second element should be a <code>&lt;h2&gt;</code>.
+        </p>
+    </div>
+</div>
+
+
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+        <p>
+            Beyond this page, three other pages share the same structure and layout.
+            However, each page starts with a different heading level, creating inconsistency.
+            Additionally, the section headings vary across these pages.
+            While those inconsistencies are outside the scope of this example,
+            they highlight the importance of maintaining a uniform design and structure for long-term usability.
+        </p>
+    </div>
+    <div>
+        <img [src]="aboutMe" alt="Savvas Assignment Summary Page" class="img-fluid" />
+    </div>
+    <div>
+    </div>
+    <div>
+
+    </div>
+
+    <!-- Accordion for Code -->
+    <div class="accordion
+      mb-3
+      mt-3
+      container
+      justify-content-between
+      align-items-center
+      text-center
+      content" id="accordion2">
+        <div class="accordion-item">
+            <h4 class="accordion-header">
+                <button id="accordionButton2"
+                    class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#codeContainer2" aria-expanded="false"
+                    aria-controls="codeContainer2">
+                    Expand Code
+                </button>
+            </h4>
+            <div id="codeContainer2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                <div class="accordion-body">
+                    <strong>About Me Page</strong>
+                    <pre></pre>
+                    <code>
+                        <strong class="text-decoration-line-through rounded text-black bg-warning">&lt;h3&gt;</strong>
+                                    About Me
+                        <strong class="text-decoration-line-through rounded text-black bg-warning">&lt;/h3&gt;</strong>
+                        <pre></pre>
+                        </code>
+                    Student Name
+                    <code>
+                        <pre></pre>
+                        <strong>&lt;div</strong>
+                            class="name-container section"<strong>&gt;</strong>
+                            <span class=" rounded text-black bg-warning">
+                            <br>
+                                &lt; &gt;
+                            <br>
+                            </span>
+                            &lt;label for="textField"&gt;
+                            <strong>&lt;/div&gt;</strong>
+                            <pre></pre>
+                            </code>
+                    Profile Image
+                    <code>
+                            <pre></pre>
+                            <strong class="text-decoration-line-through rounded text-black bg-warning">&lt;div</strong>
+                            aria-level="2"<strong class="text-decoration-line-through rounded text-black bg-warning">&gt;</strong>
+                            Profile Image
+                            <strong class="text-decoration-line-through rounded text-black bg-warning">&lt;/div&gt;</strong>
+                            <pre></pre>
+                            </code>
+                    Grades You Teach
+                    <code>
+                            <pre></pre>
+                            <strong>&lt;div&gt;</strong>
+                            <strong class="text-decoration-line-through rounded text-black bg-warning">&lt;p&gt;</strong>
+                            Grades you teach
+                            <strong class="text-decoration-line-through rounded text-black bg-warning">&lt;/p&gt;</strong>
+                            <strong>&lt;/div&gt;</strong>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="details-container">
+        <p>
+            Lets look at a few of the mistakes on the heading structure.
+        </p>
+        <ul>
+            <li><strong>Incorrect beginning header</strong><br>
+                The page starts with an <code>&lt;h3&gt;</code> instead of <code>&lt;h1&gt;</code> or
+                <code>&lt;h2&gt;</code>,
+                skipping logical heading levels.
+            </li>
+            <li><strong>Missing heading for the section</strong>
+                <br>
+                The User Name” section lacks a proper heading, making it harder for assistive technologies to identify
+                its importance.
+            </li>
+            <li><strong>Incorrect use of semantic heading</strong>
+                <br>
+                The “Profile Image” section uses a &lt;div aria-level="2"&gt;, which is improper. &lt;div&gt; is not a
+                valid heading element and should be replaced with an appropriatly descending <code>&lt;h2&gt;</code> or
+                <code>&lt;h3&gt;</code>.
+            </li>
+            <li><strong>Heading order is inconsistent</strong>
+                <br>
+                If following the page structure, the "Grades you teach" section should have a <code>&lt;h3&gt;</code>
+                but is using <code>&lt;p&gt;</code>, breaking the expected hierarchy.
+            </li>
+        </ul>
     </div>
 </div>
