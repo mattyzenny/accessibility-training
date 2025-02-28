@@ -4,7 +4,7 @@
       "term": "AT",
       "definition": "Assistive Technology is equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.",
       "link": "https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.",
-      "updated": "Fri Feb 21 00:55:15 2025 -0500"
+      "updated": "Fri Feb 21 00:49:20 2025 -0500"
     },
     {
       "term": "HAT",
@@ -14,9 +14,9 @@
     },
     {
       "term": "Deque Systems",
-      "definition": "Deque Systems is a company that heads most of the software and tooling around accessibility. The closely align with the W3C and are a great resource for learning more about accessibility.",
+      "definition": "Deque Systems is a company that heads most of the software and tooling around accessibility. They closely align with the W3C and are a great resource for learning more about accessibility.",
       "link": "https://www.deque.com/",
-      "updated": "Fri Feb 21 00:55:15 2025 -0500"
+      "updated": "Thu Feb 27 23:05:22 2025 -0500"
     },
     {
       "term": "W3C",
@@ -29,6 +29,18 @@
       "definition": "The Web Content Accessibility Guidelines (WCAG) are part of a series of web accessibility guidelines published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), the main international standards organization for the Internet.",
       "link": "https://www.w3.org/WAI/WCAG22/Understanding/",
       "updated": "Fri Feb 21 00:55:15 2025 -0500"
+    },
+    {
+      "term": "ADA Component Checklist",
+      "definition": "A checklist that can be used to ensure that core components are accessible. This checklist is a great resource for designers when building components.",
+      "link": "https://dequeuniversity.com/checklists/web/",
+      "updated": "Sat Feb 22 22:57:15 2025 -0500"
+    },
+    {
+      "term": "Bootstrap",
+      "definition": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first, front-end web development. It was leveraged alongside cel-components styles to build this training.",
+      "link": "https://getbootstrap.com/",
+      "updated": "Mon Feb 24 23:51:46 2025 -0500"
     }
   ]
 }
