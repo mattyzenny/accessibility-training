@@ -11,30 +11,34 @@
 
 <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
   <p>
-    Landmarks are essential for accessibility, aiding both navigation and comprehension for assistive technology users. 
+    Landmarks are essential for accessibility, aiding both navigation and comprehension for assistive technology users.
     They provide the same modular structure to screen readers that visual design offers to sighted users.
   </p>
-  
+
   <p><strong>Required</strong></p>
   <ul>
     <li>
-      If a landmark is used more than once, it <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
-      href="https://dequeuniversity.com/rules/axe/4.6/landmark-unique" target="_blank"
-      aria-label="must have a visual and meaningful label, opens new window">must</a> have a unique label.
+      If a landmark is used more than once, it <a
+        class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://dequeuniversity.com/rules/axe/4.6/landmark-unique" target="_blank"
+        aria-label="must have a visual and meaningful label, opens new window">must</a> have a unique label.
     </li>
     <li>
-      A page 
+      A page
       <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
         href="https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks" target="_blank"
-        aria-label="must have one main landmark, WCAG, opens new window">must</a> have one <code>&lt;main&gt;</code> landmark.
+        aria-label="must have one main landmark, WCAG, opens new window">must</a> have one <code>&lt;main&gt;</code>
+      landmark.
     </li>
     <li>
-      All content <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2" 
-      href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" target="_blank"
-      aria-label="must not have content outside a landmark, WCAG, opens new window">must </a> be contained inside a landmark. 
+      All content <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" target="_blank"
+        aria-label="must not have content outside a landmark, WCAG, opens new window">must </a> be contained inside a
+      landmark.
     </li>
     <li>
-      Only one <code>&lt;banner&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;contentinfo&gt;</code> landmark is allowed per page.
+      Only one <code>&lt;banner&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;contentinfo&gt;</code> landmark is
+      allowed per page.
       <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
         href="https://dequeuniversity.com/class/semantic-structure/landmarks/best-practices" target="_blank"
         aria-label="banner landmark rules, opens new window">Learn more</a>.
@@ -49,12 +53,13 @@
 <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
   <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
     <p>
-
+      Other than quickly navigating a page, screen reader users can pull up
+      a list of landmarks. In the screen below you can see an example of this.
     </p>
   </div>
   <div>
     <img [src]="landmarkDashboard" alt="Savvas Dashboard Landmarks Page" class="img-fluid" />
-</div>
+  </div>
 
   <!-- Accordion for Code -->
   <div class="accordion
@@ -76,16 +81,40 @@
       </h4>
       <div id="codeContainer3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
         <div class="accordion-body">
-
-
+  <pre class="">
+    <code>
+&lt;body&gt;
+&lt;div role="banner"&gt;
+&lt;div role="navigation"/&gt;
+&lt;/div&gt;
+&lt;div role="complementary"/&gt;
+&lt;div role="main"&gt;
+...
+...
+&lt;div role="navigation"/&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+    </code>
+  </pre>
         </div>
       </div>
     </div>
   </div>
   <div class="container" id="details-container">
     <p>
-      additional content here
+      We can notice 2 things.
     </p>
+    <ul>
+      <li>
+        ✅ We are effectively using multiple <code>&lt;nav&gt;</code> landmarks with unique labels to enhance navigation
+        and accessibility.
+      </li>
+      <li>
+        ❌ We have an empty <code>&lt;complimentary&gt;</code> landmark.
+        This is dead code a should be moved. It provides nothing to the user and may
+        confuse others.
+      </li>
+    </ul>
   </div>
 </div>
 
@@ -95,7 +124,9 @@
 <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
   <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
     <p>
-      Below are input-fields that are more complex. Each one demonstrates
+      Provided below, we can see we have 2 <code>&lt;main&gt;</code> landmarks.
+      This is not allowed and should be fixed.
+      We can also see redundant navigation landmarks, as well as redundant labelling.
     </p>
   </div>
   <div>
@@ -121,16 +152,43 @@
         </button>
       </h4>
       <div id="codeContainer4" class="accordion-collapse collapse" data-bs-parent="#accordion3">
-        <div class="accordion-body">
-
-
+        <div class="accordion-body containere-fluid align-items-center justify-content-center">
+          <pre>
+            <code>
+&lt;body&gt;
+&lt;div role="banner"&gt;
+&lt;div role="navigation"/&gt;
+&lt;/div&gt;
+&lt;div role="complementary"/&gt;
+<strong style="color: blue;">&lt;div role="main"&gt;</strong>
+&lt;div class="app-container"&gt;
+...
+<strong style="color: green">&lt;div role="navigation" aria-label="secondary"&gt;</strong>
+<span class="text-decoration-underline">&lt;nav aria-label="side navigation"/&gt;</span>
+<strong style="color: green">&lt;/div&gt;</strong>
+<span class="text-decoration-underline">&lt;main&gt;</span>
+...
+...
+<span class="text-decoration-underline">&lt;/main&gt;</span>
+&lt;/div&gt;
+<strong style="color: blue;">&lt;/div&gt;</strong>
+&lt;/body&gt;
+            </code>
+          </pre>
         </div>
       </div>
     </div>
   </div>
   <div class="container" id="details-container">
     <p>
-      additional content here
+      Notice that empty <code>&lt;complimentary&gt;</code> region is carried across all pages in the application.
+      This is where MFE's should discuss who will own which landmarks on the page layout, and wrap their content
+      accordingly.
+    </p>
+    <p>
+      Ask yourself, if you pulled up this list of landmarks, would you know the difference between
+      navigation and side navigation? How about between the 2 main landmarks?
+      If we can't make sense of it, neither can a screen reader.
     </p>
   </div>
 </div>
