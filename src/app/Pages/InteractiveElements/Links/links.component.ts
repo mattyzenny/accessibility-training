@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TooltipService } from 'src/app/Services/TooltipService/tooltip.service';
 
 @Component({
   selector: 'Links',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinksComponent implements OnInit {
 title = 'Links'; 
-  constructor() { }
+  constructor(private tooltipService: TooltipService) { }
 
   scrollToTop(event: Event) {
     window.scrollTo(0, 0);
@@ -17,6 +18,10 @@ title = 'Links';
   };
 
   ngOnInit(): void {
+    this.tooltipService.createTooltip();
+  }
+  ngOnDestroy(): void {
+    this.tooltipService.destroyTooltips();
   }
 
 }

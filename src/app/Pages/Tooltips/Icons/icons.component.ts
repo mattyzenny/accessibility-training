@@ -9,7 +9,8 @@ import { TooltipService } from '../../../Services/TooltipService/tooltip.service
 export class IconsComponent implements OnInit, OnDestroy {
   title = 'Icons';
 
-  constructor(private tooltipService: TooltipService) { }
+  // apply data-bs-tooltip="true" data-bs-title=""
+    constructor(private tooltipService: TooltipService) { }
 
   ngOnInit(): void {
     this.tooltipService.createTooltip();

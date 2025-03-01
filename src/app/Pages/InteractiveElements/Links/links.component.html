@@ -165,8 +165,8 @@
   <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
     <p>
       Though it is always better to provide visible text as labels for your links, sometimes
-      the design only uses icons.
-    </p>
+      the design only uses icons. For this reason, a custom tooltip should be applied.
+      <em>See <a routerLink="/Tooltips" class="text-info fw-semibold">tooltip page</a> for more info</em>    </p>
     <ul>
       <li>
         <span class="text-danger">Warning:</span> If you truncate a link, you <strong>must</strong> provide a means for
@@ -197,7 +197,7 @@
     content
   ">
     <div class="override-container">
-      <cel-text-link data-truncate="true" data-show-icon-left="true" data-open-in-new-tab="true"
+      <cel-text-link data-truncate="true" data-noTitle="true" data-text-link-aria-label="gogle drive" data-bs-tooltip="true" data-bs-title="Google Drive" data-show-icon-left="true" data-open-in-new-tab="true"
         data-label="Google Drive" data-link-href="https://google.com/drive" data-show-icon="true"
         data-icon-name="drive-link">
       </cel-text-link>
