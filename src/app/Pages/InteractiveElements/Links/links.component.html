@@ -19,7 +19,8 @@
     Links are simple components that are often misued.
     Buttons and links may sometimes look similar, but they <strong>should</strong> perform different actions.
     Links are expected to navigate to a different page or resource, while buttons are used
-    to perform an action. In the same manner, buttons and links  <strong>should not</strong> be styled to look like one another.
+    to perform an action. In the same manner, buttons and links <strong>should not</strong> be styled to look like one
+    another.
     If you remember <strong><em> links go somewhere, and buttons do something</em></strong>,
     then you should be well equipped to utilize the two components correctly.
   </p>
@@ -29,7 +30,8 @@
       A link's purpose <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
         href="https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context" target="_blank"
         aria-label="must be clear in its context, WCAG, opens new window">must</a>
-      be clear from its text or surrounding context. <em>Click here!</em> is <strong>not</strong> an appropriate label for a link. A user should be able to navigate to the link and understand it's
+      be clear from its text or surrounding context. <em>Click here!</em> is <strong>not</strong> an appropriate label
+      for a link. A user should be able to navigate to the link and understand it's
       purpose.
     </li>
     <li>
@@ -81,7 +83,7 @@
       "Opens in a new window".
     </li>
     <li>
-      Do not add the word 'link' to the end of a link. It is redundant and unnecessary. 
+      Do not add the word 'link' to the end of a link. It is redundant and unnecessary.
     </li>
   </ul>
 </div>
@@ -166,7 +168,13 @@
     <p>
       Though it is always better to provide visible text as labels for your links, sometimes
       the design only uses icons. For this reason, a custom tooltip should be applied.
-      <em>See <a routerLink="/Tooltips" class="text-info fw-semibold">tooltip page</a> for more info</em>    </p>
+    </p>
+    <p>
+      <span class="text-danger">Warning </span> a custom tooltip was applied to the code below that currently
+      is not in cel-components. This custom tooltip was applied to show you the ideal implementation.
+      <em>See <a routerLink="/Tooltips" class="text-info-emphasis fw-semibold link-underline-info link-offset-2">tooltip
+          page</a> for more info</em>
+    </p>
     <ul>
       <li>
         <span class="text-danger">Warning:</span> If you truncate a link, you <strong>must</strong> provide a means for
@@ -197,14 +205,19 @@
     content
   ">
     <div class="override-container">
-      <cel-text-link data-truncate="true" data-noTitle="true" data-text-link-aria-label="gogle drive" data-bs-tooltip="true" data-bs-title="Google Drive" data-show-icon-left="true" data-open-in-new-tab="true"
-        data-label="Google Drive" data-link-href="https://google.com/drive" data-show-icon="true"
-        data-icon-name="drive-link">
+        <cel-text-link  data-truncate="true" data-noTitle="true" data-icon-color="feedback-green"
+          data-text-link-aria-label="gogle drive custom" data-bs-tooltip="true" data-bs-title="Google Drive"
+          data-show-icon-left="true" data-open-in-new-tab="true" data-label="Google Drive"
+          data-link-href="https://google.com/drive" data-show-icon="true" data-icon-name="drive-link">
+        </cel-text-link>
+      <hr>
+      <cel-text-link data-truncate="true" data-bs-title="Google Drive" data-show-icon-left="true"
+        data-open-in-new-tab="true" data-label="Google Drive" data-link-href="https://google.com/drive"
+        data-show-icon="true" data-icon-name="drive-link">
       </cel-text-link>
       <cel-text-link style="margin-left: 10px" data-text-link-aria-label="send mail" data-open-in-new-tab="false"
         (celTextLinkClicked)="windowAlert($event)" data-label="mail" data-show-icon="true" data-icon-name="send">
       </cel-text-link>
-    </div>
   </div>
   <div class="accordion
               mb-3
