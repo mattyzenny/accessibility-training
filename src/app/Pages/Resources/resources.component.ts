@@ -104,6 +104,23 @@ export class ResourcesComponent implements OnInit {
         updated: 'Loading...',
         startLine: 99,
         endLine: 107,
+      },
+      {
+        term: 'Landmarks',
+        definition: 'Landmarks are a way to identify the different sections of a page. They are used by screen readers to help users navigate the page.',
+        link: 'https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/general-principles.html',
+        updated: 'Loading...',
+        startLine: 108,
+        endLine: 115,
+      },
+      {
+        term: 'MDN',
+        definition:
+          'Mozilla Developer Network (MDN) is a resource for developers, maintained by the community of developers and technical writers and hosting documentation for web technologies, including HTML, CSS, and JavaScript.',
+        link: 'https://developer.mozilla.org/en-US/docs/Web/Accessibility',
+        updated: 'Loading...',
+        startLine: 116,
+        endLine: 124,
       }
     ];
       

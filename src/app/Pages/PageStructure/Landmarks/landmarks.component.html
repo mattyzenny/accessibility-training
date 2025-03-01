@@ -8,68 +8,129 @@
   ">
   <h2 class="h4 text-body-secondary">{{title}}</h2>
 </div>
+
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+  <p>
+    Landmarks are essential for accessibility, aiding both navigation and comprehension for assistive technology users. 
+    They provide the same modular structure to screen readers that visual design offers to sighted users.
+  </p>
   
+  <p><strong>Required</strong></p>
+  <ul>
+    <li>
+      If a landmark is used more than once, it <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+      href="https://dequeuniversity.com/rules/axe/4.6/landmark-unique" target="_blank"
+      aria-label="must have a visual and meaningful label, opens new window">must</a> have a unique label.
+    </li>
+    <li>
+      A page 
+      <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/bypass-blocks" target="_blank"
+        aria-label="must have one main landmark, WCAG, opens new window">must</a> have one <code>&lt;main&gt;</code> landmark.
+    </li>
+    <li>
+      All content <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2" 
+      href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html" target="_blank"
+      aria-label="must not have content outside a landmark, WCAG, opens new window">must </a> be contained inside a landmark. 
+    </li>
+    <li>
+      Only one <code>&lt;banner&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;contentinfo&gt;</code> landmark is allowed per page.
+      <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+        href="https://dequeuniversity.com/class/semantic-structure/landmarks/best-practices" target="_blank"
+        aria-label="banner landmark rules, opens new window">Learn more</a>.
+    </li>
+  </ul>
+</div>
+
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
   <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-    <p> 
-        Definition1
+    <p>
+
     </p>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!-- Component Grouping -->
-  
-  <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
-    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
-      <p>
-        Below are input-fields that are more complex. Each one demonstrates
-      </p>
-    </div>
-      <div>
-  
-      </div>
-      <div>
-  
-      </div>
-      <div>
-   
-      </div>
-    
-    <!-- Accordion for Code -->
-    <div class="accordion
+  <div>
+    <img [src]="landmarkDashboard" alt="Savvas Dashboard Landmarks Page" class="img-fluid" />
+</div>
+
+  <!-- Accordion for Code -->
+  <div class="accordion
       mb-3
       mt-3
       container
       justify-content-between
       align-items-center
       text-center
-      content" id="accordion1">
-      <div class="accordion-item">
-        <h4 class="accordion-header">
-          <button id="accordionButton1" class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed"  type="button" data-bs-toggle="collapse"
-            data-bs-target="#codeContainer1" aria-expanded="false" aria-controls="codeContainer1">
-            Expand Code
-          </button>
-        </h4>
-        <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
-          <div class="accordion-body">
-  
-            
-          </div>
+      content" id="accordion3">
+    <div class="accordion-item">
+      <h4 class="accordion-header">
+        <button id="accordionButton3"
+          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer3" aria-expanded="false"
+          aria-controls="codeContainer3">
+          Expand Code
+        </button>
+      </h4>
+      <div id="codeContainer3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+        <div class="accordion-body">
+
+
         </div>
       </div>
     </div>
-    <div class="container" id="details-container">
-      <p>
-        additional content here
-      </p>
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      additional content here
+    </p>
+  </div>
+</div>
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+  <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+      Below are input-fields that are more complex. Each one demonstrates
+    </p>
+  </div>
+  <div>
+    <img [src]="landmarkNormal" alt="Savvas Classes Landmarks Page" class="img-fluid" />
+  </div>
+
+  <!-- Accordion for Code -->
+  <div class="accordion
+      mb-3
+      mt-3
+      container
+      justify-content-between
+      align-items-center
+      text-center
+      content" id="accordion4">
+    <div class="accordion-item">
+      <h4 class="accordion-header">
+        <button id="accordionButton4"
+          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+          data-bs-toggle="collapse" data-bs-target="#codeContainer4" aria-expanded="false"
+          aria-controls="codeContainer4">
+          Expand Code
+        </button>
+      </h4>
+      <div id="codeContainer4" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+        <div class="accordion-body">
+
+
+        </div>
+      </div>
     </div>
-    </div>
-  
-  
+  </div>
+  <div class="container" id="details-container">
+    <p>
+      additional content here
+    </p>
+  </div>
+</div>

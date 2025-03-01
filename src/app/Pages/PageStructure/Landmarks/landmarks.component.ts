@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class LandmarksComponent implements OnInit {
 
   title="Landmarks";
-  
+  landmarkDashboard = './assets/page-structure-examples/dashboardLandmark.png';
+  landmarkNormal = './assets/page-structure-examples/normalLandmark.png';
   constructor() { }
 
   ngOnInit(): void {
