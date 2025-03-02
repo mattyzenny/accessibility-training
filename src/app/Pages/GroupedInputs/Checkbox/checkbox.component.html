@@ -17,41 +17,75 @@
         group label is also required. Each element must be interactive with both a keyboard and a mouse.
     </p>
     <p>
-        The main difference between radio groups and checkbox groups is how a user navigates the elements. 
-        When tabbing into a radio group, you use arrow keys to 
+        The main difference between radio groups and checkbox groups is how a user navigates the elements.
+        When tabbing into a radio group, you use arrow keys to
         choose different options. Generally 1 item in a radio group is active at a time. With checkbox groups,
         users can tab to each individual checkbox, and can select however many they want.
     </p>
     <p><strong>Required</strong></p>
     <ul>
         <li>
-            Starting from the top level of the component, grouped inputs
+            There
             <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
                 href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships" target="_blank"
-                aria-label="must have a visual and meaningful group label, WCAG, opens new window">must</a> have a
-            visible,
-            meaningful label <code>&lt;legend&gt;</code>. These are crucial
-            for the understanding and purpose of the radio group. They can be seen as the instructions or the group
-            label.
+                aria-label="must have a visual and meaningful group label, WCAG, opens new window">must</a> be a
+            visible goup label.
         </li>
         <li>
-            Similar to many other elements, each individual radio button <a
-                class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+            Each selectable option <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
                 href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions" target="_blank"
                 aria-label="must have a visible descriptive for each input, WCAG, opens new window">must</a> have a
-            visible
-            label. All users need to know what each button represents.
+            visible label.
         </li>
         <li>
-            The name, role, state, & value <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+            The state of each element <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
                 href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank"
                 aria-label="must semantically or programmatical be correct, WCAG, opens new window">must</a> be
             programmatically
-            determinable. <em>(<strong>role</strong> is often baked into the native
-                HTML<code> &lt;button&gt; </code>component</em> | <em><strong>name</strong> is the visible text</em> |
-            <em><strong>value, state</strong> are required for more complex functionality)</em>
+            determinable.
+        </li>
+        <li>
+            Each element <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+                href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard" target="_blank"
+                aria-label="must be operable by keyboard, WCAG, opens new window">must</a> be operable by keyboard.
+        </li>
+        <li>
+            The visible label <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+                href="https://www.w3.org/WAI/WCAG22/Understanding/label-in-name" target="_blank"
+                aria-label="must have the same hidden and visual label, WCAG, opens new window">must</a> match the
+            hidden label.
+        </li>
+        <li>
+            The state of each element <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+                href="https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast" target="_blank"
+                aria-label="must have sufficient contrast, WCAG, opens new window">must</a> have a contrast ratio of 3:1.
         </li>
     </ul>
+    <p><strong>Best Practice</strong></p>
+    <ul>
+        <li>
+            Do not nest interactive elements inside a checkbox.
+        </li>
+        <li>
+            If selection triggers dynamic content...
+        </li>
+            <ol>
+                <li>
+                    Ensure that the user is informed of the change.
+                </li>
+                <li>
+                    Have that content display outside of the checkbox.
+                </li>
+            </ol>
+            <li>
+                Labels should be visually adjacent.
+            </li>
+            <li>
+                If required, visually and programmatically assocaite the required boxes or groups.
+            </li>
+    </ul>
+
+
 </div>
 
 <!-- Component Grouping -->
@@ -59,10 +93,9 @@
 <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
     <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
         <p>
-            This first radio group is using the bare mininmum to be accessible. There is a group
-            label, and each radio button has a visible label. Only 2 props are required to pass accessibility when using
-            cel-components.
-        </p>
+           Navigate to each element using tab. Use the spacebar to select or deselect each checkbox.
+        If marked up correctly, when you enter a checkbox group, you will hear the checkbox label, the state, and the group name.
+    </p>
     </div>
 
     <div *ngFor="let checkbox of checkboxList; let i =index">
@@ -74,7 +107,8 @@
         content
         ">
             <div>
-                <cel-checkbox-group [attr.data-show-checkbox-group-horizontal]="!isMobile" [label]="checkbox.label" [itemList]="checkbox.checkboxGroup"></cel-checkbox-group>
+                <cel-checkbox-group [attr.data-show-checkbox-group-horizontal]="!isMobile" [label]="checkbox.label"
+                    [itemList]="checkbox.checkboxGroup"></cel-checkbox-group>
             </div>
         </div>
     </div>
@@ -85,35 +119,50 @@
               justify-content-between
               align-items-center
               text-center
-              content" id="accordion0">
+              content" id="accordion2">
         <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button id="accordionButton0"
+            <h3 class="accordion-header">
+                <button id="accordionButton2"
                     class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed"
-                    type="button" data-bs-toggle="collapse" data-bs-target="#codeContainer0" aria-expanded="false"
-                    aria-controls="codeContainer0">
+                    type="button" data-bs-toggle="collapse" data-bs-target="#codeContainer2" aria-expanded="false"
+                    aria-controls="codeContainer2">
                     Expand Code
                 </button>
-            </h2>
-            <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
+            </h3>
+            <div id="codeContainer2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
                 <div class="accordion-body">
+                    <strong>Checkbox Group 1</strong>
+                    <pre></pre>
+                    <code>
+              <strong>
+                &lt;cel-checkbox-group
+              </strong>
+            </code>
+                    <code style="color: #006748;">
+              [attr.data-show-checkbox-group-horizontal]=</code>
+                    <code>"!isMobile"
+            </code>
+                    <code style="color: #006748;">
+              [label]=</code>
+                    <code>"checkbox.label"
+            </code>
+                    <code style="color: #006748;">
+              [itemList]=</code>
+                    <code>"checkbox.checkboxGroup"<strong>&gt;
+              &lt;/cel-checkbox-group&gt;
+            </strong>
+            </code>
+                    <pre></pre>
                 </div>
             </div>
         </div>
     </div>
     <div class="container" id="details-container">
         <p>
-            When you select an input, you will hear the <strong>state</strong> of "selected" be announced.
-            In the second input of the second radio group, the <strong>state</strong> of "disabled" is announced.
-            <br>
-            <code>data-show-radio-group-horizontal</code> is
-            a styled property that changes display of the radio group,
-            <code> header </code> <small>(Not to be confused with &lt;header&gt; or &lt;h1&gt;...)</small> is providing
-            the group label or <code>&lt;legend&gt;</code>
-            and <code>list</code> is an array of objects defined in the code elsewhere.
-            <em>Notice that in larger viewports the
-                radio group is displayed horizontally. Despite
-                its visual appearance; the key navigation remains the same. </em>
+            We have a disabled checkbox. This is a good example of how to show a disabled state. Users can
+            still navigate to the element and hear the state, buy by default is it skipped in the tabindex.
+            There are different patterns one can take with disabled elements, however it should only be used
+            when absolutely necessary.
         </p>
     </div>
 </div>

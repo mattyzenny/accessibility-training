@@ -14,11 +14,11 @@ export class CheckboxComponent implements OnInit {
   ngOnInit(): void {
     this.checkboxList = [
       {
-        label: 'Color',
+        label: 'Name',
         checkboxGroup: [
-          { label: 'Blue' },
-          { label: 'Red' },
-          { label: 'Green' },
+          { label: 'First Name' },
+          { label: 'Last Name' },
+          { label: 'Middle Name', disabled: true },
         ],
       },
       {
