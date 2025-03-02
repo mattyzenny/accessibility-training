@@ -1,0 +1,58 @@
+{
+  "Resources": [
+    {
+      "term": "AT",
+      "definition": "Assistive Technology is equipment or software that helps someone with a disability to do something that they would otherwise find difficult or impossible. Screen readers, magnifiers, and alternative keyboards are examples of assistive technology.",
+      "link": "https://www.deque.com/blog/assistive-technology/#:~:text=Assistive%20technology%20is%20simply%20a,to%20name%20just%20a%20few.",
+      "updated": "Fri Feb 21 00:49:20 2025 -0500"
+    },
+    {
+      "term": "HAT",
+      "definition": "HAT represents Hidden Accessible Text. It is only announced to those users who use screen readers. They are often applied to give supplemental information that sighted users infer through the orientation of the page.",
+      "link": "https://webaim.org/",
+      "updated": "Fri Feb 21 00:55:15 2025 -0500"
+    },
+    {
+      "term": "Deque Systems",
+      "definition": "Deque Systems is a company that heads most of the software and tooling around accessibility. They closely align with the W3C and are a great resource for learning more about accessibility.",
+      "link": "https://www.deque.com/",
+      "updated": "Thu Feb 27 23:05:22 2025 -0500"
+    },
+    {
+      "term": "W3C",
+      "definition": "The World Wide Web Consortium (W3C) is an international community that develops open standards to ensure the long-term growth of the Web.",
+      "link": "https://www.w3.org/",
+      "updated": "Fri Feb 21 00:55:15 2025 -0500"
+    },
+    {
+      "term": "WCAG",
+      "definition": "The Web Content Accessibility Guidelines (WCAG) are part of a series of web accessibility guidelines published by the Web Accessibility Initiative (WAI) of the World Wide Web Consortium (W3C), the main international standards organization for the Internet.",
+      "link": "https://www.w3.org/WAI/WCAG22/Understanding/",
+      "updated": "Fri Feb 21 00:55:15 2025 -0500"
+    },
+    {
+      "term": "ADA Component Checklist",
+      "definition": "A checklist that can be used to ensure that core components are accessible. This checklist is a great resource for designers when building components.",
+      "link": "https://dequeuniversity.com/checklists/web/",
+      "updated": "Sat Feb 22 22:57:15 2025 -0500"
+    },
+    {
+      "term": "Bootstrap",
+      "definition": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first, front-end web development. It was leveraged alongside cel-components styles to build this training.",
+      "link": "https://getbootstrap.com/",
+      "updated": "Sat Mar 1 01:28:06 2025 -0500"
+    },
+    {
+      "term": "Landmarks",
+      "definition": "Landmarks are a way to identify the different sections of a page. They are used by screen readers to help users navigate the page.",
+      "link": "https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/general-principles.html",
+      "updated": "Sat Mar 1 01:28:06 2025 -0500"
+    },
+    {
+      "term": "MDN",
+      "definition": "Mozilla Developer Network (MDN) is a resource for developers, maintained by the community of developers and technical writers and hosting documentation for web technologies, including HTML, CSS, and JavaScript.",
+      "link": "https://developer.mozilla.org/en-US/docs/Web/Accessibility",
+      "updated": "Sat Mar 1 01:28:06 2025 -0500"
+    }
+  ]
+}
