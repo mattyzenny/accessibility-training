@@ -170,16 +170,21 @@
       the design only uses icons. For this reason, a custom tooltip should be applied.
     </p>
     <p>
-      <span class="badge fs-7 text-bg-warning"> <cel-icon data-color="black" data-size="small" data-name="alert-triangle"></cel-icon> Warning </span> a custom tooltip was applied to the code below that currently
+      <span class="badge fs-7 text-bg-warning"> <cel-icon data-color="black" data-size="small"
+          data-name="alert-triangle"></cel-icon> Warning </span> A custom tooltip was applied to the code below that
+      currently
       is not in cel-components. This custom tooltip was applied to show you the ideal implementation.
       <em>See <a routerLink="/Tooltips" class="text-info-emphasis fw-semibold link-underline-info link-offset-2">tooltip
           page</a> for more info.</em>
     </p>
     <ul>
       <li>
-        <span class="badge fs-7 text-bg-warning">  <cel-icon data-color="black" data-size="small" data-name="alert-triangle"></cel-icon> Warning</span> If you truncate a link, you <strong>must</strong> provide a means for
+        <span class="badge fs-7 text-bg-warning"> <cel-icon data-color="black" data-size="small"
+            data-name="alert-triangle"></cel-icon> Warning</span> If you truncate a link, you <strong>must</strong>
+        provide a means for
         that label to come back into view. This can be done by
-        providing a tooltip on hover and on focus (<em>See above</em>), or if the truncated text is revealed on the linked page.
+        providing a tooltip on hover and on focus (<em>See above</em>), or if the truncated text is revealed on the
+        linked page.
       </li>
       <li>
         You should <strong>never</strong> use only icons unless that icon is universally understood.
@@ -205,11 +210,11 @@
     content
   ">
     <div class="override-container">
-        <cel-text-link  data-truncate="true" data-noTitle="true" data-icon-color="feedback-green"
-          data-text-link-aria-label="google drive custom" data-bs-tooltip="true" data-bs-title="Google Drive"
-          data-show-icon-left="true" data-open-in-new-tab="true" data-label="Google Drive"
-          data-link-href="https://google.com/drive" data-show-icon="true" data-icon-name="drive-link">
-        </cel-text-link>
+      <cel-text-link data-truncate="true" data-noTitle="true" data-icon-color="feedback-green"
+        data-text-link-aria-label="google drive custom" data-bs-tooltip="true" data-bs-title="Google Drive"
+        data-show-icon-left="true" data-open-in-new-tab="true" data-label="Google Drive"
+        data-link-href="https://google.com/drive" data-show-icon="true" data-icon-name="drive-link">
+      </cel-text-link>
       <hr>
       <cel-text-link data-truncate="true" data-bs-title="Google Drive" data-show-icon-left="true"
         data-open-in-new-tab="true" data-label="Google Drive" data-link-href="https://google.com/drive"
@@ -218,6 +223,7 @@
       <cel-text-link style="margin-left: 10px" data-text-link-aria-label="send mail" data-open-in-new-tab="false"
         (celTextLinkClicked)="windowAlert($event)" data-label="mail" data-show-icon="true" data-icon-name="send">
       </cel-text-link>
+    </div>
   </div>
   <div class="accordion
               mb-3
@@ -294,7 +300,9 @@
       </li>
     </ul>
     <p>
-      <span class="badge fs-7 text-bg-warning"> <cel-icon data-color="black" data-size="small" data-name="alert-triangle"></cel-icon>Warning</span> when you have 2 links next to eachother, they must have a minimum of
+      <span class="badge fs-7 text-bg-warning"> <cel-icon data-color="black" data-size="small"
+          data-name="alert-triangle"></cel-icon>Warning</span> When you have 2 links next to eachother, they must have
+      a minimum of
       24x24 margin between the targetted areas.
       The current design of <code>&lt;cel-text-link&gt;</code> does not have this built in. It must be styled
       independently.
