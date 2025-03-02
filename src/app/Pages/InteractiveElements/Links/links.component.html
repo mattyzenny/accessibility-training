@@ -170,16 +170,16 @@
       the design only uses icons. For this reason, a custom tooltip should be applied.
     </p>
     <p>
-      <span class="text-danger">Warning </span> a custom tooltip was applied to the code below that currently
+      <span class="badge fs-7 text-bg-warning"> <cel-icon data-color="black" data-size="small" data-name="alert-triangle"></cel-icon> Warning </span> a custom tooltip was applied to the code below that currently
       is not in cel-components. This custom tooltip was applied to show you the ideal implementation.
       <em>See <a routerLink="/Tooltips" class="text-info-emphasis fw-semibold link-underline-info link-offset-2">tooltip
           page</a> for more info</em>
     </p>
     <ul>
       <li>
-        <span class="text-danger fw-bold">Warning:</span> If you truncate a link, you <strong>must</strong> provide a means for
+        <span class="badge fs-7 text-bg-warning">  <cel-icon data-color="black" data-size="small" data-name="alert-triangle"></cel-icon> Warning</span> If you truncate a link, you <strong>must</strong> provide a means for
         that label to come back into view. This can be done by
-        providing a tooltip on hover and on focus (<em>See above</em>), or by the truncated text being revealed on the linked page.
+        providing a tooltip on hover and on focus (<em>See above</em>), or if the truncated text is revealed on the linked page.
       </li>
       <li>
         You should <strong>never</strong> use only icons unless that icon is universally understood.
@@ -190,8 +190,8 @@
       </li>
     </ul>
     <p>
-      Hover over each link. Noticed a tooltip appears only on one. That is because
-      we want to display the full truncated links to all users. The <em>mail</em> link
+      Hover over each link. Noticed a tooltip appears on the google drive icons. That is because
+      we want to display the full truncated text to all users. The <em>mail</em> link
       already has visible text so a <strong><em>title</em></strong> attribute would be redundant and unecessary.
     </p>
   </div>
@@ -294,7 +294,7 @@
       </li>
     </ul>
     <p>
-      <span class="text-danger fw-bold">Warning:</span> when you have 2 links next to eachother, they must have a minimum of
+      <span class="badge fs-7 text-bg-warning"> <cel-icon data-color="black" data-size="small" data-name="alert-triangle"></cel-icon>Warning</span> when you have 2 links next to eachother, they must have a minimum of
       24x24 margin between the targetted areas.
       The current design of <code>&lt;cel-text-link&gt;</code> does not have this built in. It must be styled
       independently.
