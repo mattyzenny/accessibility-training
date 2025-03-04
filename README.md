@@ -63,11 +63,11 @@ follow the steps below in ## Linking Local Dependencies ##
 
 ### 2. **Link the Local Dependency to Your Project**
 
-In the `cel-components` project directory, run the following command to link the local project:
+In the `forked-cel-components` project directory, run the following command to link the local project:
 
 {`npm link`}
 
-This creates a global symlink to the `cel-components` library.
+This creates a global symlink to the `forked-cel-components` library.
 
 ### 3. **Link the Local Dependency to Your Target Project (accessibility-training)**
 
@@ -75,7 +75,7 @@ In the `accessibility-training` project directory, run:
 
 {`npm link @savvaslearning/cel-components`}
 
-This links the local version of `cel-components` to the `node_modules` of `accessibility-training`.
+This links the local version of `forked-cel-components` to the `node_modules` of `accessibility-training`.
 
 ### 4. **Update the Path to the Local Dependency in `accessibility-training/package.json`**
 
