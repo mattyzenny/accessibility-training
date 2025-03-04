@@ -165,8 +165,8 @@
         <p id="continueLabel">
           Do you wish to continue?
         </p>
-        <cel-button #toggleButton (click)="isActive()" data-toggle=true data-label="Yes"
-          data-button-aria-label="Do you wish to Continue? Yes"></cel-button>
+        <cel-button #toggleButton (click)="isActive()" data-toggle=true data-label="Enable"
+          [attr.aria-label]=" 'Do you wish to Continue?'"></cel-button>
       </div>
       <div>
         <cel-radio-button-group [attr.data-show-radio-group-horizontal]="!isMobile" [header]="radio.header"
@@ -204,9 +204,9 @@
               #toggleButton 
               (click)="isActive()" 
             data-toggle="true"
-            data-label="Yes"
-            data-button-aria-label=
-            "Do you wish to Continue? Yes"<strong>&gt;
+            data-label="Enable"
+            [attr.aria-label]=
+            "'Do you wish to Continue?'"<strong>&gt;
             &lt;/cel-button&gt;</strong>
           </code>
           <pre></pre>

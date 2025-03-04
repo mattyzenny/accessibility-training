@@ -65,6 +65,7 @@ export class RadioComponent implements AfterViewInit {
     this.isPressed = !currentState;
 
     button.setAttribute('aria-pressed', this.isPressed ? 'true' : 'false');
+    button.label = this.isPressed ? 'Disable' : 'Enable';
     return this.isPressed;
   }
 
