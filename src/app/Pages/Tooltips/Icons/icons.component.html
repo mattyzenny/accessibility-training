@@ -355,7 +355,11 @@
     content
   ">
     <div class="d-flex justify-content-between align-items-center">
-      <cel-icon-button data-color="grey-darker" data-has-popover="true" data-name="information-circle">
+      <cel-icon-button data-color="grey-darker" data-has-popover="true" data-name="information-circle"
+      style="
+            --icon-button-popover-right: 0;
+            --icon-button-popover-wrapper-right: 0;
+            --icon-button-popover-border-radius: 5px;">
         <div>
           <p>If this is important information, we probably should be displaying this on the page to prevent
             anyone potentially skipping this content.</p>
@@ -363,7 +367,10 @@
       </cel-icon-button>
       <cel-icon-button data-toggle="true" data-identifier="info-btn" data-icon-button-aria-label="information popup"
         data-color="grey-darker" data-has-popover="true" data-open-popover="false"
-        data-tooltip-label="information popup" data-name="information-circle">
+        data-tooltip-label="information popup" data-name="information-circle" style="
+        --icon-button-popover-right: 0;
+        --icon-button-popover-wrapper-right: 0;
+        --icon-button-popover-border-radius: 5px;">
         <div>
           <p>If this is important information, we probably should be displaying this on the page to prevent
             anyone potentially skipping this content.</p>
@@ -532,7 +539,7 @@
             Focus is managed.
           </li>
           <li>
-            Reflow is handled.
+            Reflow is handled with custom CSS.
           </li>
         </ul>
       </dd>
