@@ -7,6 +7,8 @@ import { ReflowService } from 'src/app/Services/ReflowService/reflow.service';
   styleUrls: ['./input-validations.component.scss'],
 })
 export class InputValidationsComponent implements AfterViewInit {
+  title = 'Input Validations';
+  
   errorMessages: { [key: string]: string } = {};
   successMessages: { [key: string]: string } = {};
   constructor(public reflowService: ReflowService) {}

@@ -13,10 +13,8 @@ import { ReflowService } from 'src/app/Services/ReflowService/reflow.service';
   styleUrls: ['./input-fields.component.scss'],
 })
 export class InputFieldsComponent implements AfterViewInit {
-  title = '';
+  title = "Input Fields";
   enableError = false;
-
-  @ViewChild('navToggleButton') navToggleButtonReference!: ElementRef;
 
   // Dependency injection for ReflowService | checks for the NavToggleButton visibility
   constructor(public reflowService: ReflowService) {}

@@ -24,7 +24,9 @@ import { CheckboxComponent } from './Pages/GroupedInputs/Checkbox/checkbox.compo
 import { TooltipsComponent } from './Pages/Tooltips/tooltips.component';
 import { LandmarksComponent } from './Pages/PageStructure/Landmarks/landmarks.component';
 import { HeadingsComponent } from './Pages/PageStructure/Headings/headings.component';
-
+import { AriaLiveComponent } from './Pages/AdvancedComponents/AriaLive/aria-live.component';
+import { ModalsComponent } from './Pages/AdvancedComponents/Modals/modals.component';
+import { FormsModule } from '@angular/forms';
 defineCustomElements();
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -60,8 +62,11 @@ const routes: Routes = [
     TooltipsComponent,
     HeadingsComponent,
     LandmarksComponent,
+    AriaLiveComponent,
+    AdvancedComponentsComponent,
+    ModalsComponent,
   ],
-  imports: [BrowserModule, HttpClientModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
+  imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
