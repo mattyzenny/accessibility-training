@@ -116,23 +116,19 @@
         <cel-text-field data-required="true" data-helper-label="content below will be removed"
           #inputForm></cel-text-field>
       </div>
-
-
       <div>
-        <cel-button class="mt-3" data-button-size="small" data-label="Clear Data" type="button" id="button-addon1"
+        <cel-button class="mt-3" data-button-size="small" data-label="Clear Data" type="button"
           (celButtonOnClick)="handleChange($event)" (blur)="clearAlert()"></cel-button>
       </div>
-
       <div class="form-floating mt-3 mb-3">
         <input id="customLiveInputField" type="text" placeholder="custom aria-live message"
-          placeholder=" 'custom aria-live message' " [(ngModel)]="inputValue" class="form-control">
+          placeholder=" 'custom aria-live message' " [(ngModel)]="inputValue" class="form-control" />
         <label for="customLiveInputField">
           custom aria-live message
         </label>
       </div>
     </div>
-  </div>
-  <div class="accordion
+    <div class="accordion
               mb-3
               mt-3
               container
@@ -140,31 +136,116 @@
               align-items-center
               text-center
               content" id="accordion0">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button id="accordionButton0"
-          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
-          data-bs-toggle="collapse" data-bs-target="#codeContainer0" aria-expanded="false"
-          aria-controls="codeContainer0">
-          Expand Code
-        </button>
-      </h2>
-      <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
-        <div class="accordion-body">
-          <strong>Code Title</strong>
-          <pre></pre>
-          <code><strong>&lt;component Name</strong></code> <code style="color: #006748;"> attributeStyle</code>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button id="accordionButton0"
+            class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#codeContainer0" aria-expanded="false"
+            aria-controls="codeContainer0">
+            Expand Code
+          </button>
+        </h2>
+        <div id="codeContainer0" class="accordion-collapse collapse" data-bs-parent="#accordion0">
+          <div class="accordion-body">
+            <strong>Aria-live Region</strong>
+            <pre></pre>
+            <strong>
+              <code style="color: #006748;">
+                &lt;div class="visually-hidden" aria-live="polite"&gt;
+              </code>
+              </strong>
+              <code>
+              <span ngNonBindable>{{hiddenAlert}}</span>
+            </code>
+              <code style="color: #006748;">
+              <strong>
+              &lt;/div&gt;
+            </strong>
+            </code>
+            <pre></pre>
+            <strong>Text Field</strong>
+            <pre></pre>
+            <code>
+            <strong>
+              &lt;div&gt;
+            </strong>
+            <strong>
+              &lt;cel-text-field
+            </strong>
+              data-required="true"
+              data-helper-label="content below will be removed"
+              #inputForm
+            <strong>&gt;
+              &lt;/cel-text-field&gt;
+              &lt;/div&gt;
+            </strong>
+            </code>
+            <pre></pre>
+            <strong>
+              Clear Button
+            </strong>
+            <pre></pre>
+            <code>
+            <strong>
+              &lt;div&gt;
+            </strong>
+            <strong>
+              &lt;cel-button
+            </strong>
+              class="mt-3"
+              data-button-size="small"
+              data-label="Clear Data"
+              type="button"
+              (celButtonOnClick)="handleChange($event)"
+              (blur)="clearAlert()"<strong>&gt;&lt;/cel-button&gt;</strong>
+            <strong>
+              &lt;/div&gt;
+            </strong>
+            </code>
+            <pre></pre>
+            <strong>
+              Custom aria-live Message
+            </strong>
+            <pre></pre>
+            <code>
+            <strong>
+              &lt;div class="form-floating mt-3 mb-3"&gt;
+            </strong>
+            <strong>
+              &lt;input
+            </strong>
+            </code>
+            <code>
+              id="customLiveInputField"
+              type="text"
+              placeholder="custom aria-live message"
+              [(ngModel)]="inputValue"
+              class="form-control"<strong>/&gt;</strong>
+            <strong>
+              &lt;label for="customLiveInputField"&gt;
+            </strong>
+              custom aria-live message
+            <strong>
+              &lt;/label&gt;
+            </strong>
+            <strong>
+              &lt;/div&gt;
+            </strong>
+            </code>
+            <pre></pre>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container" id="details-container">
-    <p>
-      You can inspect the console or the html and see the <code>&lt;div aria-live="polite"&gt;</code> get updated.
-      In the console I've logged what is happening on each interaction.
-    </p>
+    <div class="container" id="details-container">
+      <p>
+        You can inspect the console or the html and see the <code>&lt;div aria-live="polite"&gt;</code> get updated.
+        In the console I've logged what is happening on each interaction.
+      </p>
+    </div>
   </div>
 </div>
+
 
 
 <!-- Component Grouping -->
@@ -172,8 +253,8 @@
 <div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
   <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
     <p>
-    The same logic can be applied when displaying new content based on user interaction.
-  </p>
+      The same logic can be applied when displaying new content based on user interaction.
+    </p>
   </div>
   <div class="
     mt-3
@@ -185,13 +266,13 @@
     content
   ">
     <div class="override-container">
-      <div aria-atomic="true" aria-live="polite" *ngFor="let radio of radioGroupList">
-        <cel-radio-button-group
-         #radioGroupForms [header]=radio.header [attr.data-show-radio-group-horizontal]="!isMobile" [groupName]="radio.groupName" [list]="radio.radioGroup"
-      (celRadioButtonChange)="displayToggle($event)"></cel-radio-button-group>
-    </div>  
-  </div>
-  <div class="accordion
+      <div aria-live="polite" *ngFor="let radio of radioGroupList">
+        <cel-radio-button-group #radioGroupForms [header]=radio.header
+          [attr.data-show-radio-group-horizontal]="!isMobile" [groupName]="radio.groupName" [list]="radio.radioGroup"
+          (celRadioButtonChange)="displayToggle($event)"></cel-radio-button-group>
+      </div>
+    </div>
+    <div class="accordion
               mb-3
               mt-3
               container
@@ -199,28 +280,60 @@
               align-items-center
               text-center
               content" id="accordion1">
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button id="accordionButton1"
-          class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
-          data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
-          aria-controls="codeContainer1">
-          Expand Code
-        </button>
-      </h2>
-      <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion3">
-        <div class="accordion-body">
-          <strong>Code Title</strong>
-          <pre></pre>
-          <code><strong>&lt;component Name</strong></code> <code style="color: #006748;"> attributeStyle</code>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button id="accordionButton1"
+            class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#codeContainer1" aria-expanded="false"
+            aria-controls="codeContainer1">
+            Expand Code
+          </button>
+        </h2>
+        <div id="codeContainer1" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+          <div class="accordion-body">
+            <strong>Display Content</strong>
+            <pre></pre>
+            <code style="color: #006748;">
+              <strong>
+              &lt;div aria-live="polite" *ngFor="let radio of radioGroupList"&gt;
+            </strong>
+            </code>
+            <code>
+            <strong>
+              &lt;cel-radio-button-group
+            </strong>
+            </code>
+            <code>
+              [attr.data-show-radio-group-horizontal]="!isMobile"
+            </code>
+            <code>
+              [header]="radio.header"
+            </code>
+            <code>
+              [groupName]="radio.groupName"
+            </code>
+            <code>
+              [list]="radio.radioGroup"
+            </code>
+            <code>
+              (celRadioButtonChange)="displayToggle($event)"<strong>&gt;
+              &lt;/cel-radio-button-group&gt;
+            </strong>
+            </code>
+            <code style="color: #006748;">
+            <strong>
+              &lt;/div&gt;
+            </strong>
+            </code>
+            <pre></pre>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="container" id="details-container">
-    <p>
-      You can inspect the console or the html and see the <code>&lt;div aria-live="polite"&gt;</code> get updated.
-      In the console I've logged what is happening on each interaction.
-    </p>
+    <div class="container" id="details-container">
+      <p>
+        Inspect the console or html to see the <code>&lt;div aria-live="polite"&gt;</code> get updated.
+      </p>
+    </div>
   </div>
 </div>

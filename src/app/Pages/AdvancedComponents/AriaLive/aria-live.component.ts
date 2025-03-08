@@ -5,7 +5,6 @@ import {
   ViewChild,
   ElementRef,
   ViewChildren,
-  Query,
   QueryList,
   HostListener,
 } from '@angular/core';
@@ -21,7 +20,6 @@ export class AriaLiveComponent implements AfterViewInit, OnInit {
   inputValue = '';
   hiddenAlert = '';
   radioGroupList: any[] = [];
-  isHidden = '';
 
   //Logic 2 different ways |  ViewChild && [(ngModel)]
   @ViewChild('inputForm') input!: ElementRef;
@@ -112,21 +110,20 @@ export class AriaLiveComponent implements AfterViewInit, OnInit {
   displayToggle(event: Event) {
     this.radioGroupList.forEach((radioProp) => {
       radioProp.radioGroup.forEach((radio: any) => {
-        if (radio.checked) {
-          console.log(radio);
-        }
-        //logic for hiding the second radio group
+        // Hiding the second radio group based on isHidden property
         if (radio.radioId === 'yes' && radio.checked) {
-          this.radioGroupQueryList.forEach((celRadioGroup) => {
-            if (celRadioGroup.nativeElement.groupName === 'School-District') {
+          this.radioGroupQueryList.forEach((celRadioGroup, index) => {
+            if (this.radioGroupList[index].isHidden) { 
               celRadioGroup.nativeElement.style.display = 'none';
+              console.dir(`${celRadioGroup.nativeElement.localName}` + ' : ' + `${celRadioGroup.nativeElement.groupName}` + ": Hidden" );
             }
           });
         }
         if (radio.radioId === 'no' && radio.checked) {
-          this.radioGroupQueryList.forEach((celRadioGroup) => {
-            if (celRadioGroup.nativeElement.groupName === 'School-District') {
+          this.radioGroupQueryList.forEach((celRadioGroup, index) => {
+            if (this.radioGroupList[index].isHidden) {
               celRadioGroup.nativeElement.style.display = 'block';
+              console.dir(`${celRadioGroup.nativeElement.localName}` + ' : ' + `${celRadioGroup.nativeElement.groupName}` + ": Visible" );
             }
           });
         }
