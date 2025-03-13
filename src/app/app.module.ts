@@ -18,16 +18,16 @@ import { LinksComponent } from './Pages/InteractiveElements/Links/links.componen
 import { PagesComponent } from './Pages/PageStructure/pages.component';
 import { IconsComponent } from './Pages/Tooltips/Icons/icons.component';
 import { InteractiveElementsComponent } from './Pages/InteractiveElements/interactive-elements.component';
-import { AdvancedComponentsComponent } from './Pages/AdvancedComponents/advanced-components.component';
+import { AdvancedDesignsComponent } from './Pages/AdvancedDesigns/advanced-designs.component';
 import { GroupedInputsComponent } from './Pages/GroupedInputs/grouped-inputs.component';
 import { CheckboxComponent } from './Pages/GroupedInputs/Checkbox/checkbox.component';
 import { TooltipsComponent } from './Pages/Tooltips/tooltips.component';
 import { LandmarksComponent } from './Pages/PageStructure/Landmarks/landmarks.component';
 import { HeadingsComponent } from './Pages/PageStructure/Headings/headings.component';
-import { AriaLiveComponent } from './Pages/AdvancedComponents/AriaLive/aria-live.component';
-import { ModalsComponent } from './Pages/AdvancedComponents/Modals/modals.component';
+import { AriaLiveComponent } from './Pages/AdvancedDesigns/AriaLive/aria-live.component';
+import { ModalsComponent } from './Pages/AdvancedDesigns/Modals/modals.component';
 import { FormsModule } from '@angular/forms';
-import { DescriptionListComponent } from './Pages/AdvancedComponents/DescriptionList/description-list.component';
+import { DescriptionListComponent } from './Pages/AdvancedDesigns/DescriptionList/description-list.component';
 defineCustomElements();
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -35,7 +35,7 @@ const routes: Routes = [
   {path: 'Interactive-Elements', component: InteractiveElementsComponent},
   {path: 'Grouped-Inputs', component: GroupedInputsComponent},
   {path: 'Text-Fields', component: TextFieldsComponent},
-  {path: 'Advanced-Components', component: AdvancedComponentsComponent},
+  {path: 'Advanced-Designs', component: AdvancedDesignsComponent},
   {path: 'Pages', component: PagesComponent},
   {path: 'How-To', component: HowToComponent},
   {path: 'Resources-Testing', component: ResourcesComponent},
@@ -64,7 +64,7 @@ const routes: Routes = [
     HeadingsComponent,
     LandmarksComponent,
     AriaLiveComponent,
-    AdvancedComponentsComponent,
+    AdvancedDesignsComponent,
     ModalsComponent,
     DescriptionListComponent,
   ],
