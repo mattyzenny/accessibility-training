@@ -1,6 +1,6 @@
 {
   "name": "accessibility-training",
-  "version": "1.1.0 ",
+  "version": "1.1.1",
   "scripts": {
     "ng": "ng",
     "serve": "node git-backend/server.js",
