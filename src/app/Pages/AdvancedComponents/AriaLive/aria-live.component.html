@@ -332,7 +332,9 @@
     </div>
     <div class="container" id="details-container">
       <p>
-        Inspect the console or html to see the <code>&lt;div aria-live="polite"&gt;</code> get updated.
+        There is some nuance with <strong>change of context & change of content</strong>. Technically we are not changing
+        context, but we are changing the content of the page. Since the user initated the change, it is not considered
+        an interruption or WCAG failure, however; it is still important to consider the user experience by providing the <code>aria-live</code> region.
       </p>
     </div>
   </div>

@@ -1,0 +1,203 @@
+<div class="
+    container
+    d-flex
+    justify-content-between
+    align-items-center
+    text-center
+    content
+  ">
+    <h2 class="h4 text-body-secondary">{{title}}</h2>
+</div>
+
+
+
+
+<!-- Intro Section -->
+
+
+<div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+    <p>
+        Description lists (<code>&lt;dl&gt;</code>) are used to group related terms and descriptions. They provide
+        a structured way to present information where multiple terms may be associated with a single description,
+        or a single term may have multiple descriptions.
+    </p>
+    <p>
+        Screen readers interpret description lists by announcing the term (<code>&lt;dt&gt;</code>), followed by the
+        description (<code>&lt;dd&gt;</code>). Users can navigate between pairs using standard list navigation commands.
+    </p>
+    <p>
+        Description lists should only be used for <strong>key-value</strong> relationships or glossary style
+        information.
+    </p>
+
+    <p><strong>Required</strong></p>
+    <ul>
+        <li>
+            The relationship between terms and descriptions
+            <a class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+                href="https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships" target="_blank"
+                aria-label="must be clear and meaningful, WCAG, opens new window">must</a> be meaningful and
+            programmatically
+            determinable. Use a <code>&lt;dl&gt;</code> only when the structure represents a **clear association**
+            between terms and descriptions.
+        </li>
+        <li>
+            Each description term <code>&lt;dt&gt;</code> <a
+                class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+                href="https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions" target="_blank"
+                aria-label="must have an associated description, WCAG, opens new window"> must</a> have at least one
+            corresponding <code>&lt;dd&gt;</code>. Similarly, each <code>&lt;dd&gt;</code> must be associated with a
+            <code>&lt;dt&gt;</code>.
+        </li>
+        <li>
+            The name, role, and structure of the list <a
+                class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
+                href="https://www.w3.org/WAI/WCAG22/Understanding/name-role-value" target="_blank"
+                aria-label="must be programmatically determinable, WCAG, opens new window">must</a> remain intact.
+            Overriding native semantics with excessive styling or using <code>role="presentation"</code> on a
+            <code>&lt;dl&gt;</code> can break accessibility.
+        </li>
+    </ul>
+    <p><strong>Best Practices</strong></p>
+    <ul>
+        <li>
+            A <code>&lt;dl&gt;</code> can be used when a table would be excessive for simple term-description pairs. It
+            provides a
+            structured and accessible way to associate terms (<code>&lt;dt&gt;</code>) with their descriptions
+            (<code>&lt;dd&gt;</code>)
+            without the complexity of a full table.
+        </li>
+        <li>
+            If the information requires tabular relationships, such as comparisons or multiple attributes per item,
+            a <code>&lt;table&gt;</code> may be more appropriate.
+        </li>
+    </ul>
+</div>
+
+
+<!-- Component Grouping -->
+
+<div class="form-control border-primary-subtle border-2 container mt-3 mb-3">
+    <div class="container border border-primary-subtle mt-3 mb-3" id="content-container">
+        <p>
+            In the example below, we have an HTML element that only represents key value pairs. When there is no need
+            for a heading,
+            and there is no need for table structure, we can code it as a description list.
+        </p>
+    </div>
+    <div class="
+      mt-3
+      mb-3
+      container
+      justify-content-between
+      align-items-center
+      text-center
+      content
+    ">
+        <div class="row">
+            <dl class="override-container w-100">
+                <div class="row border-bottom border-3 mb-3 pb-3">
+                    <dt class="col-auto fw-bold">Description lists</dt>
+                    <dd class="col text-end">A description list is perfect for defining terms.</dd>
+                </div>
+
+                <div class="row border-bottom border-3 mb-3 pb-3">
+                    <dt class="col-auto fw-bold">Description list with 2 terms</dt>
+                    <dt class="col-auto">
+                        <cel-button [buttonSize]="buttonProps.size" [label]="buttonProps.label"></cel-button>
+                    </dt>
+                    <dd class="col text-end">This is a definition for 2 terms.</dd>
+                </div>
+
+                <div class="row border-bottom border-3 mb-3 pb-3">
+                    <dt class="col-auto fw-bold">Another term</dt>
+                    <dd class="col text-end">This definition is short, so no extra paragraphs or anything.</dd>
+                </div>
+
+                <div class="row border-bottom border-3 pb-3">
+                    <dt class="col-sm-1 fw-bold text-truncate" data-bs-tooltip="true" data-bs-title="Truncated term">
+                        Truncated term
+                    </dt>
+                    <dd class="col text-end">This can be useful when space is tight. Adds an ellipsis at the end.</dd>
+                    <dd class="col text-end">Here is a second definition.</dd>
+                </div>
+            </dl>
+        </div>
+
+    </div>
+    <div class="accordion
+                mb-3
+                mt-3
+                container
+                justify-content-between
+                align-items-center
+                text-center
+                content" id="accordion3">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button id="accordionButton3"
+                    class="border border-secondary border-1 bg-info bg-opacity-10 accordion-button collapsed"
+                    type="button" data-bs-toggle="collapse" data-bs-target="#codeContainer3" aria-expanded="false"
+                    aria-controls="codeContainer3">
+                    Expand Code
+                </button>
+            </h2>
+            <div id="codeContainer3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                <div class="accordion-body">
+                    <strong>Description Lists</strong>
+                    <pre></pre>
+                    <code><strong>&lt;dl</strong></code>
+                    <code>class=
+                    "override-container w-100"<strong>&gt;</strong></code>
+                    <pre></pre>
+                    <code>  &lt;div class="row border-bottom border-3 mb-3 pb-3"&gt;</code>
+                    <code>    &lt;dt class="col-auto fw-bold"&gt;Description lists&lt;/dt&gt;</code>
+                    <code>    &lt;dd class="col text-end"&gt;A description list is perfect for defining terms.&lt;/dd&gt;</code>
+                    <code>  &lt;/div&gt;</code>
+                    <pre></pre>
+                    <code>
+                    &lt;div class="row border-bottom border-3 mb-3 pb-3"&gt;
+                    &lt;dt class="col-auto fw-bold"&gt;Description list with 2 terms&lt;/dt&gt;
+                    &lt;dt class="col-auto"&gt;
+                    &lt;cel-button
+                    [buttonSize]
+                    "buttonProps.size"
+                    [label]=
+                    "buttonProps.label"&gt;&lt;/cel-button&gt;
+                    &lt;/dt&gt;
+                    &lt;dd class="col text-end"&gt;This is a definition for 2 terms.&lt;/dd&gt;
+                    &lt;/div&gt;
+                    <pre></pre>
+                    &lt;div class="row border-bottom border-3 mb-3 pb-3"&gt;
+                    &lt;dt class="col-auto fw-bold"&gt;Another term&lt;/dt&gt;
+                    &lt;dd class="col text-end"&gt;This definition is short, so no extra paragraphs or anything.&lt;/dd&gt;
+                    &lt;/div&gt;
+                    <pre></pre>
+
+                    &lt;div class="row border-bottom border-3 pb-3"&gt;
+                    &lt;dt class="col-sm-1 fw-bold text-truncate"
+                    data-bs-tooltip=
+                    "true"
+                    data-bs-title=
+                    "Truncated term"&gt;
+                    Truncated term&lt;/dt&gt;
+                    &lt;dd class="col text-end"&gt;This can be useful when space is tight. Adds an ellipsis at the end.&lt;/dd&gt;
+                    &lt;dd class="col text-end"&gt;Here is a second definition.&lt;/dd&gt;
+                    &lt;/div&gt;
+                    </code>
+                    <pre></pre>
+
+                    <code><strong>&lt;/dl&gt;</strong></code>
+                    <pre></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="details-container">
+        <p>
+            Description lists are easy to navigate. Turn on the screen reader, navigate to the container of the
+            description list,
+            and press [ <strong> &#8963; Control + &#8997; Option + A </strong>] to read the full description list.
+        </p>
+    </div>
+</div>

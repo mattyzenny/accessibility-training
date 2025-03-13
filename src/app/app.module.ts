@@ -27,6 +27,7 @@ import { HeadingsComponent } from './Pages/PageStructure/Headings/headings.compo
 import { AriaLiveComponent } from './Pages/AdvancedComponents/AriaLive/aria-live.component';
 import { ModalsComponent } from './Pages/AdvancedComponents/Modals/modals.component';
 import { FormsModule } from '@angular/forms';
+import { DescriptionListComponent } from './Pages/AdvancedComponents/DescriptionList/description-list.component';
 defineCustomElements();
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -65,6 +66,7 @@ const routes: Routes = [
     AriaLiveComponent,
     AdvancedComponentsComponent,
     ModalsComponent,
+    DescriptionListComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
