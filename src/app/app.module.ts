@@ -28,6 +28,7 @@ import { AriaLiveComponent } from './Pages/AdvancedDesigns/AriaLive/aria-live.co
 import { ModalsComponent } from './Pages/AdvancedDesigns/Modals/modals.component';
 import { FormsModule } from '@angular/forms';
 import { DescriptionListComponent } from './Pages/AdvancedDesigns/DescriptionList/description-list.component';
+import { HighContrastComponent } from './Pages/AdvancedDesigns/HighContrast/high-contrast.component';
 defineCustomElements();
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -67,6 +68,7 @@ const routes: Routes = [
     AdvancedDesignsComponent,
     ModalsComponent,
     DescriptionListComponent,
+    HighContrastComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot(routes, {useHash: true, anchorScrolling: 'enabled', scrollPositionRestoration: 'enabled'})],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
