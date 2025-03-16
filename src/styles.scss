@@ -17,9 +17,120 @@ body {
   }
 }
 
+/* High Contrast Background */
 .high-contrast {
+  background-color: #000000 !important; 
+  color: #FFD700 !important; 
+}
+/* High Contrast Focus */
+.high-contrast button:focus,
+.high-contrast a:focus,
+.high-contrast input:focus,
+.high-contrast textarea:focus {
+  outline: 4px solid #FFD700 !important; /* Bright yellow */
+  outline-offset: 2px; /* Space between element and outline */
+  background-color: #1E90FF !important; /* Blue background */
+  color: #000000 !important; /* Black text */
+}
+
+.high-contrast .form-control {
+  background-color: beige !important;
+  color: #000000 !important;
+  input {
+    background-color: #000000 !important; 
+    color: #FFD700 !important; 
+  }
+  label {
+    color: #ff0000 !important; 
+  }
+}
+
+.high-contrast nav {
+  background-color: #222222 !important; 
+  color: #FFD700 !important; 
+  a {
+    color: #1E90FF !important; 
+    &:hover {
+      color: #FF8C00 !important; 
+    }
+  }
+}
+
+
+.high-contrast #content-container {
+  background-color: #000000 !important; 
+  background-clip: border-box;
+  border-radius: 6px;
+
+  p, ul, ol {
+    color: #FFD700 !important; 
+  }
+}
+
+.high-contrast a {
+  color: #1E90FF !important; 
+  text-decoration: underline;
+}
+
+.high-contrast button {
+  background-color: #FF8C00 !important; 
+  color: #000000 !important; 
+  border: 2px solid #FFD700 !important; 
+}
+
+.high-contrast input, .high-contrast textarea {
+  background-color: #222222 !important; 
+  color: #FFD700 !important; 
+  border: 2px solid #FF8C00 !important; 
+}
+
+.high-contrast pre, .high-contrast code {
+  background-color: #121212 !important; 
+  color: #1E90FF !important; 
+  border: 1px solid #FFD700 !important; 
+  padding: 4px;
+  font-family: monospace;
+}
+
+.high-contrast table {
+  border-collapse: collapse;
+  border: 2px solid #FFD700 !important; 
+}
+.high-contrast th {
+  background-color: #333333 !important; 
+  color: #FF8C00 !important; 
+  border: 2px solid #FFD700 !important;
+}
+.high-contrast td {
   background-color: #000000 !important;
-  color: #FFFF00 !important;
+  color: #FFD700 !important;
+  border: 1px solid #FFD700 !important;
+}
+
+.high-contrast blockquote {
+  border-left: 5px solid #FF8C00 !important; 
+  color: #1E90FF !important; 
+  padding: 10px;
+}
+
+.high-contrast ::selection {
+  background-color: #FF8C00 !important; 
+  color: #000000 !important; 
+}
+
+.high-contrast label {
+  color: #FFD700 !important; 
+}
+
+.high-contrast h1, .high-contrast h2, .high-contrast h3, .high-contrast h4, .high-contrast h5, .high-contrast h6 {
+  color: #FF8C00 !important; 
+}
+
+.high-contrast .alert {
+  background-color: #222222 !important;
+  border-left: 5px solid #FFD700 !important;
+  color: #FF8C00 !important;
+  padding: 10px;
 }
 
 .visually-hidden {
