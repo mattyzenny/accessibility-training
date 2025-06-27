@@ -114,3 +114,47 @@ After linking and building, test the application to verify that the custom `cel-
 ### 9. **Maintain and Update**
 
 As you continue to develop, you may need to run `npm link` again if changes are made to the local library. Make sure the build process for the linked version is correctly integrated into your project.
+
+### 10. **Sync Your Fork with the Original Repository**
+
+If you have forked this project and want to pull the latest changes from the original (upstream) `develop` branch, follow these steps:
+
+#### 1. Add the Upstream Remote (only once)
+
+```bash
+git remote add upstream https://github.com/SavvasLearning/cel-components.git
+```
+
+> Replace the URL if your upstream source is different.
+
+#### 2. Fetch the Latest Changes
+
+```bash
+git fetch upstream
+```
+
+#### 3. Switch to Your Local `develop` Branch
+
+```bash
+git checkout develop
+```
+
+#### 4. Merge or Rebase with Upstream `develop`
+
+```bash
+git merge upstream/develop
+```
+
+_Or for a cleaner history:_
+
+```bash
+git rebase upstream/develop
+```
+
+#### 5. Push Updates to Your Fork (Optional)
+
+```bash
+git push origin develop
+```
+
+This keeps your forked version up to date with the latest changes from the source project.
