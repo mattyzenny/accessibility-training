@@ -16,8 +16,17 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Deploy
 
-Run `deploy.sh` script. This will
-provide different prompts to execute and deploy your code changes to PROD. First it will run the `npm run prod` command, change banches to the prod deployment branch, and then deploy the code.
+To deploy a production build to GitHub Pages:
+
+Run `./deploy.sh`. This will provide different prompts to execute and deploy your code changes to production.
+
+This script performs the following steps:
+- Runs a production build (`npm run prod`).
+- Switches to the `gh-pages` branch.
+- Copies the contents of `dist/accessibility-training/` into the root of `gh-pages`.
+- Commits and pushes changes to `origin gh-pages`.
+
+After the script completes, your deployed site will be live at:
 
 ## Running unit tests
 
