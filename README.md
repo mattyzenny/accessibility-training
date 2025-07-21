@@ -63,7 +63,7 @@ follow the steps below in ## Linking Local Dependencies ##
 
 ### 2. **Link the Local Dependency to Your Project**
 
-In the `forked-cel-components` project directory, run the following command to link the local project:
+In the `forked-cel-library` project directory, run the following command to link the local project:
 
 {`npm link`}
 

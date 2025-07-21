@@ -8,22 +8,41 @@ import { ReflowService } from 'src/app/Services/ReflowService/reflow.service';
 })
 export class InputValidationsComponent implements AfterViewInit {
   title = 'Input Validations';
-  
-  errorMessages: { [key: string]: string } = {};
-  successMessages: { [key: string]: string } = {};
+  maxFieldLength = 10;
+  isError: { [key: string]: boolean } = {};
+  isSuccess: { [key: string]: boolean } = {};
+  statusConfigMap: { [key: string]: {
+    errorMessages: { identifier: string; message: string }[];
+    successMessages: { identifier: string; message: string }[];
+    customMessages: { identifier: string; message: string }[];
+  } } = {}
+
+
+  statusConfigMessages = {
+    maxCharacterLimit: (length: number) => ({
+      message: `Max characters reached, please use less than ${length} characters.`,
+      identifier: 'maxCharacterLimit',
+    }),
+    invalidCharacters: {
+      message: 'No special characters allowed.',
+      identifier: 'invalidCharacters',
+    },
+    genericErrorMessage: {
+      message: 'Please enter a valid name',
+      identifier: 'genericErrorMessage',
+    },
+    genericSuccessMessage: {
+      message: 'Available',
+      identifier: 'genericSuccessMessage',
+    },
+  }
+
   constructor(public reflowService: ReflowService) {}
 
   ngAfterViewInit(): void {
     this.reflowService.checkViewport();
-
-    this.successMessages = {
-      genericSuccessMessage: 'Available',
-    };
-    this.errorMessages = {
-      maxCharacterLimit: 'max characters reached, please use less than',
-      invalidCharacters: 'no special characters allowed',
-      genericErrorMessage: 'please enter a valid name'
-    };
+    
+    // Initialize the statusConfigMap with error and success messages
   }
 
   // Listens to the window resize event
@@ -41,50 +60,62 @@ export class InputValidationsComponent implements AfterViewInit {
   
 // Function to validate input on blur event
 validateInputOnBlur(inputId: string): void {
-  const inputElement = document.getElementById(inputId) as HTMLInputElement; // Access input value
+  const inputElement = document.getElementById(inputId) as HTMLInputElement;
   const textField = inputElement.shadowRoot?.querySelector('input');
   const maxLength = textField?.maxLength;
 
-  // Start with a clean slate
-  this.errorMessages[inputId] = '';
-  this.successMessages[inputId] = '';
-
+  const inputValidation = {
+    errorMessages: [] as { identifier: string; message: string }[],
+    successMessages: [] as { identifier: string; message: string }[],
+    customMessages: [] as { identifier: string; message: string }[]
+  };
 
   if (textField?.value) {
+    const isValidMaxLength = this.validateMaxLength(textField.value, maxLength);
+    const isValidCharacters = this.validateNoSpecialCharacters(textField.value);
 
-    const isValidMaxLength = this.validateMaxLength(textField, inputId);
-    const isValidCharacters = this.validateNoSpecialCharacters(textField, inputId);
-
-    if (isValidMaxLength && isValidCharacters) {
-      this.successMessages[inputId] = this.successMessages.genericSuccessMessage;
+    if (!isValidMaxLength) {
+      inputValidation.errorMessages.push(
+        this.statusConfigMessages.maxCharacterLimit(maxLength || this.maxFieldLength)
+      )
     }
-
-    if (!isValidMaxLength && !isValidCharacters) {
-      this.errorMessages[inputId] = `${this.errorMessages.maxCharacterLimit} ${maxLength} ${this.errorMessages.invalidCharacters}`.trim();
+    if (!isValidCharacters) {
+      inputValidation.errorMessages.push(
+        this.statusConfigMessages.invalidCharacters
+      )
+    }
+    if (inputValidation.errorMessages.length > 0) {
+    } else {
+      inputValidation.successMessages.push(
+        this.statusConfigMessages.genericSuccessMessage
+      )
     }
   } else {
-    this.errorMessages[inputId] = this.errorMessages.genericErrorMessage;
+    inputValidation.errorMessages.push(
+      this.statusConfigMessages.genericErrorMessage
+    )
   }
+
+  this.statusConfigMap[inputId] = {
+    errorMessages: inputValidation.errorMessages,
+    successMessages: inputValidation.successMessages,
+    customMessages: inputValidation.customMessages
+  }
+  this.isError[inputId] = inputValidation.errorMessages.length > 0;
+  this.isSuccess[inputId] = inputValidation.successMessages.length > 0;
 }
 
 // Max length validation
-validateMaxLength(textField: HTMLInputElement, inputId: string): boolean {
-  const currentLength = textField.value.length;
-  const maxLengthValue = textField.maxLength;
-  if (maxLengthValue > 0 && currentLength >= maxLengthValue) {
-    this.errorMessages[inputId] = `${this.errorMessages.maxCharacterLimit} ${maxLengthValue}`;
-    return false;
+validateMaxLength(value: string, maxLength: number | undefined): boolean {
+  if (maxLength === undefined || maxLength <= 0) {
+    return true
   }
-  return true;
+  return value.length < maxLength
 }
 
 // Special character validation
-validateNoSpecialCharacters(textField: HTMLInputElement, inputId: string): boolean {
-  const specialCharRegex = /[^a-zA-Z0-9 ]/g;
-  if (specialCharRegex.test(textField.value)) {
-    this.errorMessages[inputId] = this.errorMessages.invalidCharacters;
-    return false;
-  }
-  return true;
+validateNoSpecialCharacters(value: string): boolean {
+  const specialCharRegex = /[^a-zA-Z0-9 ]/g
+  return !specialCharRegex.test(value)
 }
 }

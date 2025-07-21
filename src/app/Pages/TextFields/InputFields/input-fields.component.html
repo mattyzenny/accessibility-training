@@ -50,7 +50,7 @@
     <li id="autocomplete-requirements">
       If personal data is being collected, the proper input type and input purpose <strong>(autocomplete) </strong> <a
         class="text-info-emphasis fw-semibold link-underline-info link-offset-2"
-        href="https://www.w3.org/TR/2011/WD-html5-20110525/the-input-element.html#attr-input-type" target="_blank"
+        href="https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose" target="_blank"
         aria-label="must use proper input type and purpose, opens new window">must</a> be used if applicable.
       There are 22 <a href="https://www.w3.org/TR/2011/WD-html5-20110525/the-input-element.html#attr-input-type"
         target="_blank" aria-label="input types, opens new window">input types</a> and 50 <a
@@ -63,7 +63,7 @@
     accessible.
   </p>
   <p>
-    <span class="badge fs-7 text-bg-warning"> <cel-icon data-color="black" data-size="small" data-name="alert-triangle"></cel-icon>Warning </span> Currently cel-components does not fully support <code>type</code>, <code>autocomplete</code>, <code>aria-describedby</code>, <code>alert icon</code>, or the <code>required icon</code>.
+    <span class="badge fs-7 text-bg-warning"> <cel-icon data-color="black" data-size="small" data-name="alert-triangle"></cel-icon>Warning </span> Currently cel-components does not fully support <code>aria-describedby</code>.
   </p>
 </div>
 
@@ -80,7 +80,7 @@
   <div
     [class]="!isMobile ? 'mt-3 mb-3 container justify-content-between align-items-center text-center content d-flex' : 'mt-3 mb-3 container justify-content-between align-items-center text-center content'">
     <div>
-      <cel-text-field></cel-text-field>
+      <cel-text-field style="margin-top:21px"></cel-text-field>
     </div>
     <div>
       <cel-text-field data-field-label="Last Name"></cel-text-field>
@@ -140,23 +140,22 @@
   <div class="container" id="details-container">
     <ol>
       <li class="mt-2">
-        This input is right out-of-the-box from cel-components. It is accessible, but if we want to add any
-        customization, then we must consider adding attributes.
+        ❌ This input is right out-of-the-box from cel-components. It is <strong>NOT</strong> accessible. 
       </li>
       <li class="mt-2">
         This input has its own <code>&lt;label&gt;</code>. We are not creating a custom label, but rather using the
-        built-in attribute <code>data-field-label</code>
+        built-in attribute <code>data-field-label</code>. This is the bare minimum for a text field to be accessible.
       </li>
       <li class="mt-2">
         This input is using <strong>HAT</strong>. Notice the same visual label is being announced to the screen reader,
-        however; additional content is being added. This is acceptable and a common practice as long as the visual label
+        however; additional content is added. This is acceptable and a common practice as long as the visual label
         is also included into the accessible label.
       </li>
       <li class="mt-2">
-        The fourth input is using a placeholder text. Technically the placeholder text can be whatever meaninful text
-        you want it to be, as long as it is supplimental to the <code>&lt;label&gt;</code>.
+        The fourth input is using a placeholder text. Technically the placeholder text can be whatever meaningful text
+        you want it to be, as long as it is supplemental to the <code>&lt;label&gt;</code>.
         This is because once you begin typing into the input-field, the placeholder text will be removed. We cannot have
-        our only label disappear.
+        our only label disappear for the user.
       </li>
     </ol>
   </div>
@@ -182,7 +181,7 @@
     </div>
     <div>
       <cel-text-field data-field-label="Email" data-field-aria-placeholder="personal@gmail.com"
-        data-field-aria-label="Email, enter your personal email" data-field-aria-describedby="textField-5-helperLabelId"
+        data-field-aria-label="Email, enter your personal email" [fieldAriaDescribedbyContent]="'Do not enter your student emails,'"
         data-max-field-length="15"
         data-helper-label="enter a valid email, no longer than 15 characters. No .edu emails allowed"
         data-required="true">
