@@ -190,7 +190,6 @@
     <div>
       <cel-text-field data-input-type="email" data-autocomplete="email" data-field-label="Email"
         data-field-aria-placeholder="personal@gmail.com" data-field-aria-label="Email, enter your personal email"
-        data-field-aria-describedby="textField-6-helperLabelId textField-6-describedbyContent"
         data-max-field-length="15"
         data-helper-label="enter a valid email, no longer than 15 characters. No .edu emails allowed"
         data-field-aria-describedby-content="all emails must have an @ symbol" data-required="true">
@@ -249,8 +248,8 @@
           <code>"Email, enter your personal email"
           </code>
           <code style="color: #006748;">
-            data-field-aria-describedby=</code>
-          <code>"textField-5-helperLabelId"
+            [fieldAriaDescribedbyContent]=</code>
+          <code>"Do not enter your student emails"
             data-max-field-length="15"
             data-helper-label="enter a valid email, no longer than 15 characters. No .edu emails allowed"
             data-required="true"<strong>&gt; &lt;/cel-text-field&gt;</strong>
@@ -270,14 +269,11 @@
             data-autocomplete=</code>
           <code>"email" data-field-label="Email" data-field-aria-placeholder="personal@gmail.com"
             data-field-aria-label="Email, enter your personal email"</code>
-          <code style="color: #006748"> data-field-aria-describedby=</code><code>"textField-6-helperLabelId
-          <mark>textField-6-describedbyContent</mark>"
+          <code> data-field-aria-describedby-content=</code><code>"all emails must have an @ symbol"
             data-max-field-length="15"
             data-helper-label="enter a valid email, no longer than 15 characters. No .edu emails allowed"
           </code>
-          <code style="color: #006748">
-            data-field-aria-describedby-content=</code>
-          <code>"all emails must have an @ symbol"
+          <code>
             data-required="true"<strong>&gt; &lt;/cel-text-field&gt;</strong>
           </code>
           <pre></pre>
@@ -317,11 +313,11 @@
       <li class="mt-2">
         This example demonstrates how we can apply both the <code>data-field-aria-label</code> &
         <code>data-field-aria-describedby</code> together.
-        The aria-label attribute overwrites the label field, and aria-describedby adds supplemental content by
+        In HTML, the aria-label attribute overwrites the label field, and <strong>aria-describedby</strong> adds supplemental content by
         referencing any element's ID.
-        In this example we reference the <strong>helper-label</strong> ID with our
-        <code>data-field-aria-describedby</code> attribute to apply both the <strong>helper-label</strong> content along
-        with the <strong>HAT</strong> associated to our <code>data-aria-field-label</code>.
+        In this example we use <code>data-field-aria-describedby</code>. The baked in logic
+        makes sure that if there is a describedby-content, and if there is a helper-label, we reference both ID's. In same the same manner, if there is
+        an aria-label, a helper-label, and an aria-describedby, all 3 instances are referenced (<code>data-helper-label</code> ID, <code>data-field-aria-describedby-content</code> ID, and the <code>data-field-aria-label</code>).
       </li>
       <li class="mt-2">
         This final input is fully loaded with everything an input could possibly need. It is unlikely to use all of
@@ -329,14 +325,12 @@
         but we are showcasing how they are accessibily used together.
         <ul>
           <li>
-            First let's look at our <code>data-field-aria-describedby</code>. An aria-describedby attribute can
+            First let's look at our <code>data-field-aria-describedby-content</code>. An aria-describedby attribute can
             concatenate
-            multiple ID's within the DOM. Here we are referencing the ID of <code>data-helper-label</code> &
-            <code>data-field-aria-describedby-content</code>
-            to give us a optimally robust description for our input field.
+            multiple ID's within the DOM to give us a optimally robust description for our input field.
           </li>
           <li>
-            Most importantly we have added <code>data-autocomplete</code> & <code>data-input-type</code>.
+            More importantly we have added <code>data-autocomplete</code> & <code>data-input-type</code>.
             These attributes are used to help the browser understand what type of input is being used, and
             assists the user with auto-filling stored data.
             For more information, please reference <a [routerLink]="[]"

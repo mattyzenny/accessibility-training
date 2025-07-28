@@ -26,7 +26,7 @@
     [class]="!isMobile ? 'mt-3 mb-3 container justify-content-between align-items-center text-center content d-flex' : 'mt-3 mb-3 container justify-content-between align-items-center text-center content'">
     <div>
       <cel-text-field data-field-label="Last Name" data-required="true" id="cel-textField-7"
-        (celTextFieldOnBlur)="validateInputOnBlur('cel-textField-7')" [enableSuccess]="isSuccess['cel-textField-7']" [statusConfig]="statusConfigMap['cel-textField-7']" [enableError]="isError['cel-textField-7']">
+        (celTextFieldOnBlur)="validateInputOnBlur('cel-textField-7')" [statusConfig]="statusConfigMap['cel-textField-7']" [enableError]="isError['cel-textField-7']">
       </cel-text-field>
     </div>
 
@@ -70,8 +70,11 @@
           <code>"validateInputOnBlur('cel-textField-7')"
           </code>
           <code style="color: #006748;">
-            [errorMessage]=</code>
-          <code>"errorMessages['cel-textField-7']"<strong>&gt;</strong> <strong>&lt;/cel-text-field&gt;</strong>
+            [statusConfig]=</code>
+          <code>"statusConfigMap['cel-textField-7']"</code>
+          <code style="color: #006748;">
+            [enableError]=</code>
+          <code>"isError['cel-textField-7']"<strong>&gt;</strong> <strong>&lt;/cel-text-field&gt;</strong>
           </code>
           <pre></pre>
 
@@ -79,11 +82,11 @@
           <pre></pre>
           <code>
             <strong>&lt;cel-text-field</strong> data-required="true" id="cel-textField-8" (blur)="validateInputOnBlur('cel-textField-8')"
-            [errorMessage]="errorMessages['cel-textField-8']" data-field-label="Middle Name"
+            [enableError]="isError['cel-textField-8']" [statusConfig]="statusConfigMap['cel-textField-8']" data-field-label="Middle Name"
           </code>
           <code style="color: #006748;">
             [successMessage]=</code>
-          <code>"successMessages['cel-textField-8']"<strong>&gt;</strong> <strong>&lt;/cel-text-field&gt;</strong>
+          <code>"isSuccess['cel-textField-8']"<strong>&gt;</strong> <strong>&lt;/cel-text-field&gt;</strong>
           </code>
           <pre></pre>
 
@@ -91,13 +94,12 @@
           <pre></pre>
           <code>
             <strong>&lt;cel-text-field</strong> id="cel-textField-9" data-helper-label="maximum 10 characters" (blur)="validateInputOnBlur('cel-textField-9')"
-            [errorMessage]="errorMessages['cel-textField-9']" data-max-field-legth="10" [successMessage]="successMessages['cel-textField-9']"
+            [enableError]="isError['cel-textField-9']" data-max-field-legth="10" [statusConfig]="statusConfigMap['cel-textField-9']" [enableSuccess]="isSuccess['cel-textField-9']"
             data-field-label="First Name" data-required="true"
           </code>
           <code style="color: #006748;">
             data-toggle-password=</code>
-          <code>"true"
-          </code>
+          <code>"true"</code>
           <code style="color: #006748;">
             data-autocomplete=</code>
           <code>"new-password"<strong>&gt;</strong> <strong>&lt;/cel-text-field&gt;</strong>
@@ -117,14 +119,19 @@
             This is an onBlur() function. It runs error validation when a user tabs out or clicks out of the element.
           </li>
           <li>
-            <code>[errorMessage]</code>
+            <code>[statusConfig]</code>
+            This is an object that contains the status configuration for the input field. It is used and required to display the
+            validation object messages.
+          </li>
+          <li>
+            <code>[enableError]</code>
             This is an array of error messages that will be displayed if the input is invalid.
             This should be added to any required input that need validation.
           </li>
         </ul>
       </li>
       <li class="mt-2">
-        Here we add the <code>[successMessage]</code> which behaves exactly like the <code>[errorMessage]</code>. It
+        Here we add the <code>[enableSuccess]</code> which behaves exactly like the <code>[enableError]</code>. It
         takes an array of messages.
       </li>
       <li class="mt-2">
